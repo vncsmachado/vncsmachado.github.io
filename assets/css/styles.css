@@ -1,7 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
+/* Tokens compartilhados. Fontes servidas pelo Adobe Web Project kmd2lah.
+   As três famílias oferecem 400/700 nos estilos normal/italic. */
+:root {
+    --color-vivid-red: #f20505;
+    --color-clear-white: #f8f9f4;
+    --font-operetta: "operetta-8", Georgia, "Times New Roman", serif;
+    --font-helvetica: "helvetica-lt-pro", Helvetica, Arial, sans-serif;
+    --font-roboto: "roboto", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    vertical-align: baseline;
-    list-style: none;
+}
+
+/* Base provisória de leitura; não representa o layout final do Figma. */
+body {
+    margin: 0;
+}
+
+.page-shell {
+    padding: 1rem;
+    overflow-wrap: break-word;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }

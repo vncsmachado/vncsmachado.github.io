@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinicius Machado | Portfolio</title>
-    <meta name="description" content="Portfólio do Product Designer Vinicius Machado para compartilhar pojetos e habilidades.">
+    <title>Vinicius Machado | Portfólio</title>
+    <meta name="description" content="Portfólio de Vinicius Machado, Product Designer: projetos e habilidades.">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.typekit.net/kmd2lah.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <h1>Vinicius Machado</h1>
+    <header class="home-header">
+        <a class="home-header__brand" href="index.html" aria-label="Vinicius Machado — início">
+            <img src="assets/logos/vinicius-machado.svg" width="48" height="48" alt="">
+        </a>
+        <nav aria-label="Navegação principal">
+            <ul class="home-header__links">
+                <li><a class="home-header__link" href="#sobre-mim">Sobre mim</a></li>
+                <!-- Remover aria-disabled quando assets/documents/curriculo.pdf for fornecido. -->
+                <li><a class="home-header__link" href="assets/documents/curriculo.pdf" target="_blank" rel="noopener" aria-disabled="true">Currículo<span class="visually-hidden"> (PDF, abre em nova aba quando disponível)</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo" class="page-shell">
+        <h1>Vinicius Machado</h1>
+        <p>Product Designer</p>
+        <p>Portfólio em desenvolvimento.</p>
+        <a href="cases/libero.html">Case LIBERÔ — em preparação</a>
+    </main>
 </body>
 </html>
