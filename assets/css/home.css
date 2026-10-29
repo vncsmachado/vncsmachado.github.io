@@ -98,3 +98,108 @@ html {
         --header-padding-inline: 100px;
     }
 }
+
+/* Hero: Figma 507:109 (1440 px) e 507:34 (412 px).
+   As entrelinhas seguem as caixas de texto dos metadados: 24, 63 e 20 px. */
+.home-main {
+    padding-block-start: 48px;
+    background-color: var(--color-clear-white);
+}
+
+.home-hero {
+    --hero-color-text: #000;
+    --hero-color-border: #595856;
+    --hero-padding-inline: 16px;
+    --hero-group-gap: 256px;
+    --hero-text-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--hero-group-gap);
+    min-height: 630px;
+    padding: 32px var(--hero-padding-inline) 48px;
+    color: var(--hero-color-text);
+    font-family: var(--font-helvetica);
+    font-style: normal;
+    /* Traço interno: preserva a altura do Auto Layout sem somar 1 px. */
+    box-shadow: inset 0 -1px 0 var(--hero-color-border);
+}
+
+.home-hero p,
+.home-hero h1 {
+    margin: 0;
+}
+
+.home-hero__name {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.home-hero__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--hero-text-gap);
+    width: 100%;
+    min-width: 0;
+}
+
+.home-hero__title {
+    width: 274px;
+    max-width: 100%;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 63px;
+}
+
+.home-hero__location {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.home-hero__description {
+    width: 374px;
+    max-width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@media (min-width: 48rem) {
+    .home-hero {
+        --hero-padding-inline: 100px;
+    }
+}
+
+/* A composição em duas colunas entra quando há espaço para os textos.
+   O gap chega aos 256 px da referência em 1440 px e diminui no tablet. */
+@media (min-width: 64rem) {
+    .home-hero {
+        --hero-group-gap: clamp(32px, 17.777778vw, 256px);
+        --hero-text-gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 215px;
+        /* Espaços efetivos medidos no frame desktop de altura 215 px:
+           intro em y=26, com 147 px de altura, e 42 px restantes abaixo. */
+        padding-block: 26px 42px;
+    }
+
+    .home-hero__name {
+        flex: 1 0 236px;
+    }
+
+    .home-hero__intro {
+        flex: 0 1 710px;
+    }
+
+    .home-hero__title,
+    .home-hero__description {
+        width: 100%;
+    }
+}

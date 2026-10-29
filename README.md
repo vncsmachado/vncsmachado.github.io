@@ -1,6 +1,6 @@
 # vncsmachado.github.io
 
-Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Apenas o Header da Home foi implementado visualmente.
+Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. O Header e a Hero da Home foram implementados visualmente.
 
 ## Estrutura
 
@@ -10,7 +10,7 @@ cases/libero.html           Case LIBERÔ
 favicon.ico                 Favicon original preservado
 assets/
   css/styles.css            Base compartilhada e tokens confirmados
-  css/home.css              Estilos futuros da Home
+  css/home.css              Header e Hero da Home
   css/libero.css            Estilos futuros do case
   js/main.js                Entrada para futuras interações
   images/                   Imagens
@@ -29,7 +29,7 @@ As pastas de assets usam `.gitkeep` para serem preservadas pelo Git enquanto est
 - HTML semântico, CSS e JavaScript nativos, sem dependências ou build.
 - Caminhos relativos funcionam na raiz do GitHub Pages, em subdiretórios e em um servidor local. O case usa `../assets/` e `../favicon.ico`.
 - A base mantém estilos nativos do navegador, foco visível e semântica das listas. O espaçamento de leitura é provisório e não representa valores do Figma.
-- As cores e medidas recuperadas do Header são aplicadas em `home.css`, usando os tokens globais de cor.
+- As cores e medidas recuperadas do Header e da Hero são aplicadas em `home.css`, reutilizando os tokens globais existentes.
 - CSS de cada página está separado do global. O JavaScript é carregado com `defer` e bloqueia a navegação do currículo enquanto ele estiver marcado com `aria-disabled="true"`.
 - O favicon existente foi preservado. Não há assets fictícios, URLs temporárias do Figma ou fontes Adobe redistribuídas.
 
@@ -56,9 +56,21 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Validação inicial no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: Header de 144 px, logo carregada a 48 × 48 px, sem overflow horizontal nem erros de carregamento/execução. Screenshots em 412 e 1440 px conferidas com o Figma. A fonte temporária desloca o início do grupo de links cerca de 1,7 px à esquerda e o topo do texto 1 px abaixo das referências; não compensar com ajustes artificiais antes de carregar a fonte correta.
 - “Sobre mim” aponta para `#sobre-mim`, cuja seção será implementada posteriormente. O smooth scroll solicitado respeita `prefers-reduced-motion`.
 - Fornecer `assets/documents/curriculo.pdf` e remover `aria-disabled="true"` do link no HTML para ativá-lo. O caminho relativo, `target="_blank"` e `rel="noopener"` já estão configurados; não há PDF fictício nem atributo `download`, permitindo visualização e download pelo visualizador do navegador.
-- Nenhuma outra seção foi implementada ou alterada visualmente.
+- Na etapa do Header, nenhuma outra seção foi implementada ou alterada visualmente.
 
-- Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. Apenas o Header recebe aplicação tipográfica nesta etapa; os demais componentes mantêm seus estilos até a leitura dos respectivos designs.
+### Hero da Home
+
+- Referências: metadados, contexto e screenshots dos nós `507:109` (desktop) e `507:34` (mobile), sem solicitar contexto dos frames completos. A variável `medium gray` retornou `#595856`.
+- Elementos: nome em caixa alta, título semântico `h1` “Product Designer”, localização “Curitiba - PR” e texto de apresentação. Nenhum asset visual é necessário para a Hero.
+- Helvetica LT Pro Bold (700 normal) no nome/localização a 24 px e no título a 64 px; Roman (400 normal) na descrição a 20 px. As entrelinhas de 24/63/20 px seguem as alturas das caixas de texto dos metadados, para manter a geometria em vez de depender de `normal` no navegador.
+- A Hero inicia em y=192, com 48 px entre o Header e a seção. Em 412 px, altura de 630 px, padding de 32/16/48 px, intervalo de 256 px entre os grupos e de 20 px entre os textos; título limitado a 274 px e descrição a 374 px, sem exceder a largura disponível.
+- Em 1440 px, altura de 215 px, nome em x=100/y=87,5 relativo à seção e apresentação em x=630/y=26, com 710 × 147 px. Os espaços verticais efetivos de 26/42 px seguem os metadados e a screenshot: o padding nominal 32/48 px exportado não cabe nessa altura fixa com o conteúdo de 147 px. A linha cinza inferior é desenhada internamente sem aumentar a altura da seção.
+- Adaptação entre as referências: margens desktop em 48rem, como no Header; duas colunas a partir de 64rem, com gap fluido limitado aos 256 px da referência. Esses breakpoints são decisões de implementação; não há frame tablet fornecido. A altura pode crescer nas larguras menores para acomodar o texto sem overflow.
+- Chrome headless verificado em 320, 375, 412, 768, 1024 e 1440 px, sem rolagem horizontal, sobreposição ou erros de carregamento. Screenshots de 412 e 1440 px comparadas com o Figma; posições e dimensões principais coincidem com os metadados. Permanecem pequenas diferenças nas métricas visuais/rasterização dos textos entre navegador e Figma, sem compensações artificiais nos glifos.
+- O navegador confirmou `HelveticaLTPro-Bold` e `HelveticaLTPro-Roman` efetivamente renderizadas. Header, logo SVG, fontes globais, JavaScript e Case LIBERÔ foram preservados, incluindo navegação por teclado, smooth scroll e bloqueio do currículo pendente.
+- Sem assets pendentes para a Hero. Aguardar instruções para as próximas seções.
+
+- Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. Header e Hero usam suas respectivas fontes; os demais componentes mantêm seus estilos até a leitura dos respectivos designs.
 - Identificar os frames desktop e mobile da Home e do Case LIBERÔ. O header desktop já consultado é o nó `507:102` do arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`.
 - Consultar primeiro `get_metadata` para mapear a hierarquia; depois consultar `get_design_context` por seção, conferir `get_screenshot` e recuperar variáveis quando necessário. Evitar contexto de páginas completas devido ao timeout já observado.
 - Recuperar assets por seção para estas pastas, priorizando SVG quando disponível; listar arquivos que precisarem de fornecimento manual após essa inspeção.
