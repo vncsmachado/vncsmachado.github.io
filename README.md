@@ -1,6 +1,6 @@
 # vncsmachado.github.io
 
-Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero, projeto LIBERÔ, Sobre mim e Footer implementados na Home.
+Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Introdução vetorial animada, Header, Hero, projeto LIBERÔ, Sobre mim e Footer implementados na Home.
 
 ## Estrutura
 
@@ -116,10 +116,21 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Regras de hover limitadas a `(hover: hover) and (pointer: fine)`, evitando estados persistentes em telas de toque. Com `prefers-reduced-motion: reduce`, as transições são removidas; foco visível e smooth scroll existentes foram preservados.
 - O texto do CTA usa `.project-card__label` acima do pseudo-elemento que estende o link ao card. `:has(.project-card__label:hover)` aplica a cor apenas sobre “Ler mais”, preservando o clique na capa sem acionar hover visual no card inteiro. Nenhum novo efeito na logo, fotografias ou botão de copiar e-mail.
 - Chrome headless: comparação do estado padrão antes/depois em 320, 375, 412, 768, 1024 e 1440 px, com geometria, fontes, cores, decorações e destinos idênticos; sem overflow. Confirmadas cor final `rgb(174, 6, 6)`, propriedade `color`, duração `0.2s`, função `ease` e interpolação de cor durante a transição.
-- Testados movimento reduzido, emulação de toque sem hover, foco por Tab nos oito controles, navegação por card/CTA, âncora Sobre mim e smooth scroll, novas abas do currículo/redes sociais e cópia real do e-mail com feedback. JavaScript e Case LIBERÔ não foram alterados. Nenhuma animação da logo foi iniciada e não há divergências visuais ou funcionais identificadas nesta etapa.
+- Testados movimento reduzido, emulação de toque sem hover, foco por Tab nos oito controles, navegação por card/CTA, âncora Sobre mim e smooth scroll, novas abas do currículo/redes sociais e cópia real do e-mail com feedback. JavaScript e Case LIBERÔ não foram alterados. Na etapa de hover, a animação da logo ainda não havia sido iniciada.
+
+### Introdução e animação vetorial
+
+- Introdução no mesmo `index.html`, como overlay fixo de tela cheia, fora do fluxo da Home. Fundo `#F8F9F4`, logo centralizada, altura `100svh` com fallback `100vh`. A Home permanece renderizada abaixo, começando pelo Header, sem reservar espaço para a introdução.
+- SVG inline, três paths, cores, proporções, `viewBox` e `clipPath` preservados. A animação continua exclusivamente em CSS: V de baixo para cima em 1100 ms; esquerda entre 1000–1900 ms; direita entre 1080–1980 ms; zoom de 1 para 1.025 entre 1980–2580 ms. Sem loop, desaparecimento automático ou alteração da logo do Header.
+- O primeiro gesto para baixo (wheel/touchpad, toque, ArrowDown, Espaço, PageDown ou End) inicia a saída, mesmo antes do fim da animação. O overlay sobe e perde opacidade com `500ms ease-in-out`; ao terminar, recebe `hidden` e não pode ser reencontrado rolando para cima. Não há redirecionamento nem temporizador para iniciar o avanço. Um fallback de 600 ms apenas finaliza uma saída já solicitada caso `transitionend` não seja emitido.
+- Durante a introdução, a rolagem da Home fica suspensa e suas regiões usam `inert` temporariamente, evitando foco atrás do overlay. O gesto inicial revela a Home no topo; `touch-action: pinch-zoom` impede que a inércia desse gesto desloque o Header, preservando o zoom por pinça. Após a saída, os estados anteriores são restaurados e todos os listeners temporários são removidos com `AbortController`.
+- O atalho “Avançar para a Home” aparece ao receber Tab. Enter ou as teclas de avanço removem o overlay e transferem o foco ao Header, sem prendê-lo. O smooth scroll existente permanece intacto. Com movimento reduzido, a logo aparece completa imediatamente e a saída não tem animação. Sem JavaScript, o overlay permanece oculto e a Home fica acessível desde o início.
+- Chrome headless: entrada, permanência após a animação, interpolação da saída, primeira rolagem, retorno ao topo sem introdução/espaço vazio, limpeza de listeners, teclado e atalho, toque emulado, movimento reduzido e JavaScript desativado. Em 320, 375, 412, 768, 1024 e 1440 px, conferidas centralização e ausência de overflow; a geometria e os estilos da Home após a saída coincidem com a referência anterior.
+- Links do currículo e das redes sociais, card/CTA LIBERÔ, âncora Sobre mim, foco e cópia real do e-mail foram conferidos após a remoção do overlay. Conteúdo das seções anteriores, SVG original, estilos globais e página do Case preservados.
+- Limite da validação: Chrome headless e emulação de toque; aparelhos físicos, barras móveis reais e outros navegadores não foram testados.
 
 - Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic, e Helvetica LT Pro também com Light 300 normal. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. As seções implementadas usam suas respectivas fontes; os demais componentes aguardam a leitura dos designs.
 - Identificar os frames desktop e mobile da Home e do Case LIBERÔ. O header desktop já consultado é o nó `507:102` do arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`.
 - Consultar primeiro `get_metadata` para mapear a hierarquia; depois consultar `get_design_context` por seção, conferir `get_screenshot` e recuperar variáveis quando necessário. Evitar contexto de páginas completas devido ao timeout já observado.
 - Recuperar assets por seção para estas pastas, priorizando SVG quando disponível; listar arquivos que precisarem de fornecimento manual após essa inspeção.
-- Aguardar novas instruções antes de avançar para outra etapa. Não há animações adicionais.
+- Aguardar novas instruções antes de avançar para outra etapa. Além da introdução solicitada e das transições de hover, não há animações adicionais.

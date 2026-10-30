@@ -13,7 +13,32 @@
     <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <header class="home-header">
+    <a class="home-intro__skip" href="#inicio-home">Avançar para a Home</a>
+    <section class="home-intro" aria-label="Introdução" hidden>
+        <svg class="home-intro__logo" width="291" height="249" viewBox="0 0 291 249" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo de Vinicius Machado" focusable="false">
+            <defs>
+                <clipPath id="intro-clip-left" clipPathUnits="userSpaceOnUse">
+                    <rect class="home-intro__reveal home-intro__reveal--left" width="291" height="249" />
+                </clipPath>
+                <clipPath id="intro-clip-right" clipPathUnits="userSpaceOnUse">
+                    <rect class="home-intro__reveal home-intro__reveal--right" width="291" height="249" />
+                </clipPath>
+                <clipPath id="intro-clip-v" clipPathUnits="userSpaceOnUse">
+                    <rect class="home-intro__reveal home-intro__reveal--v" width="291" height="249" />
+                </clipPath>
+            </defs>
+            <g clip-path="url(#intro-clip-left)">
+                <path d="M84.192 245.856V248.16H0V245.856H2.48274C29.0723 245.856 41.3077 224.759 41.3077 173V2.30438H7.61945V0H43.7833V173C43.7833 224.759 54.0567 245.856 81.7093 245.856H84.192Z" fill="black" />
+            </g>
+            <g clip-path="url(#intro-clip-right)">
+                <path d="M258.968 2.30438V245.856H290.88V248.153H192.141V245.856H224.053V0H290.88V2.30438H258.968Z" fill="black" />
+            </g>
+            <g clip-path="url(#intro-clip-v)">
+                <path d="M224.053 0V4.07369L138.434 248.153H135.238L43.7834 5.67178V0H79.4122L153.68 195.865L222.812 0H224.053Z" fill="#F20505" />
+            </g>
+        </svg>
+    </section>
+    <header id="inicio-home" class="home-header" tabindex="-1">
         <a class="home-header__brand" href="index.html" aria-label="Vinicius Machado — início">
             <img src="assets/logos/vinicius-machado.svg" width="48" height="48" alt="">
         </a>
