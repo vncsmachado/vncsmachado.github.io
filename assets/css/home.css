@@ -524,3 +524,124 @@ html {
         left: -0.1%;
     }
 }
+
+/* Footer: Figma 507:168 (desktop) e 507:93 (mobile). */
+.home-footer {
+    --footer-padding-inline: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 194px;
+    min-height: 420px;
+    padding: 32px var(--footer-padding-inline);
+    background-color: #000;
+    color: var(--color-vivid-red);
+    font-family: var(--font-operetta);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.home-footer__copyright {
+    flex-shrink: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+.home-footer__contacts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.home-footer__contacts a,
+.home-footer__email {
+    width: 100%;
+    max-width: 100%;
+    color: inherit;
+}
+
+.home-footer__email {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    text-align: left;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Feedback fora do fluxo: não desloca o e-mail nem os links sociais. */
+.home-footer__email-status {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    pointer-events: none;
+}
+
+.home-footer__social {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 4%;
+    text-underline-position: from-font;
+}
+
+.home-footer__social--instagram {
+    text-decoration-skip-ink: none;
+}
+
+.home-footer__contacts a:focus-visible,
+.home-footer__email:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+@media (min-width: 48rem) {
+    .home-footer {
+        --footer-padding-inline: 100px;
+    }
+}
+
+/* Em larguras intermediárias, os grupos podem quebrar de linha.
+   Em 1440 px, ambos ficam na mesma linha, conforme o Figma. */
+@media (min-width: 64rem) {
+    .home-footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        gap: 32px;
+        min-height: 204px;
+    }
+
+    .home-footer__copyright {
+        width: 270px;
+    }
+
+    .home-footer__contacts {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 590px;
+    }
+
+    .home-footer__contacts a,
+    .home-footer__email {
+        width: auto;
+    }
+}

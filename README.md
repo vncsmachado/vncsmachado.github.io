@@ -1,6 +1,6 @@
 # vncsmachado.github.io
 
-Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero, projeto LIBERÔ e seção Sobre mim implementados na Home.
+Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero, projeto LIBERÔ, Sobre mim e Footer implementados na Home.
 
 ## Estrutura
 
@@ -84,7 +84,7 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 
 ### Sobre mim da Home
 
-- Consultados `get_metadata`, `get_design_context` e `get_screenshot` nos nós `507:136` (desktop) e `507:61` (mobile). A implementação preserva os dois parágrafos, as oito ferramentas e as duas fotografias das referências. Nenhum Footer foi implementado.
+- Consultados `get_metadata`, `get_design_context` e `get_screenshot` nos nós `507:136` (desktop) e `507:61` (mobile). A implementação preserva os dois parágrafos, as oito ferramentas e as duas fotografias das referências. Naquela etapa, o Footer ainda não havia sido implementado.
 - Seção semântica com `id="sobre-mim"`, título `h2`, subtítulo `h3`, lista de ferramentas e textos alternativos nas fotografias. Helvetica LT Pro Bold 700 em 32 px no título e 20 px em “Ferramentas:”; Roman 400 em 16 px na lista e nos parágrafos. Entrelinhas derivadas das caixas do Figma: 31/20/16 px; parágrafos separados por 18 px.
 - Seção 72 px após o projeto; padding superior de 48 px e inferior de 32 px; margens de 16 px no mobile e 100 px a partir de 48rem. Traço cinza `#595856` desenhado internamente no topo, sem acrescentar altura.
 - Em 412 px, a seção mede 1768 px, o grupo lateral 487 px, o espaço entre título e ferramentas 194 px e o grupo de apresentação inicia a 663 px do topo. As fotos de 340 × 340 px ficam empilhadas com intervalo de 36 px, 22 px após os parágrafos.
@@ -96,8 +96,22 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Link “Sobre mim” validado por clique e Tab/Enter: hash correto, foco na seção e rolagem suave; com movimento reduzido, comportamento `auto`. A rolagem respeita o limite do documento quando a seção inteira cabe no fim da página. Nenhuma lógica de rolagem foi duplicada e o Header não foi alterado.
 - Header, Hero, projeto LIBERÔ, fontes/estilos globais, JavaScript, assets anteriores e Case LIBERÔ preservados. Navegação do card por mouse/teclado conferida novamente. Sem assets pendentes ou intervenção manual necessária para Sobre mim.
 
+### Footer da Home
+
+- Consultados metadados, contexto e screenshots exclusivamente dos nós `507:168` e `507:93`, sem contexto dos frames completos. Elemento `<footer>` após o conteúdo principal, com “Todos os direitos reservados™”, e-mail e três redes sociais. Nenhum asset novo é necessário.
+- Fundo preto `#000000`, texto `#F20505` e Operetta 8 Regular 400 a 20 px, reutilizando os tokens globais. Entrelinha de 24 px conforme as caixas do Figma; redes sublinhadas com espessura de 4%, sem novos efeitos de hover ou animações.
+- Em 412 px: altura de 420 px, padding de 32/16 px, intervalo de 194 px entre copyright e contatos, links empilhados com intervalo de 14 px e área de cada link ocupando a largura do grupo. Em 1440 px: altura de 204 px, margens de 100 px, copyright em x=100/y=90 relativo ao Footer e grupo de contatos de 590 px em x=750/y=90.
+- Adaptação intermediária: margens desktop a partir de 48rem; composição horizontal com quebra de linha a partir de 64rem. Quando os dois grupos não cabem lado a lado, passam para linhas distintas, separados por 32 px. Em 320 px, o e-mail quebra em duas linhas e a altura cresce para 444 px, sem reduzir a fonte nem causar overflow.
+- Destinos recuperados do Figma: Instagram `https://www.instagram.com/vncs_machado?srtk=Nm9iZGc0OWQyOGR5&utm_source=qr`, Twitter `https://x.com/vncs_machado?s=11` e LinkedIn `https://www.linkedin.com/in/viniciushmachado/`. Todos usam `target="_blank"` e `rel="noopener noreferrer"`. O e-mail mantém a aparência sem sublinhado da referência e agora é um botão que copia `vncs_machado@outlook.com`, sem abrir um cliente de e-mail.
+- Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px, sem overflow horizontal, sobreposição ou erros de carregamento. Fonte efetiva confirmada como `Operetta8-Regular`. Screenshots desktop/mobile comparadas ao Figma; permanecem pequenas diferenças de rasterização tipográfica.
+- Os quatro contatos receberam foco com Tab e contorno visível. LinkedIn aberto por Enter; Instagram e Twitter abertos por clique, com os destinos confirmados em novas abas. A página externa de cada serviço pode ter redirecionamentos ou exigir login.
+- Cópia do e-mail implementada em `assets/js/main.js` com `navigator.clipboard.writeText()`, extraindo o endereço do texto existente. Botão nativo com `type="button"`, nome acessível “Copiar endereço de e-mail”, cursor pointer e foco visível, mantendo fonte/cor/espaçamentos. O sucesso só aparece após a promessa ser resolvida: “Copiado!” é anunciado por uma região `aria-live="polite"` e removido em 2 segundos. O feedback fica acima dos contatos, fora do fluxo, sem deslocamentos. Falha ou indisponibilidade mostram instrução de cópia manual, sem falso sucesso; cliques concorrentes e temporizadores anteriores são controlados.
+- Ajuste de cópia validado no Chrome: leitura real da área de transferência após clique nas seis larguras; Enter e Espaço também copiaram o endereço correto. Confirmados o desaparecimento do sucesso, as falhas por permissão negada e API ausente, ausência de deslocamentos/overflow e preservação das redes sociais e demais seções. Nenhuma aba, navegação, aplicativo de e-mail ou envio de mensagem é acionado pela cópia.
+- Header, Hero, projeto LIBERÔ, Sobre mim, fotos, logo, integração Adobe, estilos globais, JavaScript e Case LIBERÔ preservados. Navegação do card e da âncora Sobre mim, incluindo movimento reduzido, conferida novamente.
+- Nenhum link fictício, asset pendente ou intervenção manual necessária para o Footer. O botão “Voltar ao topo” não foi implementado na Home nem no Case LIBERÔ.
+
 - Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic, e Helvetica LT Pro também com Light 300 normal. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. As seções implementadas usam suas respectivas fontes; os demais componentes aguardam a leitura dos designs.
 - Identificar os frames desktop e mobile da Home e do Case LIBERÔ. O header desktop já consultado é o nó `507:102` do arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`.
 - Consultar primeiro `get_metadata` para mapear a hierarquia; depois consultar `get_design_context` por seção, conferir `get_screenshot` e recuperar variáveis quando necessário. Evitar contexto de páginas completas devido ao timeout já observado.
 - Recuperar assets por seção para estas pastas, priorizando SVG quando disponível; listar arquivos que precisarem de fornecimento manual após essa inspeção.
-- Aguardar novas instruções antes de implementar as demais seções da Home. Não há animações adicionais.
+- Aguardar novas instruções antes de avançar para outra etapa. Não há animações adicionais.
