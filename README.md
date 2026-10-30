@@ -1,6 +1,6 @@
 # vncsmachado.github.io
 
-Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. O Header e a Hero da Home foram implementados visualmente.
+Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero e seção do projeto LIBERÔ implementados na Home.
 
 ## Estrutura
 
@@ -10,7 +10,7 @@ cases/libero.html           Case LIBERÔ
 favicon.ico                 Favicon original preservado
 assets/
   css/styles.css            Base compartilhada e tokens confirmados
-  css/home.css              Header e Hero da Home
+  css/home.css              Header, Hero e projeto LIBERÔ da Home
   css/libero.css            Estilos futuros do case
   js/main.js                Entrada para futuras interações
   images/                   Imagens
@@ -29,7 +29,7 @@ As pastas de assets usam `.gitkeep` para serem preservadas pelo Git enquanto est
 - HTML semântico, CSS e JavaScript nativos, sem dependências ou build.
 - Caminhos relativos funcionam na raiz do GitHub Pages, em subdiretórios e em um servidor local. O case usa `../assets/` e `../favicon.ico`.
 - A base mantém estilos nativos do navegador, foco visível e semântica das listas. O espaçamento de leitura é provisório e não representa valores do Figma.
-- As cores e medidas recuperadas do Header e da Hero são aplicadas em `home.css`, reutilizando os tokens globais existentes.
+- As cores e medidas recuperadas das seções da Home são aplicadas em `home.css`, reutilizando os tokens globais existentes.
 - CSS de cada página está separado do global. O JavaScript é carregado com `defer` e bloqueia a navegação do currículo enquanto ele estiver marcado com `aria-disabled="true"`.
 - O favicon existente foi preservado. Não há assets fictícios, URLs temporárias do Figma ou fontes Adobe redistribuídas.
 
@@ -70,7 +70,19 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - O navegador confirmou `HelveticaLTPro-Bold` e `HelveticaLTPro-Roman` efetivamente renderizadas. Header, logo SVG, fontes globais, JavaScript e Case LIBERÔ foram preservados, incluindo navegação por teclado, smooth scroll e bloqueio do currículo pendente.
 - Sem assets pendentes para a Hero. Aguardar instruções para as próximas seções.
 
-- Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. Header e Hero usam suas respectivas fontes; os demais componentes mantêm seus estilos até a leitura dos respectivos designs.
+### Projeto LIBERÔ da Home
+
+- Referências: `get_metadata` nos frames desktop/mobile, seguido de `get_design_context` e `get_screenshot` exclusivamente nos nós `507:119` e `507:44`. Nenhum contexto de página completa foi solicitado.
+- Card com capa original, identificação LIBERÔ/2024, separador SVG, título, descrição e CTA “Ler mais”. A capa foi salva em `assets/images/libero-capa.png` (4096 × 2731 px, sem recompressão); o separador original em `assets/icons/libero-separador.svg` (1 × 40 px). Não há dependências de URLs temporárias do Figma.
+- Seção 48 px após a Hero, padding vertical de 32 px e margens laterais de 16 px no mobile/100 px a partir de 48rem, preservando o padrão existente. Capa com `object-fit: cover`, proporção 380/153 no mobile e 1240/500 no desktop; espaço até os detalhes de 46/48 px. Os detalhes têm altura mínima de 284 px e crescem conforme necessário em telas menores.
+- Tipografia: Helvetica LT Pro Light 300 nos rótulos a 20 px, Bold 700 no título a 30/32 px e Roman 400 na descrição a 20 px; CTA com Operetta 8 Regular 400 a 20 px. O peso Light foi disponibilizado no kit Adobe durante a implementação e confirmado no Chrome como `HelveticaLTPro-Light`, sem substituição por outro peso.
+- Títulos com larguras máximas de 365/504 px e entrelinhas de 29/31 px, conforme as caixas de texto do Figma. Descrição com limite de 381/468 px e entrelinha de 20 px. No mobile de 412 px, a descrição é limitada aos 380 px úteis para evitar o excesso de 1 px presente no metadado do Figma.
+- Um único link HTML nativo, com nome acessível “Ler mais sobre o case LIBERÔ”, cobre todo o card por pseudo-elemento e leva a `cases/libero.html`. O foco por teclado contorna o card. Sem links aninhados, JavaScript adicional, animações ou efeitos de hover.
+- Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: sem rolagem horizontal, sobreposição ou erros de carregamento; fontes e ambos os assets carregados. Capturas em 412/1440 px comparadas com as referências: seção de 547/896 px e capa de 380 × 153/1240 × 500 px, com pequenas diferenças de rasterização tipográfica.
+- Navegação confirmada com Tab/Enter, clique na capa e clique no CTA, incluindo carregamento da página de destino. Header, Hero, logo SVG, fontes/estilos globais, JavaScript e arquivos do Case LIBERÔ preservados.
+- Nenhum asset ou ajuste manual pendente nesta seção. O currículo e a futura seção “Sobre mim” continuam com as pendências já registradas.
+
+- Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic, e Helvetica LT Pro também com Light 300 normal. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. As seções implementadas usam suas respectivas fontes; os demais componentes aguardam a leitura dos designs.
 - Identificar os frames desktop e mobile da Home e do Case LIBERÔ. O header desktop já consultado é o nó `507:102` do arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`.
 - Consultar primeiro `get_metadata` para mapear a hierarquia; depois consultar `get_design_context` por seção, conferir `get_screenshot` e recuperar variáveis quando necessário. Evitar contexto de páginas completas devido ao timeout já observado.
 - Recuperar assets por seção para estas pastas, priorizando SVG quando disponível; listar arquivos que precisarem de fornecimento manual após essa inspeção.
