@@ -645,3 +645,32 @@ html {
         width: auto;
     }
 }
+
+/* Mantém o texto do CTA acima do link estendido ao card inteiro.
+   Assim, somente “Ler mais” recebe hover, sem mudar o clique na capa. */
+.project-card__label {
+    position: relative;
+    z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-header__link,
+    .project-card__link,
+    .home-footer__social {
+        transition: color 200ms ease;
+    }
+
+    .home-header__link:hover,
+    .project-card__link:has(.project-card__label:hover),
+    .home-footer__social:hover {
+        color: var(--color-link-hover);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-header__link,
+    .project-card__link,
+    .home-footer__social {
+        transition: none;
+    }
+}

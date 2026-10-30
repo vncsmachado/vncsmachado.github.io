@@ -2,6 +2,7 @@
    As três famílias oferecem 400/700 nos estilos normal/italic. */
 :root {
     --color-vivid-red: #f20505;
+    --color-link-hover: #ae0606;
     --color-clear-white: #f8f9f4;
     --font-operetta: "operetta-8", Georgia, "Times New Roman", serif;
     --font-helvetica: "helvetica-lt-pro", Helvetica, Arial, sans-serif;
