@@ -1,6 +1,6 @@
 # vncsmachado.github.io
 
-Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero e seção do projeto LIBERÔ implementados na Home.
+Portfólio de Vinicius Machado, Product Designer. Base estática para Home e Case LIBERÔ, destinada ao GitHub Pages. Header, Hero, projeto LIBERÔ e seção Sobre mim implementados na Home.
 
 ## Estrutura
 
@@ -10,7 +10,7 @@ cases/libero.html           Case LIBERÔ
 favicon.ico                 Favicon original preservado
 assets/
   css/styles.css            Base compartilhada e tokens confirmados
-  css/home.css              Header, Hero e projeto LIBERÔ da Home
+  css/home.css              Seções implementadas da Home
   css/libero.css            Estilos futuros do case
   js/main.js                Entrada para futuras interações
   images/                   Imagens
@@ -54,7 +54,7 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - A fonte do Header é Operetta 8 Regular (`operetta-8`, 400 normal), 20 px, entrelinha normal e sublinhado de 4%. O Adobe Web Project `kmd2lah` está integrado em Home e Case LIBERÔ pelo stylesheet oficial, sem redistribuir arquivos de fonte. Georgia/Times New Roman permanecem apenas como fallback para falha de carregamento.
 - Validação após a integração Adobe Fonts: `document.fonts.load()` carregou as 12 combinações de família/peso/estilo em ambas as páginas; o Chrome confirmou `Operetta8-Regular` como fonte efetivamente renderizada no Header. As seis larguras foram verificadas novamente, sem overflow ou erros de carregamento. Tamanho, peso, entrelinha `normal`, sublinhado e espaçamentos CSS foram preservados.
 - Validação inicial no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: Header de 144 px, logo carregada a 48 × 48 px, sem overflow horizontal nem erros de carregamento/execução. Screenshots em 412 e 1440 px conferidas com o Figma. A fonte temporária desloca o início do grupo de links cerca de 1,7 px à esquerda e o topo do texto 1 px abaixo das referências; não compensar com ajustes artificiais antes de carregar a fonte correta.
-- “Sobre mim” aponta para `#sobre-mim`, cuja seção será implementada posteriormente. O smooth scroll solicitado respeita `prefers-reduced-motion`.
+- “Sobre mim” aponta para a seção `#sobre-mim`, já implementada. O smooth scroll existente respeita `prefers-reduced-motion` e a âncora nativa transfere o foco para a seção, que tem `tabindex="-1"`.
 - Fornecer `assets/documents/curriculo.pdf` e remover `aria-disabled="true"` do link no HTML para ativá-lo. O caminho relativo, `target="_blank"` e `rel="noopener"` já estão configurados; não há PDF fictício nem atributo `download`, permitindo visualização e download pelo visualizador do navegador.
 - Na etapa do Header, nenhuma outra seção foi implementada ou alterada visualmente.
 
@@ -80,7 +80,21 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Um único link HTML nativo, com nome acessível “Ler mais sobre o case LIBERÔ”, cobre todo o card por pseudo-elemento e leva a `cases/libero.html`. O foco por teclado contorna o card. Sem links aninhados, JavaScript adicional, animações ou efeitos de hover.
 - Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: sem rolagem horizontal, sobreposição ou erros de carregamento; fontes e ambos os assets carregados. Capturas em 412/1440 px comparadas com as referências: seção de 547/896 px e capa de 380 × 153/1240 × 500 px, com pequenas diferenças de rasterização tipográfica.
 - Navegação confirmada com Tab/Enter, clique na capa e clique no CTA, incluindo carregamento da página de destino. Header, Hero, logo SVG, fontes/estilos globais, JavaScript e arquivos do Case LIBERÔ preservados.
-- Nenhum asset ou ajuste manual pendente nesta seção. O currículo e a futura seção “Sobre mim” continuam com as pendências já registradas.
+- Nenhum asset ou ajuste manual pendente nesta seção. O currículo continua com a pendência já registrada.
+
+### Sobre mim da Home
+
+- Consultados `get_metadata`, `get_design_context` e `get_screenshot` nos nós `507:136` (desktop) e `507:61` (mobile). A implementação preserva os dois parágrafos, as oito ferramentas e as duas fotografias das referências. Nenhum Footer foi implementado.
+- Seção semântica com `id="sobre-mim"`, título `h2`, subtítulo `h3`, lista de ferramentas e textos alternativos nas fotografias. Helvetica LT Pro Bold 700 em 32 px no título e 20 px em “Ferramentas:”; Roman 400 em 16 px na lista e nos parágrafos. Entrelinhas derivadas das caixas do Figma: 31/20/16 px; parágrafos separados por 18 px.
+- Seção 72 px após o projeto; padding superior de 48 px e inferior de 32 px; margens de 16 px no mobile e 100 px a partir de 48rem. Traço cinza `#595856` desenhado internamente no topo, sem acrescentar altura.
+- Em 412 px, a seção mede 1768 px, o grupo lateral 487 px, o espaço entre título e ferramentas 194 px e o grupo de apresentação inicia a 663 px do topo. As fotos de 340 × 340 px ficam empilhadas com intervalo de 36 px, 22 px após os parágrafos.
+- Em 1440 px, a seção mede 663 px; o grupo lateral começa em x=100/y=48 relativo à seção, com 153 px entre título e ferramentas. A apresentação ocupa 709 px a partir de x=631/y=48. Fotos lado a lado de 340 × 340 px com intervalo de 29 px, 22 px após o texto.
+- Adaptação intermediária: duas colunas a partir de 64rem, como na Hero; abaixo, organização mobile. Em telas menores que a largura da foto, os quadrados reduzem fluidamente; em desktop intermediário, as fotos dividem o espaço disponível sem overflow. Esses pontos de transição são decisões de implementação, pois não há referência tablet específica.
+- Fotografias originais recuperadas: `assets/images/vinicius-machado-retrato.jpg` (896 × 1200 px) e `assets/images/vinicius-machado-formatura.jpg` (3648 × 2432 px). Os endpoints do MCP terminavam em `.png`, mas o conteúdo real era JPEG; as extensões locais foram corrigidas sem recompressão nem alteração de pixels. Não há ícones adicionais nesta seção.
+- Recorte do retrato preservado conforme o Figma: imagem com altura de 133,93% da caixa, topo em -4,9% no mobile/-4,89% no desktop e deslocamento horizontal de -0,1% apenas no desktop. Formatura com `object-fit: cover` centralizado. As caixas quadradas limitam os recortes.
+- Chrome headless validado em 320, 375, 412, 768, 1024 e 1440 px: fotos/fontes carregadas, oito ferramentas, dois parágrafos, sem overflow horizontal ou sobreposições. Screenshots de 412/1440 px comparadas com o Figma; geometria principal e enquadramentos conferidos, com pequenas diferenças de rasterização tipográfica.
+- Link “Sobre mim” validado por clique e Tab/Enter: hash correto, foco na seção e rolagem suave; com movimento reduzido, comportamento `auto`. A rolagem respeita o limite do documento quando a seção inteira cabe no fim da página. Nenhuma lógica de rolagem foi duplicada e o Header não foi alterado.
+- Header, Hero, projeto LIBERÔ, fontes/estilos globais, JavaScript, assets anteriores e Case LIBERÔ preservados. Navegação do card por mouse/teclado conferida novamente. Sem assets pendentes ou intervenção manual necessária para Sobre mim.
 
 - Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic, e Helvetica LT Pro também com Light 300 normal. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. As seções implementadas usam suas respectivas fontes; os demais componentes aguardam a leitura dos designs.
 - Identificar os frames desktop e mobile da Home e do Case LIBERÔ. O header desktop já consultado é o nó `507:102` do arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`.

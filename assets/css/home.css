@@ -355,3 +355,172 @@ html {
         aspect-ratio: 1240 / 500;
     }
 }
+
+/* Sobre mim: Figma 507:136 (desktop) e 507:61 (mobile). */
+.home-about {
+    --about-padding-inline: 16px;
+    --about-sidebar-gap: 194px;
+    --about-border-color: #595856;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 128px;
+    min-height: 1768px;
+    margin-block-start: 72px;
+    padding: 48px var(--about-padding-inline) 32px;
+    background-color: var(--color-clear-white);
+    color: #000;
+    font-family: var(--font-helvetica);
+    font-style: normal;
+    box-shadow: inset 0 1px 0 var(--about-border-color);
+}
+
+.home-about:focus-visible {
+    outline: 2px solid var(--about-border-color);
+    outline-offset: -2px;
+}
+
+.home-about__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    gap: var(--about-sidebar-gap);
+    width: 100%;
+    /* Altura do grupo no Figma; a lista ultrapassa sua caixa em 5 px,
+       dentro do espaço livre de 128 px até a apresentação. */
+    height: 487px;
+}
+
+.home-about__title,
+.home-about__tools-title,
+.home-about__bio p {
+    margin: 0;
+}
+
+.home-about__title {
+    flex-shrink: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+.home-about__tools {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 11px;
+}
+
+.home-about__tools-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.home-about__tools-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.home-about__tools-list li {
+    min-height: 19px;
+}
+
+.home-about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    min-width: 0;
+    min-height: 1041px;
+}
+
+.home-about__bio {
+    font-size: 16px;
+    font-weight: 400;
+    /* Altura das linhas medida nas caixas de texto dos dois frames. */
+    line-height: 16px;
+}
+
+.home-about__bio p + p {
+    margin-block-start: 18px;
+}
+
+.home-about__photos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    width: 340px;
+    max-width: 100%;
+}
+
+.home-about__photo {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.home-about__photo img {
+    position: absolute;
+    width: 100%;
+    max-width: none;
+}
+
+.home-about__photo--portrait img {
+    top: -4.9%;
+    left: 0;
+    height: 133.93%;
+}
+
+.home-about__photo--graduation img {
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 48rem) {
+    .home-about {
+        --about-padding-inline: 100px;
+    }
+}
+
+/* Duas colunas a partir de 64rem, como na Hero. Fotos fluidas para
+   larguras intermediárias; em 1440 px, cada foto mede 340 × 340 px. */
+@media (min-width: 64rem) {
+    .home-about {
+        --about-sidebar-gap: 153px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 32px;
+        min-height: 663px;
+    }
+
+    .home-about__sidebar {
+        flex: 0 0 166px;
+        height: 498px;
+    }
+
+    .home-about__content {
+        flex: 0 1 709px;
+        min-height: 524px;
+    }
+
+    .home-about__photos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 29px;
+        width: 100%;
+    }
+
+    .home-about__photo--portrait img {
+        top: -4.89%;
+        left: -0.1%;
+    }
+}
