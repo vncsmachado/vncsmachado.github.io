@@ -19,7 +19,7 @@ assets/
   videos/                   Vídeos
   animations/               Assets de animação
   fonts/                    Somente fontes com distribuição web autorizada
-  documents/                Currículo PDF (ainda não fornecido)
+  documents/                Currículo PDF
 ```
 
 As pastas de assets usam `.gitkeep` para serem preservadas pelo Git enquanto estiverem vazias. Para novos arquivos, usar nomes descritivos em minúsculas, sem espaços ou acentos, separados por hífens.
@@ -30,7 +30,7 @@ As pastas de assets usam `.gitkeep` para serem preservadas pelo Git enquanto est
 - Caminhos relativos funcionam na raiz do GitHub Pages, em subdiretórios e em um servidor local. O case usa `../assets/` e `../favicon.ico`.
 - A base mantém estilos nativos do navegador, foco visível e semântica das listas. O espaçamento de leitura é provisório e não representa valores do Figma.
 - As cores e medidas recuperadas das seções da Home são aplicadas em `home.css`, reutilizando os tokens globais existentes.
-- CSS de cada página está separado do global. O JavaScript é carregado com `defer` e bloqueia a navegação do currículo enquanto ele estiver marcado com `aria-disabled="true"`.
+- CSS de cada página está separado do global. O JavaScript é carregado com `defer` e implementa a cópia do e-mail do Footer; a navegação do currículo usa apenas o link HTML nativo.
 - O favicon existente foi preservado. Não há assets fictícios, URLs temporárias do Figma ou fontes Adobe redistribuídas.
 
 ## Visualização local
@@ -55,7 +55,7 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Validação após a integração Adobe Fonts: `document.fonts.load()` carregou as 12 combinações de família/peso/estilo em ambas as páginas; o Chrome confirmou `Operetta8-Regular` como fonte efetivamente renderizada no Header. As seis larguras foram verificadas novamente, sem overflow ou erros de carregamento. Tamanho, peso, entrelinha `normal`, sublinhado e espaçamentos CSS foram preservados.
 - Validação inicial no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: Header de 144 px, logo carregada a 48 × 48 px, sem overflow horizontal nem erros de carregamento/execução. Screenshots em 412 e 1440 px conferidas com o Figma. A fonte temporária desloca o início do grupo de links cerca de 1,7 px à esquerda e o topo do texto 1 px abaixo das referências; não compensar com ajustes artificiais antes de carregar a fonte correta.
 - “Sobre mim” aponta para a seção `#sobre-mim`, já implementada. O smooth scroll existente respeita `prefers-reduced-motion` e a âncora nativa transfere o foco para a seção, que tem `tabindex="-1"`.
-- Fornecer `assets/documents/curriculo.pdf` e remover `aria-disabled="true"` do link no HTML para ativá-lo. O caminho relativo, `target="_blank"` e `rel="noopener"` já estão configurados; não há PDF fictício nem atributo `download`, permitindo visualização e download pelo visualizador do navegador.
+- Currículo disponível em `assets/documents/curriculo.pdf`, acessível pelo link nativo do Header com `target="_blank"` e `rel="noopener noreferrer"`. O bloqueio anterior foi removido do HTML e do JavaScript. Sem atributo `download`, permitindo visualização no navegador e download pelo próprio visualizador.
 - Na etapa do Header, nenhuma outra seção foi implementada ou alterada visualmente.
 
 ### Hero da Home
@@ -80,7 +80,7 @@ A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta eta
 - Um único link HTML nativo, com nome acessível “Ler mais sobre o case LIBERÔ”, cobre todo o card por pseudo-elemento e leva a `cases/libero.html`. O foco por teclado contorna o card. Sem links aninhados, JavaScript adicional, animações ou efeitos de hover.
 - Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: sem rolagem horizontal, sobreposição ou erros de carregamento; fontes e ambos os assets carregados. Capturas em 412/1440 px comparadas com as referências: seção de 547/896 px e capa de 380 × 153/1240 × 500 px, com pequenas diferenças de rasterização tipográfica.
 - Navegação confirmada com Tab/Enter, clique na capa e clique no CTA, incluindo carregamento da página de destino. Header, Hero, logo SVG, fontes/estilos globais, JavaScript e arquivos do Case LIBERÔ preservados.
-- Nenhum asset ou ajuste manual pendente nesta seção. O currículo continua com a pendência já registrada.
+- Nenhum asset ou ajuste manual pendente nesta seção. O currículo também está disponível pelo Header.
 
 ### Sobre mim da Home
 
