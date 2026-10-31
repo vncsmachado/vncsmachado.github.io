@@ -24,8 +24,41 @@
             </ul>
         </nav>
     </header>
-    <main id="conteudo" class="case-layout">
-        <h1 class="case-sr-only">Case LIBERÔ</h1>
+    <main id="conteudo">
+        <section class="case-hero" aria-labelledby="case-title">
+            <div class="case-hero__content">
+                <div class="case-hero__text">
+                    <h1 id="case-title">Como reformulei a experiência de viagem ao tratar a bagagem como um problema emocional, e não apenas logístico</h1>
+                    <p class="case-hero__description">Projeto acadêmico de Product Design e UX/UI que propõe uma plataforma de aluguel de itens no destino para reduzir fricções, imprevistos e o desgaste emocional associado à bagagem.</p>
+                </div>
+                <picture class="case-hero__image">
+                    <source media="(min-width: 48rem)" srcset="../assets/images/libero-hero-desktop.png" width="2480" height="1522">
+                    <img src="../assets/images/libero-hero-mobile.png" width="760" height="466" alt="Passageiro em um avião utilizando o aplicativo LIBERÔ no celular.">
+                </picture>
+            </div>
+            <dl class="case-hero__details">
+                <div class="case-hero__detail case-hero__detail--date">
+                    <dt>Quando</dt>
+                    <dd>Jul - Dez 2024</dd>
+                </div>
+                <div class="case-hero__detail case-hero__detail--role">
+                    <dt>Função</dt>
+                    <dd>Product Designer</dd>
+                </div>
+                <div class="case-hero__detail case-hero__detail--tools">
+                    <dt>Ferramentas</dt>
+                    <dd>Figma, Notion, Trello, ChatGPT, Illustrator, Photoshop, Adobe Express, CapCut, OBS.</dd>
+                </div>
+                <div class="case-hero__detail case-hero__detail--scope">
+                    <dt>Escopo</dt>
+                    <dd>
+                        <p>Este projeto foca na experiência do usuário ao navegar, personalizar e alugar pacotes de viagem. Abrange a jornada principal, da descoberta à finalização da compra, priorizando clareza e facilidade de uso.</p>
+                        <p>Sistemas operacionais, infraestrutura de back-end e validação em situações reais foram considerados fora do escopo.</p>
+                    </dd>
+                </div>
+            </dl>
+        </section>
+        <div class="case-layout">
         <aside class="case-sidebar" aria-label="Navegação do case">
             <a class="case-back" href="../index.html">
                 <span class="case-back__icon" aria-hidden="true"><img src="../assets/icons/libero-voltar.svg" width="5" height="10" alt=""></span>
@@ -33,8 +66,8 @@
             </a>
             <nav aria-label="Seções do Case LIBERÔ">
                 <ul class="case-menu">
-                    <li><a href="#contexto" data-section="contexto" aria-current="location">Contexto</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="diagnostico" title="Seção disponível em uma próxima etapa">Diagnóstico</a></li>
+                    <li><a href="#contexto" data-section="contexto">Contexto</a></li>
+                    <li><a href="#diagnostico" data-section="diagnostico">Diagnóstico</a></li>
                     <li><a role="link" aria-disabled="true" data-section="decisao" title="Seção disponível em uma próxima etapa">Decisão</a></li>
                     <li><a role="link" aria-disabled="true" data-section="solucao" title="Seção disponível em uma próxima etapa">Solução</a></li>
                     <li><a role="link" aria-disabled="true" data-section="estrategia" title="Seção disponível em uma próxima etapa">Estratégia</a></li>
@@ -69,9 +102,35 @@
                     </div>
                 </div>
             </section>
-            <!-- Próximas seções: diagnostico, decisao, solucao, estrategia,
+            <section id="diagnostico" class="case-section case-diagnosis" aria-labelledby="diagnostico-title" tabindex="-1">
+                <div class="case-text-group">
+                    <h2 id="diagnostico-title">Diagnóstico</h2>
+                    <div class="case-diagnosis__copy">
+                        <p>Para estruturar o problema, combinei pesquisa exploratória, análise de tendências, construção de cenário, entrevistas qualitativas, personas, jornada do usuário, benchmarking, SWOT e Value Proposition Canvas. Esse conjunto mostrou que <strong>o incômodo com a bagagem não é isolado</strong>: <strong>ele reflete uma mentalidade que prioriza experiência sobre posse, consumo consciente, fluidez e leveza emocional.</strong></p>
+                        <p>A leitura do cenário apontou dois grupos com forte aderência ao problema: <strong>jovens viajantes conscientes, especialmente Millennials e Gen Z, e profissionais em viagem ou nômades digitais. Em comum, eles valorizam praticidade, previsibilidade, controle financeiro e redução de esforço.</strong></p>
+                    </div>
+                </div>
+                <section class="case-conflict" aria-labelledby="conflito-title">
+                    <div class="case-text-group">
+                        <h3 id="conflito-title">Conflito central</h3>
+                        <div class="case-conflict__body">
+                            <div class="case-diagnosis__copy">
+                                <p><strong>O conflito do projeto não estava em “como organizar melhor uma mala”, mas em algo mais profundo</strong>: viajar pede liberdade, enquanto a lógica da bagagem impõe peso, antecipação excessiva, medo de extravio, risco de taxas e decisões difíceis demais para uma experiência que deveria ser leve.</p>
+                                <p>As entrevistas reforçaram essa tensão com clareza. Mesmo usando listas, organizadores, balanças e planejamento antecipado, os participantes relataram que a mala acompanha emocionalmente o viajante antes, durante e depois da viagem. Uma frase sintetizou esse padrão:</p>
+                            </div>
+                            <blockquote class="case-conflict__quote">“Eu queria aproveitar a viagem, não me preocupar e cuidar da mala.”</blockquote>
+                            <p class="case-conflict__insight">A partir daí, o projeto virou a chave: <strong>a dor não é só logística; a dor também é emocional</strong><strong class="case-conflict__period">.</strong></p>
+                        </div>
+                    </div>
+                    <div class="case-conflict__image">
+                        <img src="../assets/images/libero-conflito-termometro.png" width="1920" height="1080" alt="Termômetro das dores da bagagem: extrema — logística e extravio, conexões curtas e corridas, danos e avarias; muito alta — peso e limite da mala, taxa inesperada e reorganização no aeroporto; alta — arrumar a mala, incerteza climática e medo de esquecer itens; subestimada — lavar roupa no destino, tempo perdido e barreiras linguísticas.">
+                    </div>
+                </section>
+            </section>
+            <!-- Próximas seções: decisao, solucao, estrategia,
                  wireframes, resultados, futuro e conclusao. Não criar âncoras vazias. -->
         </article>
+        </div>
     </main>
 </body>
 </html>

@@ -80,8 +80,78 @@ video:focus-visible {
     text-underline-position: from-font;
 }
 
+/* Hero: 507:340 (desktop) e 507:184 (mobile). Conteúdo desktop em todas as telas. */
+.case-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 1200px;
+    margin: 126px var(--case-page-gutter) 0;
+}
+
+.case-hero__content,
+.case-hero__text,
+.case-hero__detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-hero__content { gap: 40px; }
+.case-hero__text { gap: 16px; max-width: 1134px; }
+.case-hero h1,
+.case-hero p,
+.case-hero dd { margin: 0; }
+
+.case-hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.2px;
+}
+
+.case-hero__description {
+    font-size: 24px;
+    line-height: 26.4px;
+}
+
+.case-hero__image,
+.case-hero__image img {
+    display: block;
+    width: 100%;
+}
+
+.case-hero__image img { height: auto; }
+
+.case-hero__details {
+    display: grid;
+    gap: 81px;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+.case-hero__detail { min-width: 0; gap: 16px; }
+.case-hero__detail--date { width: 105px; }
+.case-hero__detail--role { width: 129px; }
+.case-hero__detail--tools { width: min(272px, 100%); }
+.case-hero dt { color: var(--case-color-muted); font-weight: 700; }
+.case-hero__detail--tools dd,
+.case-hero__detail--scope dd { font-size: 14px; }
+.case-hero__detail--scope p + p { margin-top: 6px; }
+
+/* Sem referência de tablet: dois grupos por linha, sem estreitar o Escopo.
+   A partir de 80rem cabem as quatro colunas e os intervalos desktop de 81px. */
+@media (min-width: 48rem) {
+    .case-hero { min-height: 0; }
+    .case-hero__details { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
+}
+
+@media (min-width: 80rem) {
+    .case-hero { min-height: 1060px; }
+    .case-hero__details { grid-template-columns: 105px 129px 272px minmax(0, 1fr); }
+}
+
 .case-layout {
-    margin: 126px var(--case-page-gutter) 80px;
+    margin: 240px var(--case-page-gutter) 80px;
 }
 
 .case-sidebar { display: none; }
@@ -147,6 +217,62 @@ video:focus-visible {
     line-height: normal;
 }
 
+/* Diagnóstico e Conflito: 507:361/472 (desktop), 507:219/222 (mobile).
+   Alturas de texto naturais preservam a leitura sem recortes em telas menores. */
+.case-diagnosis { margin-top: 48px; }
+
+.case-diagnosis__copy,
+.case-conflict,
+.case-conflict__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-diagnosis__copy,
+.case-conflict__body { gap: 24px; }
+.case-conflict { gap: 16px; }
+
+.case-conflict h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.case-conflict__quote {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.case-conflict__insight { line-height: normal; }
+.case-conflict__period { font-size: 24px; }
+
+.case-conflict__image {
+    position: relative;
+    aspect-ratio: 380 / 240;
+    overflow: hidden;
+}
+
+.case-conflict__image img {
+    position: absolute;
+    top: 0;
+    left: -13.83%;
+    width: 112.09%;
+    max-width: none;
+    height: 100%;
+}
+
+@media (min-width: 64rem) {
+    .case-diagnosis {
+        margin-top: 51px;
+        gap: 51px;
+    }
+
+    .case-conflict__image { aspect-ratio: 824 / 517; }
+}
+
 /* 48rem mantém as margens desktop do projeto. Sem menu em tablets.
    Textos crescem com o conteúdo, evitando as caixas fixas do protótipo. */
 @media (min-width: 48rem) {
@@ -155,14 +281,14 @@ video:focus-visible {
 
 /* 64rem permite menu e leitura lado a lado. Em 1440: menu x=100,
    conteúdo x=520/largura 824. A coluna encolhe nas larguras intermediárias.
-   A Hero futura não recebe espaço vazio nesta etapa. */
+   Após a Hero, 160px até o menu e mais 80px até o Contexto. */
 @media (min-width: 64rem) {
     .case-layout {
         display: grid;
         grid-template-columns: minmax(138px, 1fr) minmax(0, 824px);
         column-gap: clamp(48px, 19.583333vw, 282px);
         align-items: start;
-        margin-top: 46px;
+        margin-top: 160px;
         margin-right: 96px;
     }
 

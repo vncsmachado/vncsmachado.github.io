@@ -19,7 +19,7 @@ const setCurrentSection = (id) => {
 };
 
 if (sections.length) {
-    setCurrentSection(sections[0].id);
+    setCurrentSection(null);
     if ("IntersectionObserver" in window) {
         const visibleSections = new Set();
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -30,8 +30,14 @@ if (sections.length) {
             const current = [...visibleSections].sort((a, b) =>
                 Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top)
             )[0];
-            if (current) setCurrentSection(current.id);
-        }, { rootMargin: "-12% 0px -55% 0px", threshold: 0 });
+            if (sections[0].getBoundingClientRect().top > window.innerHeight * 0.13) {
+                setCurrentSection(null);
+            } else if (current) {
+                setCurrentSection(current.id);
+            }
+        // Uma faixa estreita identifica a seção na linha de leitura,
+        // sem ativar a próxima só porque ela apareceu no fim da viewport.
+        }, { rootMargin: "-12% 0px -87% 0px", threshold: 0 });
         sections.forEach((section) => sectionObserver.observe(section));
     }
 }
