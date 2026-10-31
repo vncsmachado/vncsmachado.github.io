@@ -70,8 +70,8 @@
                     <li><a href="#diagnostico" data-section="diagnostico">Diagnóstico</a></li>
                     <li><a href="#decisao" data-section="decisao">Decisão</a></li>
                     <li><a href="#solucao" data-section="solucao">Solução</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="estrategia" title="Seção disponível em uma próxima etapa">Estratégia</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="wireframes" title="Seção disponível em uma próxima etapa">Wireframes</a></li>
+                    <li><a href="#estrategia" data-section="estrategia">Estratégia</a></li>
+                    <li><a href="#wireframes" data-section="wireframes">Wireframes</a></li>
                     <li><a role="link" aria-disabled="true" data-section="resultados" title="Seção disponível em uma próxima etapa">Resultados</a></li>
                     <li><a role="link" aria-disabled="true" data-section="futuro" title="Seção disponível em uma próxima etapa">Futuro</a></li>
                     <li><a role="link" aria-disabled="true" data-section="conclusao" title="Seção disponível em uma próxima etapa">Conclusão</a></li>
@@ -237,8 +237,61 @@
                     </video>
                 </section>
             </section>
-            <!-- Próximas seções: estrategia,
-                 wireframes, resultados, futuro e conclusao. Não criar âncoras vazias. -->
+            <section id="estrategia" class="case-section case-strategy" aria-labelledby="estrategia-title" tabindex="-1">
+                <div class="case-text-group">
+                    <h2 id="estrategia-title">Como a estratégia virou produto</h2>
+                    <div class="case-strategy__copy">
+                        <p>As descobertas de pesquisa foram traduzidas em decisões concretas de produto. <strong>A maior fonte de ansiedade, a bagagem</strong>, levou à proposta de aluguel de itens direto no destino. <strong>O peso e os limites da mala</strong> direcionaram a ideia de um catálogo adaptado ao destino. <strong>O tempo gasto com lavanderia</strong> apareceu como oportunidade para pacotes com trocas e lavanderia parceira. <strong>A imprevisibilidade financeira</strong> sustentou a decisão por preços claros por tempo de aluguel (aluguel mínimo de 7 dias) e simulação antecipada. <strong>Já a fragmentação do mercado</strong> reforçou a criação de uma plataforma unificada com múltiplos tipos de itens.</p>
+                        <p>Na prática, <strong>cada funcionalidade foi pensada para responder a uma dor real evidenciada na pesquisa.</strong> O projeto não partiu de uma coleção de features desejáveis, mas de uma tentativa de reduzir o esforço invisível que a viagem impõe ao usuário.</p>
+                    </div>
+                </div>
+                <section class="case-text-group case-strategy__service" aria-labelledby="servico-title">
+                    <h3 id="servico-title">Estruturando o serviço além da interface</h3>
+                    <div class="case-strategy__copy">
+                        <p>Para garantir coerência além das telas, estruturei a operação da LIBERÔ com <strong>Service Blueprint</strong>. Esse mapeamento permitiu visualizar as etapas que sustentam a experiência, incluindo estoque, logística, devoluções, danos e atrasos. Mais do que apoiar a interface, ele <strong>ajudou a testar a consistência operacional do serviço e a viabilidade do modelo híbrido de retirada e entrega.</strong></p>
+                        <p>No ecossistema digital, <strong>o site foi organizado para explicar o modelo de negócio, gerar confiança e direcionar para a plataforma principal</strong>. Já <strong>a arquitetura do aplicativo foi pensada a partir da lógica do serviço, priorizando busca, reserva, uso, acompanhamento e devolução.</strong> Com isso, a estrutura do produto deixou de seguir uma lógica tradicional de e-commerce e passou a refletir os estados reais da jornada do usuário.</p>
+                    </div>
+                </section>
+            </section>
+            <section id="wireframes" class="case-section case-wireframes" aria-labelledby="wireframes-title" tabindex="-1">
+                <div class="case-text-group case-wireframes__navigation">
+                    <div class="case-text-group">
+                        <h2 id="wireframes-title">Wireframes e decisão de navegação</h2>
+                        <p>Nos wireframes, explorei inicialmente uma entrada de busca mais aberta, em que o usuário poderia procurar livremente por itens e coleções. Embora essa alternativa ampliasse possibilidades, ela também introduzia mais complexidade e potencial sobrecarga cognitiva logo no início da jornada. Por isso, <strong>a decisão foi simplificar a navegação em dois caminhos mais claros:</strong> <strong>destinos</strong> e <strong>motivos</strong>.</p>
+                    </div>
+                    <div class="case-wireframes__exploration">
+                        <div class="case-wireframes__image case-wireframes__image--comparison">
+                            <img src="../assets/images/libero-wireframes-navegacao.png" width="1240" height="720" loading="lazy" decoding="async" alt="Comparação de wireframes: a alternativa explorada abre uma busca ampla por itens; a alternativa escolhida organiza a entrada por destinos e motivos.">
+                        </div>
+                        <div class="case-wireframes__rationale">
+                            <p class="case-question__statement">Abri mão de uma entrada mais ampla para priorizar clareza cognitiva e orientação da tarefa principal.</p>
+                            <div class="case-wireframes__copy">
+                                <p>Esse momento foi essencial para <strong>priorizar um fluxo que conduzisse a tarefa principal de forma mais natural</strong>, reduzindo ambiguidade e orientando melhor a tomada de decisão. Em vez de oferecer muitas possibilidades desde o primeiro contato, a solução passou a <strong>guiar o usuário por entradas mais objetivas, preservando clareza sem comprometer a flexibilidade da experiência.</strong></p>
+                                <p>No fluxo por <strong>motivos</strong>, complementei essa decisão com um <strong>dropdown de opções pré-definidas</strong>, pensado para <strong>orientar melhor a busca e limitar o universo de escolhas apresentadas.</strong> Assim, a interface reforça o papel da navegação como suporte à decisão, e não apenas como acesso a telas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-wireframes__image case-wireframes__image--motives">
+                        <img src="../assets/images/libero-wireframes-motivos.png" width="1240" height="720" loading="lazy" decoding="async" alt="Três wireframes do fluxo por motivos: acesso pela página inicial, campo de seleção e lista de motivos pré-definidos para orientar a busca.">
+                    </div>
+                </div>
+            </section>
+            <section class="case-text-group case-brand" aria-labelledby="marca-title">
+                <div class="case-text-group">
+                    <h2 id="marca-title">Direção de marca e linguagem visual</h2>
+                    <p>A camada visual da LIBERÔ foi <strong>construída para sustentar a mesma ideia central da proposta: leveza, liberdade, conveniência emocional e jovialidade.</strong> O naming nasce como uma variação fonética de “liberou”, evocando desbloqueio, permissão e liberdade. O moodboard reforça caminhos, fluidez, conexão, realização, tranquilidade e movimento, servindo como norte para interface e tom de voz.</p>
+                </div>
+                <div class="case-brand__image">
+                    <img src="../assets/images/libero-marca-moodboard.png" width="4096" height="2124" loading="lazy" decoding="async" alt="Painel de direção de marca LIBERÔ: referências tipográficas e visuais, viagens e movimento, paleta de amarelo, laranja e verde, e assinatura da marca.">
+                </div>
+                <p class="case-brand__insight">Na identidade, a marca se apoia em uma assinatura tipográfica com personalidade jovial e brasilidade. Na interface, o laranja foi definido como cor principal por comunicar energia, conforto e realização, enquanto a tipografia Roboto foi escolhida por legibilidade e hierarquia em telas digitais. O resultado visual busca coerência com a promessa do produto, em vez de funcionar apenas como camada decorativa.</p>
+                <div class="case-brand__image">
+                    <img src="../assets/images/libero-marca-interface.png" width="4096" height="2109" loading="lazy" decoding="async" alt="Painel de linguagem visual da interface LIBERÔ: botões, ícones, componentes, cores e hierarquia tipográfica Roboto.">
+                </div>
+            </section>
+            <!-- Próximos conteúdos: Resultados, seguido do bloco independente
+                 Limitações; depois Futuro e Conclusão.
+                 Não criar âncoras vazias. -->
         </article>
         </div>
     </main>

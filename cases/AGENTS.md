@@ -4,3 +4,4 @@
 - Mobile é referência de composição, disposição, dimensionamento e comportamento responsivo. Sempre utilizar os textos desktop, mesmo quando o frame mobile tiver outra redação.
 - Não criar variantes de conteúdo por breakpoint. Preservar os textos, a pontuação e os destaques desktop, permitindo quebras de linha e alturas naturais.
 - Aplicar esta orientação às revisões e a todas as próximas seções do Case, sem depender de nova solicitação.
+- O menu representa os marcos narrativos principais, não todos os blocos. Direção de marca (após Wireframes e antes de Resultados) e Limitações (após Resultados) são blocos independentes: não adicionar links para eles ao menu nem incluí-los na lista de seções observadas pela navegação.
