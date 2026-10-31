@@ -708,10 +708,10 @@ html {
 
 .home-intro__logo {
     display: block;
-    width: min(291px, 100%);
+    width: min(145.5px, 50%);
     height: auto;
-    max-height: calc(100vh - 64px);
-    max-height: calc(100svh - 64px);
+    max-height: calc(50vh - 32px);
+    max-height: calc(50svh - 32px);
     overflow: visible;
     transform-origin: center;
     animation: intro-logo-settle 600ms 1980ms ease both;
