@@ -358,3 +358,45 @@ video:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 }
+
+/* Decisão: 609:121 (desktop), 507:230/237 (composição mobile).
+   Texto desktop único; caixas de texto crescem naturalmente. */
+.case-decision { margin-top: 48px; }
+
+.case-decision__body,
+.case-decision__tradeoffs,
+.case-decision__tradeoff {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-decision__body { gap: 32px; }
+.case-decision__reframing > p:first-child { line-height: 24px; }
+
+.case-decision__criteria h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.case-decision__tradeoffs {
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.case-decision__tradeoff { gap: 8px; }
+
+.case-decision__tradeoff h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media (min-width: 64rem) {
+    .case-decision { margin-top: 51px; }
+    .case-decision__reframing > p:first-child { line-height: normal; }
+}

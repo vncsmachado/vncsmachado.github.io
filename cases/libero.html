@@ -68,7 +68,7 @@
                 <ul class="case-menu">
                     <li><a href="#contexto" data-section="contexto">Contexto</a></li>
                     <li><a href="#diagnostico" data-section="diagnostico">Diagnóstico</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="decisao" title="Seção disponível em uma próxima etapa">Decisão</a></li>
+                    <li><a href="#decisao" data-section="decisao">Decisão</a></li>
                     <li><a role="link" aria-disabled="true" data-section="solucao" title="Seção disponível em uma próxima etapa">Solução</a></li>
                     <li><a role="link" aria-disabled="true" data-section="estrategia" title="Seção disponível em uma próxima etapa">Estratégia</a></li>
                     <li><a role="link" aria-disabled="true" data-section="wireframes" title="Seção disponível em uma próxima etapa">Wireframes</a></li>
@@ -127,7 +127,40 @@
                     </div>
                 </section>
             </section>
-            <!-- Próximas seções: decisao, solucao, estrategia,
+            <section id="decisao" class="case-section case-decision" aria-labelledby="decisao-title" tabindex="-1">
+                <div class="case-text-group">
+                    <h2 id="decisao-title">Decisão principal</h2>
+                    <div class="case-decision__body">
+                        <div class="case-question case-decision__reframing">
+                            <p>Com base nas descobertas, reformulei o problema como uma questão de experiência:</p>
+                            <p class="case-question__statement">Como possibilitar que jovens viajantes vivam experiências mais leves e convenientes, reduzindo a dependência de bagagens e minimizando custos, riscos e desgaste emocional?</p>
+                        </div>
+                        <p>Essa reformulação trouxe uma consequência importante para o produto: <strong>a solução</strong> não deveria apenas otimizar a mala, mas <strong>reduzir etapas, decisões e incertezas</strong> a ponto de tornar a mala menos necessária em parte significativa da jornada. Em vez de pensar <strong>o projeto</strong> como mais um app funcional de viagem ou aluguel, a LIBERÔ foi construída <strong>como uma resposta à sobrecarga emocional que acompanha a logística do viajar</strong>.</p>
+                    </div>
+                </div>
+                <section class="case-text-group case-decision__criteria" aria-labelledby="criterios-title">
+                    <h3 id="criterios-title">Trade-offs e critérios de decisão</h3>
+                    <ol class="case-decision__tradeoffs" role="list">
+                        <li class="case-decision__tradeoff">
+                            <h4>Trade-off 1: acesso x posse</h4>
+                            <p>Priorizei modelos de acesso, e não de posse, para eliminar etapas desgastantes da viagem. Em vez de ajudar o usuário a levar melhor seus itens, a proposta passou a ser acessar o que precisa diretamente no destino.</p>
+                        </li>
+                        <li class="case-decision__tradeoff">
+                            <h4>Trade-off 2: amplitude de busca x clareza cognitiva</h4>
+                            <p>Nos wireframes, explorei uma entrada mais ampla, com busca livre por itens e coleções. No entanto, esse caminho aumentava a complexidade e a sobrecarga mental. A decisão foi concentrar a experiência em dois acessos mais claros, fluxos direcionados por destinos e motivos, priorizando orientação e simplicidade sobre maior liberdade exploratória.</p>
+                        </li>
+                        <li class="case-decision__tradeoff">
+                            <h4>Trade-off 3: lógica de e-commerce x lógica de serviço</h4>
+                            <p>Optei por não seguir a arquitetura de um e-commerce tradicional. Como a LIBERÔ é um serviço de aluguel sob demanda, a experiência foi organizada em torno da busca, da reserva, do período de uso e do acompanhamento até a devolução. Isso reduz parte da familiaridade de um catálogo convencional, mas torna a solução mais coerente com a natureza real do serviço.</p>
+                        </li>
+                        <li class="case-decision__tradeoff">
+                            <h4>Trade-off 4: diferenciação emocional x discurso funcional comum de mercado</h4>
+                            <p>O benchmarking mostrou um mercado fragmentado, rígido e pouco conectado ao público jovem, com foco em benefícios funcionais. Em resposta, a LIBERÔ assumiu um posicionamento mais emocional e relacional, colocando leveza, previsibilidade e conveniência emocional no centro da proposta.</p>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+            <!-- Próximas seções: solucao, estrategia,
                  wireframes, resultados, futuro e conclusao. Não criar âncoras vazias. -->
         </article>
         </div>

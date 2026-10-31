@@ -1,4 +1,4 @@
-# Case LIBERÔ — etapas 8.1 e 8.2
+# Case LIBERÔ — implementação progressiva
 
 Implementação em `libero.html`, com estilos em `../assets/css/libero.css` e script exclusivo em `../assets/js/libero.js`. A Home e seus arquivos não foram alterados.
 
@@ -16,8 +16,9 @@ Arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`, desktop `507:332` e mobile `507:176`. Co
 - Header de navegação: `507:177`. A logo SVG existente foi reutilizada.
 - Diagnóstico: `507:361` (desktop) e `507:219` (mobile); Conflito: `507:472` e `507:222`.
 - Hero: `507:340` (desktop) e `507:184` (mobile), com metadados, contexto e screenshots dos dois nós.
+- Decisão: `609:121` no desktop; `507:230` e `507:237` como referências responsivas. O grupo termina no quarto trade-off, antes da seção Solução.
 
-A Hero e os detalhes do projeto aparecem antes do Contexto. O título original da Hero é o único `h1` da página. As seções posteriores ao Diagnóstico e o Footer ainda não foram implementados; não há placeholders para elas.
+A Hero e os detalhes do projeto aparecem antes do Contexto. O título original da Hero é o único `h1` da página. As seções posteriores à Decisão e o Footer ainda não foram implementados; não há placeholders para elas.
 
 ## Layout e tipografia
 
@@ -29,13 +30,12 @@ A Hero e os detalhes do projeto aparecem antes do Contexto. O título original d
 
 ## Menu e próximas âncoras
 
-Contexto e Diagnóstico são links nativos funcionais para `#contexto` e `#diagnostico`, com smooth scroll e exceção para movimento reduzido. Conflito pertence à seção Diagnóstico e mantém esse item ativo. `IntersectionObserver` acompanha as seções reais e atualiza `aria-current="location"`; não depende de clique. A faixa de observação vai de 12% a 13% da altura da viewport. Enquanto Contexto estiver abaixo dessa faixa, nenhum item fica ativo; retornar à Hero também limpa a seleção. A Hero não foi adicionada ao menu. Sem suporte à API, os links nativos continuam funcionando sem indicação automática de seção ativa.
+Contexto, Diagnóstico e Decisão são links nativos funcionais para `#contexto`, `#diagnostico` e `#decisao`, com smooth scroll e exceção para movimento reduzido. Conflito pertence à seção Diagnóstico e mantém esse item ativo. `IntersectionObserver` acompanha as seções reais e atualiza `aria-current="location"`; não depende de clique. A faixa de observação vai de 12% a 13% da altura da viewport. Enquanto Contexto estiver abaixo dessa faixa, nenhum item fica ativo; retornar à Hero também limpa a seleção. A Hero não foi adicionada ao menu. Sem suporte à API, os links nativos continuam funcionando sem indicação automática de seção ativa.
 
 Os demais rótulos mantêm a aparência cinza do Figma e usam `aria-disabled="true"`, sem `href` para um destino inexistente. Não entram na sequência de Tab. `data-section` prepara a associação; ao adicionar uma seção real com o ID correspondente, o script ativa seu link e passa a observá-la. Ao implementar cada seção, adicionar também seu `href` no HTML para preservar a navegação sem JavaScript.
 
 | Rótulo | ID futuro | Nó principal desktop |
 |---|---|---|
-| Decisão | `decisao` | `609:121` |
 | Solução | `solucao` | `609:122` |
 | Estratégia | `estrategia` | `507:419` (incluir Estrutura do serviço `507:422`) |
 | Wireframes | `wireframes` | `507:425` (avaliar agrupamento com Marca `507:435`) |
@@ -91,4 +91,13 @@ Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: imagens e fontes carregad
 - Chrome headless: 320, 375, 412, 768, 1024 e 1440 px, sem overflow ou sobreposições. Imagens decodificadas, proporções e seleção de asset conferidas, e fontes efetivas verificadas como HelveticaLTPro-Bold/Roman. Screenshots comparadas às referências correspondentes. A geometria interna e os textos das seções anteriores ficaram idênticos à captura anterior, deslocados uniformemente para baixo.
 - Menu testado novamente com barras nativas visíveis em 1024/1440 × 600/768/900 px: sem rolagem interna, largura útil 138 px, sticky a 32 px, sete destinos futuros desabilitados. Conferidos ausência de seleção na Hero, alternância Contexto/Diagnóstico por scroll e âncoras, limpeza da seleção ao retornar à Hero, entrada direta por hash, modo estático em 400 px de altura, Tab/Enter no atalho, movimento reduzido e retorno à Home. Sem erros de carregamento. A Home e os assets anteriores foram conferidos por hash.
 
-Próxima seção de conteúdo: Decisão. Nenhum commit ou push realizado.
+### Decisão — etapa 8.3
+
+- Implementados “Decisão principal”, a introdução, a pergunta reformulada em Helvetica LT Pro Light 300 a 32 px, a consequência para o produto e “Trade-offs e critérios de decisão”, com os quatro critérios originais. O texto e os destaques desktop são usados também no mobile, incluindo “a solução”, “reduzir etapas, decisões e incertezas”, “o projeto” e “como uma resposta à sobrecarga emocional que acompanha a logística do viajar”.
+- Títulos principais a 24 px, títulos dos trade-offs Bold 20 px com entrelinha normal, texto Roman/Bold a 16/24 px. A introdução segue a referência: entrelinha normal no desktop e 24 px no mobile. Intervalos preservados: 16 px após títulos, 32 px entre os blocos da decisão, 48 px até os critérios, 24 px entre trade-offs e 8 px entre cada título e sua descrição. O intervalo após Diagnóstico é de 51 px no desktop e 48 px no mobile.
+- Alturas naturais, sem reproduzir caixas fixas ou parágrafos vazios residuais do protótipo. Na comparação com colunas úteis de 824/380 px, a seção renderizou em 983/1701 px, contra 912/1607 px nos frames. No desktop, os 71 px adicionais se distribuem entre o primeiro bloco (+12 px) e os critérios (+59 px), principalmente pelos títulos de 20 px com entrelinha automática em caixas de 15 px no Figma e pelas métricas dos parágrafos. No mobile, a referência também contém destaques diferentes dos textos desktop usados nesta implementação; a diferença de 94 px não corresponde apenas à renderização. Não foram alteradas fontes, pesos ou tamanhos para compensar essas diferenças.
+- A seção é o novo destino `#decisao`; o link nativo funciona mesmo sem JavaScript. O observador existente descobre automaticamente seções reais pelo `data-section`, sem precisar alterar `libero.js`. As seis seções futuras continuam desabilitadas. Não há imagens, ícones, vídeos ou animações nesses nós; nenhum asset foi necessário e não há arquivo pendente para Decisão.
+- Chrome headless: 320, 375, 412, 768, 1024 e 1440 px, com os 13 blocos textuais comparados automaticamente ao nó desktop, destaques conferidos, fontes efetivas verificadas e screenshots desktop/mobile inspecionadas. Nenhum overflow horizontal, sobreposição ou erro de carregamento. Todos os elementos da Hero, Contexto, Diagnóstico e menu mantiveram suas posições e dimensões anteriores, sem deslocamentos.
+- Menu conferido com barras nativas do Chrome visíveis em 1024/1440 × 600/768/900 px: largura útil 138 px, sticky a 32 px, todos os rótulos visíveis e nenhuma rolagem interna. Validados cliques nas três âncoras, destaque por scroll nas duas direções, ausência de seleção durante a Hero, foco por Tab/Enter em Decisão, movimento reduzido, entrada direta por hash e adaptação estática em 400 px de altura. Home, JavaScript, assets e regras CSS anteriores preservados.
+
+Próxima seção de conteúdo: Solução. Nenhum commit ou push realizado.
