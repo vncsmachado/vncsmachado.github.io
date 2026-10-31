@@ -8,8 +8,10 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.typekit.net/kmd2lah.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/libero.css">
     <script src="../assets/js/libero.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
 </head>
 <body>
     <a class="case-skip" href="#contexto">Ir para o conteúdo do case</a>
@@ -72,9 +74,9 @@
                     <li><a href="#solucao" data-section="solucao">Solução</a></li>
                     <li><a href="#estrategia" data-section="estrategia">Estratégia</a></li>
                     <li><a href="#wireframes" data-section="wireframes">Wireframes</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="resultados" title="Seção disponível em uma próxima etapa">Resultados</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="futuro" title="Seção disponível em uma próxima etapa">Futuro</a></li>
-                    <li><a role="link" aria-disabled="true" data-section="conclusao" title="Seção disponível em uma próxima etapa">Conclusão</a></li>
+                    <li><a href="#resultados" data-section="resultados">Resultados</a></li>
+                    <li><a href="#futuro" data-section="futuro">Futuro</a></li>
+                    <li><a href="#conclusao" data-section="conclusao">Conclusão</a></li>
                 </ul>
             </nav>
         </aside>
@@ -289,11 +291,61 @@
                     <img src="../assets/images/libero-marca-interface.png" width="4096" height="2109" loading="lazy" decoding="async" alt="Painel de linguagem visual da interface LIBERÔ: botões, ícones, componentes, cores e hierarquia tipográfica Roboto.">
                 </div>
             </section>
-            <!-- Próximos conteúdos: Resultados, seguido do bloco independente
-                 Limitações; depois Futuro e Conclusão.
-                 Não criar âncoras vazias. -->
+            <section id="resultados" class="case-section case-results" aria-labelledby="resultados-title" tabindex="-1">
+                <h2 id="resultados-title">Resultados do projeto até aqui</h2>
+                <div class="case-text-group">
+                    <p>Como se trata de um projeto acadêmico e conceitual, sem testes formais de usabilidade nesta etapa, os resultados apresentados aqui se referem aos avanços de definição estratégica e estruturação da solução, e não a métricas de mercado ou validação comportamental.</p>
+                    <p><strong>O principal resultado do projeto foi a reformulação do problema: a bagagem deixou de ser tratada apenas como uma questão logística e passou a ser entendida como uma fonte de desgaste emocional ao longo da jornada.</strong> Esse enquadramento redefiniu a proposta de valor da LIBERÔ e orientou as decisões seguintes de produto e serviço.</p>
+                    <p>A partir dessa mudança de perspectiva, <strong>o projeto consolidou uma proposta coerente em múltiplas camadas</strong>: definição de público e tensões reais, construção de uma proposta de valor centrada em leveza e previsibilidade, tradução dos insights em features, estruturação da operação via Service Blueprint e organização da arquitetura do aplicativo a partir da lógica do serviço.</p>
+                    <p>Durante o desenvolvimento, <strong>a solução também foi refinada a partir de feedbacks críticos recebidos no contexto acadêmico</strong>, o que contribuiu para amadurecer a clareza do fluxo, a coerência da proposta e o direcionamento geral do projeto.</p>
+                </div>
+            </section>
+            <section class="case-text-group case-limitations" aria-labelledby="limitacoes-title">
+                <h2 id="limitacoes-title">Limitações, riscos e o que ainda não foi validado</h2>
+                <div class="case-text-group">
+                    <p>Embora o projeto tenha avançado na definição estratégica da solução e na estruturação de sua experiência e operação, a LIBERÔ ainda não foi validada em contexto real de uso. Por se tratar de um serviço com dependência operacional relevante, sua implementação exigiria testes futuros relacionados à adesão dos usuários ao modelo, disponibilidade de inventário, formação de parcerias locais e gestão de etapas críticas como devoluções, danos, atrasos e extensão de prazo.</p>
+                    <p>A análise estratégica já indicava esse ponto ao mostrar que <strong>a solução é desejável, mas depende de logística flexível, diversidade de inventário e mitigação de barreiras culturais ligadas ao compartilhamento.</strong> Nesse sentido, o projeto atual demonstra viabilidade conceitual e coerência estratégica, mas ainda não comprova viabilidade operacional plena nem adoção em escala real.</p>
+                    <p>Por isso, este case deve ser lido como uma proposta de produto e serviço bem estruturada a partir de pesquisa, mas ainda não formalmente validada com usuários em uma etapa posterior de teste.</p>
+                </div>
+            </section>
+            <section id="futuro" class="case-section case-future" aria-labelledby="futuro-title" tabindex="-1">
+                <div class="case-text-group case-future__steps">
+                    <h2 id="futuro-title">Próximos passos e hipóteses futuras</h2>
+                    <div class="case-text-group">
+                        <p>Caso o projeto avançasse para uma próxima etapa, os passos seguintes seriam aprofundar a apresentação da solução visual final, prototipar o fluxo principal com maior detalhamento e avaliar como as decisões de navegação e reserva influenciam a percepção de clareza, confiança e previsibilidade da experiência.</p>
+                        <p>Em uma evolução futura do produto, uma oportunidade interessante seria incorporar camadas contextuais de personalização, como a identificação automática da estação do ano e das condições climáticas do destino no período selecionado da viagem, refinando recomendações e resultados apresentados ao usuário.</p>
+                        <p>Essa frente, no entanto, é apresentada como uma hipótese de produto derivada do raciocínio estratégico do projeto, e não como uma melhoria validada por feedback real. Seu valor está em apontar caminhos de evolução coerentes com a proposta da LIBERÔ, especialmente em um serviço cuja conveniência depende de contexto, antecipação e redução de incertezas.</p>
+                    </div>
+                </div>
+                <section class="case-text-group case-future__impact" aria-labelledby="impacto-title">
+                    <h3 id="impacto-title">Impacto esperado e sinais de sucesso</h3>
+                    <div class="case-text-group">
+                        <p>Como a LIBERÔ ainda não foi validada em contexto real de uso, o impacto apresentado aqui deve ser entendido como esperado, e não como resultado já comprovado. Ainda assim, a proposta permite definir sinais claros de sucesso para futuras etapas de validação.</p>
+                        <p>O desempenho da solução poderia ser avaliado em três frentes principais: <strong>clareza para iniciar a busca, eficiência na montagem da reserva e confiança ao longo da jornada.</strong> Nesse contexto, <strong>métricas como início de busca, abandono antes dos resultados, interação com os conjuntos, adição ao carrinho, conclusão da reserva e acesso ao acompanhamento do pedido ajudariam a entender se a experiência realmente reduz fricções e aumenta previsibilidade.</strong></p>
+                        <p>Além dos <strong>dados quantitativos</strong>, também seria importante <strong>observar sinais qualitativos, como percepção de praticidade, redução da preocupação com bagagem, clareza da proposta de valor e confiança no modelo de retirada, entrega e devolução.</strong> Em conjunto, esses indicadores ajudariam a avaliar se a LIBERÔ está cumprindo sua proposta central: tornar a experiência de viagem mais leve, previsível e menos desgastante.</p>
+                    </div>
+                </section>
+            </section>
+            <section id="conclusao" class="case-section case-conclusion" aria-labelledby="conclusao-title" tabindex="-1">
+                <h2 id="conclusao-title">Conclusões e aprendizados</h2>
+                <div class="case-text-group">
+                    <p>Desenvolver a LIBERÔ reforçou para mim que <strong>projetos mais consistentes começam pela compreensão do problema, e não pela interface.</strong> Ao longo do processo, percebi que a bagagem não era apenas uma questão logística, mas uma fonte de desgaste operacional e emocional que atravessa toda a experiência de viagem. Essa mudança de enquadramento foi o que deu direção ao projeto e orientou suas principais decisões.</p>
+                    <p>O case também ampliou minha <strong>visão sobre a relação entre</strong> <strong>produto e serviço</strong>, me levando a <strong>pensar além das telas e considerar operação, logística, confiança e acompanhamento da experiência</strong>. Em paralelo, <strong>o projeto expandiu meu repertório técnico e criativo</strong>: aprofundei habilidades de estruturação de fluxo, refinamento visual e prototipação, e <strong>utilizei</strong> <strong>inteligência artificial</strong> como apoio para superar uma dificuldade na criação de animações e microinterações, o que me permitiu aprender novas técnicas ao longo do processo.</p>
+                    <p>Por fim, a LIBERÔ <strong>consolidou um aprendizado importante sobre</strong> <strong>iteração</strong>. Muitas decisões só ganharam clareza depois de revisões e ajustes, <strong>reforçando que projetar também é testar, aprender e evoluir.</strong> Mais do que uma solução final, este case representou para mim um exercício de expansão de pensamento, aquisição de novas skills e abertura contínua para aprender coisas novas.</p>
+                </div>
+            </section>
         </article>
         </div>
     </main>
+    <footer class="home-footer case-footer">
+        <p class="home-footer__copyright">Todos os direitos reservados™</p>
+        <nav class="home-footer__contacts" aria-label="Contato e redes sociais">
+            <button class="home-footer__email" type="button" aria-label="Copiar endereço de e-mail">e-mail: vncs_machado@outlook.com</button>
+            <span class="home-footer__email-status" role="status" aria-live="polite" aria-atomic="true"></span>
+            <a class="home-footer__social home-footer__social--instagram" href="https://www.instagram.com/vncs_machado?srtk=Nm9iZGc0OWQyOGR5&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="home-footer__social" href="https://x.com/vncs_machado?s=11" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a class="home-footer__social" href="https://www.linkedin.com/in/viniciushmachado/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+    </footer>
 </body>
 </html>

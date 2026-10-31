@@ -549,3 +549,66 @@ video:focus-visible {
     .case-brand { margin-top: 51px; }
     .case-brand__image { aspect-ratio: 824 / 460; }
 }
+
+/* Resultados 507:443/309 e bloco independente Limitações 507:446/312.
+   Preserva a redação acadêmica desktop e as alturas naturais dos textos. */
+.case-results,
+.case-limitations {
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.case-results h2,
+.case-limitations h2 { line-height: normal; }
+
+@media (min-width: 64rem) {
+    .case-results,
+    .case-limitations { margin-top: 51px; }
+}
+
+/* Futuro: 609:123 (desktop), 507:315/318 (composição mobile).
+   Hipóteses e impacto esperado, com redação desktop e alturas naturais. */
+.case-future { margin-top: 48px; }
+
+.case-future h2,
+.case-future h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.case-future__steps h2 { max-width: 819px; }
+
+@media (min-width: 64rem) {
+    .case-future { margin-top: 51px; }
+}
+
+/* Conclusão: 507:455 (desktop) e 507:321 (composição mobile).
+   Textos e destaques desktop, sem limitar a altura dos parágrafos. */
+.case-conclusion {
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.case-conclusion h2 { line-height: normal; }
+
+@media (min-width: 64rem) {
+    .case-conclusion { margin-top: 51px; }
+}
+
+/* Footer independente: 507:480/324. Intervalo após o conteúdo, sem
+   compensar as diferenças naturais de altura dos textos anteriores. */
+.case-layout { margin-bottom: 488px; }
+.case-footer {
+    min-height: 415px;
+    padding-bottom: 27px;
+}
+
+@media (min-width: 64rem) {
+    .case-layout { margin-bottom: 475px; }
+    .case-footer {
+        min-height: 204px;
+        padding-bottom: 32px;
+    }
+}

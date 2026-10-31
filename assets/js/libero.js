@@ -34,6 +34,13 @@ if (sections.length) {
                 setCurrentSection(lastSection.id);
             } else if (current) {
                 setCurrentSection(current.id);
+            } else {
+                // Nos blocos independentes, mantém o marco anterior também
+                // ao rolar para cima, sem adicionar novos alvos ao observador.
+                const previous = [...sections].reverse().find((section) =>
+                    section.getBoundingClientRect().top <= window.innerHeight * 0.13
+                );
+                setCurrentSection(previous?.id ?? null);
             }
         };
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -61,6 +68,10 @@ if (sections.length) {
             if (sections[0].getBoundingClientRect().top > window.innerHeight * 0.13
                 && sectionLinks.some((link) => link.hasAttribute("aria-current"))) {
                 setCurrentSection(null);
+            } else if (lastSection.getBoundingClientRect().bottom <= window.innerHeight * 0.13) {
+                // Um salto direto ao Footer pode atravessar todos os alvos
+                // sem intersectar a faixa de leitura, sobretudo em telas baixas.
+                setCurrentSection(lastSection.id);
             }
         }, { passive: true });
     }
