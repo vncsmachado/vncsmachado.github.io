@@ -1,1 +1,234 @@
-/* Estilos do Case LIBERÔ: implementar após a leitura do design correspondente. */
+/* Case LIBERÔ: Figma 609:120, 507:205, 507:208 e 610:136.
+   Regras exclusivas do Case; a Home não carrega este arquivo. */
+:root {
+    --case-color-text: #000;
+    --case-color-muted: #595856;
+    --case-page-gutter: 16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--color-clear-white);
+    color: var(--case-color-text);
+    font-family: var(--font-helvetica);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.case-sr-only,
+.case-skip:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.case-skip:focus {
+    position: fixed;
+    inset: 16px auto auto 16px;
+    z-index: 2;
+    padding: 12px;
+    background: var(--color-clear-white);
+    color: var(--color-vivid-red);
+}
+
+a:focus-visible,
+video:focus-visible {
+    outline: 2px solid var(--color-vivid-red);
+    outline-offset: 4px;
+}
+
+.case-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    min-height: 144px;
+    padding: 32px var(--case-page-gutter);
+}
+
+.case-header__brand,
+.case-header__brand img {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.case-header__links {
+    display: flex;
+    gap: 34px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.case-header__links a,
+.case-back {
+    color: var(--color-vivid-red);
+    font-family: var(--font-operetta);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline solid 4%;
+    text-underline-position: from-font;
+}
+
+.case-layout {
+    margin: 126px var(--case-page-gutter) 80px;
+}
+
+.case-sidebar { display: none; }
+.case-content { min-width: 0; }
+.case-section { scroll-margin-top: 32px; }
+
+.case-section,
+.case-text-group,
+.case-context,
+.case-question {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-section { gap: 48px; }
+.case-text-group,
+.case-context { gap: 16px; }
+
+.case-content h2,
+.case-content p { margin: 0; }
+
+.case-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.case-content strong { font-weight: 700; }
+
+.case-context__baggage {
+    aspect-ratio: 380 / 178;
+    overflow: hidden;
+}
+
+.case-context__baggage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-context__culture {
+    position: relative;
+    aspect-ratio: 380 / 100;
+    overflow: hidden;
+}
+
+.case-context__culture img {
+    position: absolute;
+    top: -47.75%;
+    left: 1.2%;
+    width: 100%;
+    max-width: none;
+    height: 214.53%;
+}
+
+.case-question { gap: 32px; }
+
+.case-question > p:first-child { line-height: normal; }
+
+.case-question__statement {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+/* 48rem mantém as margens desktop do projeto. Sem menu em tablets.
+   Textos crescem com o conteúdo, evitando as caixas fixas do protótipo. */
+@media (min-width: 48rem) {
+    :root { --case-page-gutter: 100px; }
+}
+
+/* 64rem permite menu e leitura lado a lado. Em 1440: menu x=100,
+   conteúdo x=520/largura 824. A coluna encolhe nas larguras intermediárias.
+   A Hero futura não recebe espaço vazio nesta etapa. */
+@media (min-width: 64rem) {
+    .case-layout {
+        display: grid;
+        grid-template-columns: minmax(138px, 1fr) minmax(0, 824px);
+        column-gap: clamp(48px, 19.583333vw, 282px);
+        align-items: start;
+        margin-top: 46px;
+        margin-right: 96px;
+    }
+
+    .case-sidebar {
+        position: sticky;
+        top: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 138px;
+        /* O texto pode ultrapassar a caixa de linha sem criar um scrollport.
+           Barras internas reduziriam os 138px e cortariam o nav centralizado. */
+    }
+
+    .case-back {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+    }
+
+    .case-back__icon {
+        display: grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
+    }
+
+    .case-back__label {
+        padding: 10px 10px 10px 0;
+        text-decoration: underline solid 4%;
+    }
+
+    .case-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 138px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .case-menu a {
+        display: block;
+        color: var(--case-color-muted);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        text-decoration: none;
+    }
+
+    .case-menu a[aria-current="location"] { color: var(--color-vivid-red); }
+    .case-menu a[aria-disabled="true"] { cursor: default; }
+    .case-content { padding-top: 80px; }
+    .case-context__baggage { aspect-ratio: 824 / 384; }
+    .case-context__culture { aspect-ratio: 824 / 215; }
+}
+
+/* Os 420px do menu mais as margens de 32px precisam caber na viewport.
+   Abaixo disso, todos os itens seguem acessíveis pela rolagem da página. */
+@media (min-width: 64rem) and (max-height: 483px) {
+    .case-sidebar { position: static; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}

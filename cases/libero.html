@@ -4,18 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case LIBERÔ | Vinicius Machado</title>
-    <meta name="description" content="Case LIBERÔ no portfólio de Vinicius Machado, Product Designer. Conteúdo em preparação.">
+    <meta name="description" content="Case LIBERÔ: contexto e problema de uma experiência de viagem realmente leve, por Vinicius Machado, Product Designer.">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.typekit.net/kmd2lah.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/libero.css">
-    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/libero.js" defer></script>
 </head>
 <body>
-    <main id="conteudo" class="page-shell">
-        <a href="../index.html">Voltar à Home</a>
-        <h1>Case LIBERÔ</h1>
-        <p>Conteúdo em preparação.</p>
+    <a class="case-skip" href="#contexto">Ir para o conteúdo do case</a>
+    <header class="case-header">
+        <a class="case-header__brand" href="../index.html" aria-label="Voltar à Home de Vinicius Machado">
+            <img src="../assets/logos/vinicius-machado.svg" width="48" height="48" alt="">
+        </a>
+        <nav aria-label="Navegação principal">
+            <ul class="case-header__links">
+                <li><a href="../index.html#sobre-mim">Sobre mim</a></li>
+                <li><a href="../assets/documents/curriculo.pdf" target="_blank" rel="noopener noreferrer">Currículo<span class="case-sr-only"> (PDF, abre em nova aba)</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo" class="case-layout">
+        <h1 class="case-sr-only">Case LIBERÔ</h1>
+        <aside class="case-sidebar" aria-label="Navegação do case">
+            <a class="case-back" href="../index.html">
+                <span class="case-back__icon" aria-hidden="true"><img src="../assets/icons/libero-voltar.svg" width="5" height="10" alt=""></span>
+                <span class="case-back__label">Voltar</span>
+            </a>
+            <nav aria-label="Seções do Case LIBERÔ">
+                <ul class="case-menu">
+                    <li><a href="#contexto" data-section="contexto" aria-current="location">Contexto</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="diagnostico" title="Seção disponível em uma próxima etapa">Diagnóstico</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="decisao" title="Seção disponível em uma próxima etapa">Decisão</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="solucao" title="Seção disponível em uma próxima etapa">Solução</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="estrategia" title="Seção disponível em uma próxima etapa">Estratégia</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="wireframes" title="Seção disponível em uma próxima etapa">Wireframes</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="resultados" title="Seção disponível em uma próxima etapa">Resultados</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="futuro" title="Seção disponível em uma próxima etapa">Futuro</a></li>
+                    <li><a role="link" aria-disabled="true" data-section="conclusao" title="Seção disponível em uma próxima etapa">Conclusão</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article class="case-content" aria-label="Conteúdo do Case LIBERÔ">
+            <section id="contexto" class="case-section" aria-labelledby="contexto-title" tabindex="-1">
+                <div class="case-text-group case-overview">
+                    <h2 id="contexto-title">Visão Geral</h2>
+                    <p>A LIBERÔ nasceu a partir da observação de que <strong>viajar</strong>, apesar de ser associado a liberdade e bem-estar, <strong>frequentemente se transforma em uma experiência marcada por peso, incerteza e ansiedade.</strong> Ao longo da pesquisa, <strong>o problema</strong> deixou de ser entendido como uma questão puramente logística e <strong>passou a ser enquadrado como uma dor de experiência</strong>: quanto maior a dependência da mala, maior o desgaste emocional do viajante.</p>
+                </div>
+                <div class="case-context">
+                    <div class="case-text-group">
+                        <h2>Contexto e problema</h2>
+                        <p>Viajar nunca esteve tão acessível, mas a experiência do viajante se tornou mais complexa. Na investigação inicial, identifiquei que boa parte dessa complexidade se concentra em uma etapa específica da jornada: <strong>a bagagem</strong>. Mais do que transportar objetos, ela <strong>concentra decisões, riscos, custos extras, desgaste físico e ansiedade antes, durante e depois da viagem.</strong></p>
+                    </div>
+                    <div class="case-context__baggage">
+                        <img src="../assets/images/libero-contexto-bagagem.png" width="1920" height="1080" alt="Problemas com bagagens: 25,4 milhões de malas mal manuseadas em 2019; 2,5 bilhões por ano em perdas; 5,57 extravios por mil em 2022; regras complexas, processos acelerados e tarifas variáveis que aumentam a incerteza e o estresse.">
+                    </div>
+                    <p>Ao mesmo tempo, mudanças culturais e comportamentais reforçaram novas expectativas: <strong>Millennials e Gen Z valorizam conveniência, leveza, bem-estar, sustentabilidade e um uso mais consciente do tempo.</strong></p>
+                    <div class="case-context__culture">
+                        <img src="../assets/images/libero-contexto-leveza.png" width="1920" height="1080" alt="Avanço do consumo experiencial, estilo de vida nômade digital, slow travel e bleisure associado a conveniência, leveza e bem-estar.">
+                    </div>
+                    <div class="case-question">
+                        <p>Nesse contexto, o projeto passou a investigar uma pergunta central:</p>
+                        <p class="case-question__statement">Se o problema não é apenas a mala, mas o peso físico e emocional que ela representa, como projetar uma experiência de viagem realmente leve?</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Próximas seções: diagnostico, decisao, solucao, estrategia,
+                 wireframes, resultados, futuro e conclusao. Não criar âncoras vazias. -->
+        </article>
     </main>
 </body>
 </html>
