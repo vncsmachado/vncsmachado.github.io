@@ -1,5 +1,25 @@
 "use strict";
 
+// As fotos só entram no DOM perto da viewport; os slots já reservam seu espaço.
+// Sem JavaScript, o HTML em noscript mantém as imagens disponíveis.
+const deferredPhotos = [...document.querySelectorAll("template[data-deferred-photo]")];
+const revealPhoto = (slot) => {
+    const template = slot.querySelector("template[data-deferred-photo]");
+    if (template) template.replaceWith(template.content);
+};
+if ("IntersectionObserver" in window) {
+    const photoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(({ target, isIntersecting }) => {
+            if (!isIntersecting) return;
+            revealPhoto(target);
+            observer.unobserve(target);
+        });
+    }, { rootMargin: "400px 0px", threshold: 0 });
+    deferredPhotos.forEach((template) => photoObserver.observe(template.parentElement));
+} else {
+    deferredPhotos.forEach((template) => revealPhoto(template.parentElement));
+}
+
 const intro = document.querySelector(".home-intro");
 const introSkip = document.querySelector(".home-intro__skip");
 const homeHeader = document.querySelector("#inicio-home");

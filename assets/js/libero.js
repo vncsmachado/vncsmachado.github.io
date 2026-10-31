@@ -77,21 +77,48 @@ if (sections.length) {
     }
 }
 
-// Política compartilhada pelos vídeos que serão adicionados ao Case.
-// Movimento reduzido oferece reprodução manual; fora da viewport, pausa.
+// Carrega perto da viewport; reproduz somente quando realmente visível.
+// Movimento reduzido mantém a reprodução manual com controles nativos.
 const videos = [...document.querySelectorAll(".case-content video")];
 if (videos.length) {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const visibleVideos = new Set();
+    const loadedVideos = new WeakSet();
+    const loadVideo = (video) => {
+        if (loadedVideos.has(video)) return;
+        loadedVideos.add(video);
+        video.querySelectorAll("source[data-src]").forEach((source) => {
+            source.addEventListener("error", () => { video.controls = true; }, { once: true });
+            source.src = source.dataset.src;
+        });
+        video.preload = "metadata";
+        video.load();
+    };
     const updateVideo = (video) => {
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
-        video.autoplay = !reducedMotion.matches;
+        video.autoplay = visibleVideos.has(video) && !reducedMotion.matches;
         video.controls = reducedMotion.matches;
         if (reducedMotion.matches || !visibleVideos.has(video)) video.pause();
-        else video.play().catch(() => { video.controls = true; });
+        else {
+            loadVideo(video);
+            video.play().catch((error) => {
+                // Pausar ou mudar rapidamente de seção pode cancelar play().
+                if (error.name !== "AbortError" && visibleVideos.has(video)
+                    && !reducedMotion.matches) video.controls = true;
+            });
+        }
     };
+    const loadingObserver = "IntersectionObserver" in window
+        ? new IntersectionObserver((entries, observer) => {
+            entries.forEach(({ target, isIntersecting }) => {
+                if (!isIntersecting) return;
+                loadVideo(target);
+                observer.unobserve(target);
+            });
+        }, { rootMargin: "400px 0px", threshold: 0 })
+        : null;
     const videoObserver = "IntersectionObserver" in window
         ? new IntersectionObserver((entries) => {
             entries.forEach(({ target, isIntersecting }) => {
@@ -103,9 +130,16 @@ if (videos.length) {
         : null;
 
     videos.forEach((video) => {
-        if (!video.hasAttribute("preload")) video.preload = "metadata";
-        if (videoObserver) videoObserver.observe(video);
-        else visibleVideos.add(video);
+        // Desativa autoplay antes de ativar qualquer fonte, inclusive no prefetch.
+        video.autoplay = false;
+        if (videoObserver) {
+            loadingObserver.observe(video);
+            videoObserver.observe(video);
+        } else {
+            // Compatibilidade: sem observadores, os arquivos continuam acessíveis.
+            loadVideo(video);
+            visibleVideos.add(video);
+        }
         updateVideo(video);
     });
     reducedMotion.addEventListener("change", () => videos.forEach(updateVideo));

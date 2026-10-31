@@ -52,14 +52,14 @@ O Header permite retornar à Home pela logo em todas as larguras. “Sobre mim�
 
 ## Assets e vídeos
 
-Downloads originais do MCP, armazenados localmente:
+Recursos ativos derivados dos downloads do MCP (originais arquivados externamente conforme o [manifesto de mídias](../media-optimization.json)):
 
-- `../assets/images/libero-contexto-bagagem.png`: PNG 1920 × 1080, nos slots 824 × 384 e 380 × 178, com `object-fit: cover`.
-- `../assets/images/libero-contexto-leveza.png`: PNG 1920 × 1080, nos slots 824 × 215 e 380 × 100, preservando o recorte retornado pelo MCP (altura 214,53%, topo −47,75%, esquerda 1,2%).
+- `../assets/images/libero-contexto-bagagem-optimized.webp`: WebP sem perdas 1920 × 1080, nos slots 824 × 384 e 380 × 178, com `object-fit: cover`.
+- `../assets/images/libero-contexto-leveza-optimized.webp`: WebP sem perdas 1920 × 1080, nos slots 824 × 215 e 380 × 100, preservando o recorte retornado pelo MCP (altura 214,53%, topo −47,75%, esquerda 1,2%).
 - `../assets/icons/libero-voltar.svg`: vetor original de 5 × 10 dentro de uma área de 24 × 24.
-- `../assets/images/libero-conflito-termometro.png`: PNG original de 1920 × 1080, nos slots de 824 × 517 e 380 × 240, com altura 100%, largura 112,09% e esquerda −13,83%, conforme o MCP.
-- `../assets/images/libero-hero-desktop.png`: exportação original PNG de 2480 × 1522 (2× o slot desktop de 1240 × 761).
-- `../assets/images/libero-hero-mobile.png`: exportação original PNG de 760 × 466 (2× o slot mobile de 380 × 233). `<picture>` usa a versão desktop a partir de 48rem e mantém a proporção natural de cada imagem, sem distorção ou URLs temporárias.
+- `../assets/images/libero-conflito-termometro-optimized.webp`: WebP sem perdas de 1920 × 1080, nos slots de 824 × 517 e 380 × 240, com altura 100%, largura 112,09% e esquerda −13,83%, conforme o MCP.
+- `../assets/images/libero-hero-desktop-optimized.webp`: WebP sem perdas de 2480 × 1522, com variante de 1240 px (2× o slot desktop de 1240 × 761).
+- `../assets/images/libero-hero-mobile-optimized.webp`: WebP sem perdas de 760 × 466 (2× o slot mobile de 380 × 233). `<picture>` usa a versão desktop a partir de 48rem e mantém a proporção natural de cada imagem, sem distorção ou URLs temporárias.
 
 Nenhum vídeo foi identificado na Hero, Contexto, Diagnóstico ou Conflito; não há arquivos pendentes para essas seções. Os recursos de etapas futuras ainda precisam ser inspecionados individualmente; um PNG retornado pelo MCP não comprova a disponibilidade de um vídeo original.
 
@@ -109,21 +109,21 @@ Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: imagens e fontes carregad
 
 - Implementados todos os textos e destaques desktop em uma única estrutura HTML: “Solução proposta”, “Dois caminhos para reduzir ambiguidade logo no início”, “Conjuntos por loja para reduzir fragmentação e sobrecarga cognitiva” e “Mais previsibilidade na reserva e no acompanhamento do serviço”. Nenhum conteúdo de Estratégia incorporado.
 - Título principal Bold 24 px e subtítulos Bold 20 px com entrelinha normal; parágrafos Roman/Bold 16/24 px. Intervalos do Auto Layout: 48 px entre os quatro blocos, 16 px dentro de cada bloco e 24 px entre os parágrafos da apresentação e da reserva. Após Decisão: 51 px no desktop e 48 px no mobile. Sem alturas fixas, margens negativas ou compensações tipográficas.
-- Imagem original `../assets/images/libero-solucao-plataforma.png`, PNG 4096 × 1972, baixada pelo URL fornecido por `get_design_context`. Slots de 824 × 450 no desktop e 380 × 209 no mobile; recorte central com `object-fit: cover`, conforme preenchimento FILL do Figma. Nas larguras intermediárias, o slot acompanha a largura da coluna sem alterar o conteúdo textual.
+- Imagem ativa `../assets/images/libero-solucao-plataforma-optimized.webp`, WebP sem perdas 4096 × 1972, derivada do PNG fornecido por `get_design_context`. Slots de 824 × 450 no desktop e 380 × 209 no mobile; recorte central com `object-fit: cover`, conforme preenchimento FILL do Figma. Nas larguras intermediárias, o slot acompanha a largura da coluna sem alterar o conteúdo textual.
 - Link nativo `#solucao` habilitado também sem JavaScript. O observador existente reconhece a quarta seção automaticamente; `libero.js` não foi alterado. Cinco destinos futuros permanecem desabilitados. CSS do menu e estilos das seções anteriores preservados.
-- O MCP identificou nove preenchimentos VIDEO, mas disponibilizou apenas previews. Posteriormente, o usuário forneceu os nove originais em `assets/videos/`. Seus quadros foram inspecionados no Chrome e comparados às referências do Figma antes da inserção. Os arquivos foram preservados, sem conversão ou substituição por imagens. A correspondência está registrada abaixo.
+- O MCP identificou nove preenchimentos VIDEO, mas disponibilizou apenas previews. Posteriormente, o usuário forneceu os nove originais em `assets/videos/`. Seus quadros foram inspecionados no Chrome e comparados às referências do Figma antes da inserção. Na etapa 10.2.2, foram criadas versões H.264 otimizadas, sem substituição por imagens. Os originais foram arquivados externamente com SHA-256 na etapa 10.2.3. A correspondência dos arquivos ativos está registrada abaixo.
 
-| Vídeo original local | Nó desktop | Slot desktop | Slot mobile |
+| Vídeo ativo local | Nó desktop | Slot desktop | Slot mobile |
 |---|---|---|---|
-| `fluxo_1.mp4` — entrada por destinos | `507:395` | 824 × 551 | 380 × 255 |
-| `fluxo_2.mp4` — entrada por motivos | `507:396` | 824 × 550 | 380 × 255 |
-| `fluxo_3.mp4` — contexto da busca | `507:399` | 824 × 550 | 380 × 255 |
-| `fluxo_4.mp4` — navegação contextual | `507:400` | 824 × 550 | 380 × 255 |
-| `fluxo_5.mp4` — conjuntos por loja | `507:405` | 824 × 536 | 380 × 249 |
-| `fluxo_6.mp4` — detalhes e personalização do conjunto | `507:409` | 824 × 681,5 | 380 × 315 |
-| `micro_1.mp4` — seleção de tamanho | `507:410` | 409,5 × 681,5 | 187,5 × 315 |
-| `micro_2.mp4` — ajuste de itens | `507:411` | 409,5 × 681,5 | 187,5 × 315 |
-| `fluxo_7.mp4` — reserva e acompanhamento | `507:418` | 824 × 536 | 379 × 247 |
+| `fluxo_1-optimized.mp4` — entrada por destinos | `507:395` | 824 × 551 | 380 × 255 |
+| `fluxo_2-optimized.mp4` — entrada por motivos | `507:396` | 824 × 550 | 380 × 255 |
+| `fluxo_3-optimized.mp4` — contexto da busca | `507:399` | 824 × 550 | 380 × 255 |
+| `fluxo_4-optimized.mp4` — navegação contextual | `507:400` | 824 × 550 | 380 × 255 |
+| `fluxo_5-optimized.mp4` — conjuntos por loja | `507:405` | 824 × 536 | 380 × 249 |
+| `fluxo_6-optimized.mp4` — detalhes e personalização do conjunto | `507:409` | 824 × 681,5 | 380 × 315 |
+| `micro_1-optimized.mp4` — seleção de tamanho | `507:410` | 409,5 × 681,5 | 187,5 × 315 |
+| `micro_2-optimized.mp4` — ajuste de itens | `507:411` | 409,5 × 681,5 | 187,5 × 315 |
+| `fluxo_7-optimized.mp4` — reserva e acompanhamento | `507:418` | 824 × 536 | 379 × 247 |
 
 Todos os vídeos usam fontes locais em `../assets/videos/`, com `autoplay muted loop playsinline preload="metadata"` e nomes acessíveis. Fluxo6 ocupa a primeira linha inteira; Micro1/Micro2 ficam lado a lado na segunda, com gap horizontal de 5 px e vertical de 6 px. Os slots usam `aspect-ratio` e `object-fit: cover`, com recorte central correspondente aos preenchimentos FILL do Figma, sem distorção. A grade tem `min-height: 0` para impedir que o tamanho intrínseco dos vídeos verticais expanda o slot após a decodificação. Não há alturas fixas para os textos.
 
@@ -152,7 +152,7 @@ O JavaScript existente controla pausa fora da viewport, retomada ao entrar, repr
 
 - Implementados “Wireframes e decisão de navegação”, a descrição, a comparação das alternativas, o destaque em Light 32 px, os dois parágrafos de justificativa e a composição do fluxo por motivos. Mantidos textos e todos os negritos desktop nas telas menores. “Direção de marca e linguagem visual” é um bloco separado posterior e não foi incluído; Resultados e demais seções futuras permanecem ausentes.
 - Helvetica LT Pro Bold 700 a 24 px com entrelinha normal no título, Light 300 a 32 px no destaque e Roman/Bold 400/700 a 16/24 px nos parágrafos. Intervalos de 16 px entre os grupos, 32 px após a comparação e entre destaque/justificativa, 24 px entre os parágrafos. Após Estratégia: 51 px no desktop e 48 px no mobile. Sem alturas fixas para textos ou compensações tipográficas.
-- Downloads originais PNG fornecidos pelo contexto MCP: `../assets/images/libero-wireframes-navegacao.png` e `../assets/images/libero-wireframes-motivos.png`, ambos 1240 × 720 px. Os arquivos desktop/mobile são os mesmos; não há necessidade de alternância por `<picture>`. Slots de 824 × 475/476 no desktop e 380 × 221 no mobile, com recorte central FILL via `object-fit: cover`, sem distorcer as composições. As imagens usam dimensões intrínsecas, `loading="lazy"`, `decoding="async"` e descrições alternativas. Não foram recriados os wireframes em HTML.
+- WebPs sem perdas derivados dos PNGs fornecidos pelo contexto MCP: `../assets/images/libero-wireframes-navegacao-optimized.webp` e `../assets/images/libero-wireframes-motivos-optimized.webp`, ambos 1240 × 720 px. Os arquivos desktop/mobile são os mesmos; não há necessidade de alternância por `<picture>`. Slots de 824 × 475/476 no desktop e 380 × 221 no mobile, com recorte central FILL via `object-fit: cover`, sem distorcer as composições. As imagens usam dimensões intrínsecas, `loading="lazy"`, `decoding="async"` e descrições alternativas. Não foram recriados os wireframes em HTML.
 - Habilitado o sexto link nativo, inclusive sem JavaScript. Três destinos futuros continuam desabilitados. `libero.js` foi preservado: a descoberta automática inclui Wireframes e mantém a identificação da última seção curta, a seleção vazia durante a Hero e a lógica dos nove vídeos de Solução. Nenhum vídeo ou novo asset pendente identificado em Wireframes.
 - Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: título, descrição, destaque e justificativas comparados ao contexto desktop, incluindo todos os negritos. Nenhum overflow horizontal ou sobreposição; a geometria de todos os elementos das seções anteriores e do menu permaneceu idêntica à medição inicial. Home, JavaScript e assets anteriores, inclusive os nove vídeos, preservados por hashes.
 - As duas imagens foram carregadas e decodificadas nas seis larguras; conferidos os arquivos, dimensões intrínsecas, descrições, ordem, slots, recorte central e dimensionamento sem distorção. `min-height: 0` nos contêineres impede que a proporção intrínseca imponha uma altura maior que o slot FILL desktop. O detalhe interno dos wireframes fica naturalmente pequeno no mobile, como no Figma; os originais foram mantidos sem ampliar, recriar ou reorganizar suas telas.
@@ -162,7 +162,7 @@ O JavaScript existente controla pausa fora da viewport, retomada ao entrar, repr
 ### Direção de marca — complemento da etapa 8.6
 
 - Bloco sem link ou destino de menu, inserido depois de Wireframes e antes de Resultados. Implementados o título, os dois parágrafos e o destaque desktop “construída para sustentar a mesma ideia central da proposta: leveza, liberdade, conveniência emocional e jovialidade.”, além dos dois painéis originais. Mesmos textos em todas as larguras; sem vídeos novos.
-- Imagens baixadas pelo URL do contexto MCP: `../assets/images/libero-marca-moodboard.png` (4096 × 2124) e `../assets/images/libero-marca-interface.png` (4096 × 2109). Os mesmos arquivos são usados no desktop e mobile, em slots de 824 × 460 e 380 × 213, respectivamente. Recorte central FILL via `object-fit: cover`, sem distorções; dimensões intrínsecas, `loading="lazy"`, `decoding="async"` e descrições alternativas.
+- WebPs sem perdas derivados das imagens fornecidas pelo contexto MCP: `../assets/images/libero-marca-moodboard-optimized.webp` (4096 × 2124) e `../assets/images/libero-marca-interface-optimized.webp` (4096 × 2109). Os mesmos arquivos são usados no desktop e mobile, em slots de 824 × 460 e 380 × 213, respectivamente. Recorte central FILL via `object-fit: cover`, sem distorções; dimensões intrínsecas, `loading="lazy"`, `decoding="async"` e descrições alternativas.
 - Helvetica LT Pro Bold 700 a 24 px com entrelinha normal no título, Roman/Bold 400/700 a 16/24 px nos textos. Gap interno de 16 px; 51 px após Wireframes no desktop e 48 px no mobile. O segundo parágrafo é centralizado e limitado a 817 px, conforme o desktop, ocupando a largura disponível nas telas menores. Alturas naturais, sem compensações tipográficas.
 - A lista dos seis alvos observados e as seis âncoras não foram alteradas. A leitura de Direção de marca mantém Wireframes ativo. Corrigido apenas o retorno direto desse bloco à Hero (por exemplo, tecla Home): como nenhum alvo necessariamente cruza a faixa do observador nesse salto, um listener passivo limpa a seleção ao detectar a Hero. A lógica de vídeos e o comportamento sticky permanecem intactos.
 - Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: título, textos e destaque comparados ao contexto desktop; imagens decodificadas, arquivos e dimensões originais confirmados, recorte central e slots responsivos conferidos, segundo parágrafo centralizado e limitado corretamente. Sem overflow horizontal, cortes ou sobreposições. Todos os elementos das seções anteriores e do menu mantiveram a geometria anterior. Home e assets anteriores preservados por hashes.
@@ -216,3 +216,7 @@ Conclusão implementada na etapa 8.9 abaixo. Nenhum commit ou push realizado.
 - As nove seções continuam sendo os únicos alvos do menu. Footer, Direção de marca e Limitações não foram adicionados à lista observada. Ajuste restrito no listener passivo existente: se um salto direto ao final atravessar todos os alvos sem cruzar a faixa observada e a última seção já estiver acima da linha de leitura, mantém Conclusão ativa. Corrige especialmente viewports baixas; `IntersectionObserver`, sticky, dimensões e ausência de scroll interno foram preservados.
 - Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: textos, URLs, composição, gaps e separação semântica conferidos; nenhum overflow, corte ou sobreposição. Toda a geometria dos conteúdos anteriores permaneceu idêntica à medição inicial. Footer da Home comparado antes/depois nas seis larguras: mesmas medidas e estilos computados; cópia real do e-mail também confirmada na Home. Capturas de 412/1440 px comparadas ao Figma; Operetta8-Regular efetivamente carregada, sem fallback. Nenhuma divergência visual relevante no Footer.
 - Menu validado em 1024/1440 × 600/768/900 px com nove âncoras por clique, rótulos completos, sticky a 32 px e nenhuma rolagem interna. Conferidos Conclusão durante o Footer, retorno às seções anteriores, limpeza na Hero, movimento reduzido e menu estático a 400 px de altura. Os nove vídeos originais mantiveram reprodução automática silenciosa, avanço, loop, modo inline e pausa fora da viewport; movimento reduzido preserva pausa e controles manuais. Sem erros de execução ou carregamento. Nenhuma otimização geral, commit ou push realizado.
+
+### Consolidação das mídias — etapa 10.2.3
+
+Os caminhos de assets acima apontam às versões ativas. Os 21 originais substituídos estão no backup permanente externo registrado em [media-optimization.json](../media-optimization.json), com correspondência e hashes SHA-256. Foram preservados os nove MP4s otimizados, todos os WebPs e suas variantes responsivas, o retrato JPEG, SVGs, ícones, logos e currículo. As descrições das etapas anteriores são históricas; o carregamento atual mantém `data-src`, `preload="none"` e antecipação de 400 px, sem alterar navegação ou reprodução.

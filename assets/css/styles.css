@@ -4,6 +4,10 @@
     --color-vivid-red: #f20505;
     --color-link-hover: #ae0606;
     --color-clear-white: #f8f9f4;
+    /* Contraste de texto por contexto, preservando o vermelho da marca.
+       #E60505 em #F8F9F4: 4,52:1; #FF3333 em preto: 5,77:1. */
+    --color-link-on-light: #e60505;
+    --color-link-hover-on-dark: #ff3333;
     --font-operetta: "operetta-8", Georgia, "Times New Roman", serif;
     --font-helvetica: "helvetica-lt-pro", Helvetica, Arial, sans-serif;
     --font-roboto: "roboto", Arial, sans-serif;

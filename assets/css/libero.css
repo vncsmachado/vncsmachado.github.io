@@ -35,7 +35,7 @@ body {
     z-index: 2;
     padding: 12px;
     background: var(--color-clear-white);
-    color: var(--color-vivid-red);
+    color: var(--color-link-on-light);
 }
 
 a:focus-visible,
@@ -71,13 +71,21 @@ video:focus-visible {
 
 .case-header__links a,
 .case-back {
-    color: var(--color-vivid-red);
+    color: var(--color-link-on-light);
     font-family: var(--font-operetta);
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     text-decoration: underline solid 4%;
     text-underline-position: from-font;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .case-header__links a,
+    .case-back { transition: color 200ms ease; }
+
+    .case-header__links a:hover,
+    .case-back:hover { color: var(--color-link-hover); }
 }
 
 /* Hero: 507:340 (desktop) e 507:184 (mobile). Conteúdo desktop em todas as telas. */
@@ -316,7 +324,12 @@ video:focus-visible {
         place-items: center;
         width: 24px;
         height: 24px;
+        background-color: currentColor;
+        mask: url("../icons/libero-voltar.svg") center / 5px 10px no-repeat;
     }
+
+    /* O SVG original mantém sua geometria e acompanha a cor do link. */
+    .case-back__icon img { visibility: hidden; }
 
     .case-back__label {
         padding: 10px 10px 10px 0;
@@ -357,6 +370,8 @@ video:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .case-header__links a,
+    .case-back { transition: none; }
 }
 
 /* Decisão: 609:121 (desktop), 507:230/237 (composição mobile).

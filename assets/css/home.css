@@ -73,7 +73,7 @@ html {
 
 .home-header__link {
     display: block;
-    color: var(--color-vivid-red);
+    color: var(--color-link-on-light);
     font-family: var(--font-header);
     font-size: var(--header-font-size);
     font-weight: 400;
@@ -314,7 +314,7 @@ html {
 }
 
 .project-card__link {
-    color: var(--color-vivid-red);
+    color: var(--color-link-on-light);
     font-family: var(--font-operetta);
     font-size: 20px;
     font-weight: 400;
@@ -647,7 +647,7 @@ html {
     overflow: visible;
     clip-path: none;
     background-color: var(--color-clear-white);
-    color: var(--color-vivid-red);
+    color: var(--color-link-on-light);
     font-family: var(--font-helvetica);
     outline: 2px solid currentColor;
     outline-offset: 4px;

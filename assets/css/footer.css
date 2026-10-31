@@ -121,7 +121,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .home-footer__social { transition: color 200ms ease; }
-    .home-footer__social:hover { color: var(--color-link-hover); }
+    .home-footer__social:hover { color: var(--color-link-hover-on-dark); }
 }
 
 @media (prefers-reduced-motion: reduce) {

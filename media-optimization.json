@@ -1,0 +1,2421 @@
+{
+  "schemaVersion": 1,
+  "stage": "10.2.3",
+  "createdAt": "2026-10-31T22:33:24.956Z",
+  "tool": {
+    "name": "FFmpeg/FFprobe",
+    "version": "9.0.2-essentials_build-www.gyan.dev",
+    "source": "https://ffmpeg.org/download.html",
+    "download": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+    "downloadSHA256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+    "installation": "Portable executables outside the repository; no application dependency."
+  },
+  "originals": {
+    "preservedInProject": false,
+    "externalVerifiedCopy": "C:/portfolio-backups/vncsmachado-media-originals-2026-10-31",
+    "algorithm": "SHA-256",
+    "verifiedFiles": 21,
+    "retainedInProject": [
+      "assets/images/vinicius-machado-retrato.jpg"
+    ]
+  },
+  "loading": {
+    "unchanged": true,
+    "videoRootMargin": "400px 0px",
+    "sourceAttribute": "data-src",
+    "initialPreload": "none"
+  },
+  "decisions": [
+    "All nine videos keep source video resolution, frame count, frame rate, colors and visual duration; unused audio is removed because demonstrations are silent.",
+    "Lossless WebP at original dimensions for infographics, wireframes, interface and brand panels.",
+    "Photo WebP quality 92; responsive cover widths 760/1240/2480/4096; desktop Hero widths 1240/2480.",
+    "Graduation photo 2040x1360 preserves 3:2 and supports the existing 340px square crop at 4x density (1360px height).",
+    "Stage 10.2.3: 21 replaced originals copied from the project to permanent external backup, SHA-256 verified, then removed individually; optimized media unchanged.",
+    "WebP is used for current Chrome/Edge/Firefox/Safari; original files remain available for rollback in permanent external backup.",
+    "The archived libero-capa.png is actually JPEG; its original name and bytes are preserved in external backup."
+  ],
+  "assets": [
+    {
+      "original": {
+        "path": "assets/videos/fluxo_1.mp4",
+        "bytes": 17890370,
+        "sha256": "019b6beb9da133b48a70d1a833dc1cfa8fe234c32bbb6ac1128f64ccc8cebd01",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 365,
+        "visualDurationSeconds": 12.166667,
+        "containerDurationSeconds": 12.167007,
+        "bitrate": 11753832,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_1.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_1-optimized.mp4",
+          "bytes": 991511,
+          "sha256": "d58da13cd734006d9a9445ac8b3619d671d6ce2c25ec235e344b0ba4dcf2bc16",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 365,
+          "durationSeconds": 12.166667,
+          "bitrate": 648623,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 18,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999383,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_2.mp4",
+        "bytes": 13588218,
+        "sha256": "15bbd4b3abee0c6a3dc098f9b3dcb078a4db593866feb203ce05303b019c9839",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 279,
+        "visualDurationSeconds": 9.3,
+        "containerDurationSeconds": 9.3,
+        "bitrate": 11677879,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_2.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_2-optimized.mp4",
+          "bytes": 700745,
+          "sha256": "31f492161421d322670ea39ffe30bcbb29a7ebd47d3742defb5cdc8a91a82cd8",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 279,
+          "durationSeconds": 9.3,
+          "bitrate": 599193,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 18,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999426,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_3.mp4",
+        "bytes": 17040109,
+        "sha256": "2d36c011bcee055359dc173f81ebe9ae3412a2fc0eaf150b72edbb7d2509c6af",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 348,
+        "visualDurationSeconds": 11.6,
+        "containerDurationSeconds": 11.6,
+        "bitrate": 11741795,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_3.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_3-optimized.mp4",
+          "bytes": 567234,
+          "sha256": "9c1d03439c988aeabf67f6c3a431c31380dd4b7d7ea0c2dfa5fe02fdbdd7190c",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 348,
+          "durationSeconds": 11.6,
+          "bitrate": 387720,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 18,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999569,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_4.mp4",
+        "bytes": 4559512,
+        "sha256": "5690e505cb5912f29c9be7782e0d8e29442f81b1cb741e8080e4dd15fd446c27",
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 370,
+        "visualDurationSeconds": 12.333333,
+        "containerDurationSeconds": 12.333333,
+        "bitrate": 2758778,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_4.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_4-optimized.mp4",
+          "bytes": 800550,
+          "sha256": "7e886f8328c47e98656559eb74617fbcff3142c7c4f2af526ea49a455b54271e",
+          "width": 1920,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 370,
+          "durationSeconds": 12.333333,
+          "bitrate": 515771,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 18,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999332,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_5.mp4",
+        "bytes": 12687527,
+        "sha256": "677d7cac3bee9419434d224a3c62f1ace55c8a7c0b6f1de5236f707366fada61",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 261,
+        "visualDurationSeconds": 8.7,
+        "containerDurationSeconds": 8.7,
+        "bitrate": 11655646,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_5.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_5-optimized.mp4",
+          "bytes": 691805,
+          "sha256": "9e4cb1fb035f471cd62c52345a060bb847b7d8ba826d1cdadd0cdea60228bf91",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 261,
+          "durationSeconds": 8.7,
+          "bitrate": 632634,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 17,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.99954,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "17",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_6.mp4",
+        "bytes": 33097215,
+        "sha256": "603030a56e60fe5be6aa6345cef60ff84fc9c35aee725c1f6393a59e258ae888",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 669,
+        "visualDurationSeconds": 22.3,
+        "containerDurationSeconds": 22.313991,
+        "bitrate": 11865802,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_6.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_6-optimized.mp4",
+          "bytes": 1522351,
+          "sha256": "36b42ab5f4fd3baa7e1589386448cf6631d6183f172ce0ac26c8594e92b232ae",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 669,
+          "durationSeconds": 22.3,
+          "bitrate": 543019,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 17,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999638,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "17",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/fluxo_7.mp4",
+        "bytes": 15189271,
+        "sha256": "973f8ea926bf123a7ec68467758acd6f96cf481b215f04934159cbf217a5a7bf",
+        "codec": "h264",
+        "width": 1916,
+        "height": 1080,
+        "fps": "30/1",
+        "frameCount": 311,
+        "visualDurationSeconds": 10.366667,
+        "containerDurationSeconds": 10.379002,
+        "bitrate": 11711047,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/fluxo_7.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/fluxo_7-optimized.mp4",
+          "bytes": 368678,
+          "sha256": "635a7947ca0398eff166a498a026e574fc7d0f1a51926e4bcfd35104d4cc5226",
+          "width": 1916,
+          "height": 1080,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 311,
+          "durationSeconds": 10.366667,
+          "bitrate": 280958,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 18,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999848,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "18",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/micro_1.mp4",
+        "bytes": 20641451,
+        "sha256": "3a84b94a8f7a8034c6c0f0dfe3c720be683a5c3ceebd68f7463dd01582f22e3e",
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "fps": "30/1",
+        "frameCount": 420,
+        "visualDurationSeconds": 14,
+        "containerDurationSeconds": 14.000998,
+        "bitrate": 11786100,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/micro_1.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/micro_1-optimized.mp4",
+          "bytes": 945141,
+          "sha256": "f0b3e73c6ee86ebd1d4ba92beaab86ebf5489cb1b165f6e26de8a5a7654b5cb8",
+          "width": 1080,
+          "height": 1920,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 420,
+          "durationSeconds": 14,
+          "bitrate": 536705,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 16,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999674,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "16",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/videos/micro_2.mp4",
+        "bytes": 10485870,
+        "sha256": "b65e3bc7e075ca1b84bcb4909c667889a7c28667b9ab4f92e32552653271e162",
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "fps": "30/1",
+        "frameCount": 217,
+        "visualDurationSeconds": 7.233333,
+        "containerDurationSeconds": 7.243991,
+        "bitrate": 11585775,
+        "audioCodec": "aac",
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/videos/micro_2.mp4"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/videos/micro_2-optimized.mp4",
+          "bytes": 585169,
+          "sha256": "23e38242652a95ed0e3baf0f793e01e2ab14d45475f563af7d10de6207a16e22",
+          "width": 1080,
+          "height": 1920,
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "fps": "30/1",
+          "frameCount": 217,
+          "durationSeconds": 7.233333,
+          "bitrate": 643367,
+          "profile": "High",
+          "level": 40,
+          "faststart": true,
+          "crf": 16,
+          "preset": "slow",
+          "audio": false,
+          "ssim": 0.999609,
+          "ffmpegOptions": [
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "slow",
+            "-crf",
+            "16",
+            "-pix_fmt",
+            "yuv420p",
+            "-profile:v",
+            "high",
+            "-level:v",
+            "4.0",
+            "-fps_mode",
+            "passthrough",
+            "-g",
+            "60",
+            "-threads",
+            "2",
+            "-movflags",
+            "+faststart"
+          ]
+        }
+      ],
+      "visualReview": {
+        "representativeFrames": [
+          0.2,
+          0.5,
+          0.8
+        ],
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-capa.png",
+        "bytes": 4140048,
+        "sha256": "fa280dd61c172585880a867fa2a356f581cc5c135ec57d0c0a74d566d498461d",
+        "codec": "mjpeg",
+        "width": 4096,
+        "height": 2731,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-capa.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-capa-760.webp",
+          "bytes": 52070,
+          "sha256": "199a45da8ce67c957fcab43d935adb5c6dd128e40cffefaaa083eb1e7770ca9f",
+          "width": 760,
+          "height": 507,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.97581,
+          "ffmpegOptions": [
+            "-vf",
+            "scale=760:-1:flags=lanczos",
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        },
+        {
+          "path": "assets/images/libero-capa-1240.webp",
+          "bytes": 106722,
+          "sha256": "f342fd16453929b38d011641732d09f051cb997f4a72d22aced2071be95ba0c2",
+          "width": 1240,
+          "height": 827,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.976444,
+          "ffmpegOptions": [
+            "-vf",
+            "scale=1240:-1:flags=lanczos",
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        },
+        {
+          "path": "assets/images/libero-capa-2480.webp",
+          "bytes": 284900,
+          "sha256": "c3a1bf83d4eaf8790cf016930e3e3c2171e7ac0c55de78cb22311ff4422706b6",
+          "width": 2480,
+          "height": 1654,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.971912,
+          "ffmpegOptions": [
+            "-vf",
+            "scale=2480:-1:flags=lanczos",
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        },
+        {
+          "path": "assets/images/libero-capa-optimized.webp",
+          "bytes": 576220,
+          "sha256": "acc198675d48457cbb1f96e966eed21f65aaf7d4922f988054ddd9d1a5f950f5",
+          "width": 4096,
+          "height": 2731,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.980988,
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-conflito-termometro.png",
+        "bytes": 176605,
+        "sha256": "1ebb366e0fb2f162c1e02a16ea292ba3c10ecc93af32b079d348947f9c86c719",
+        "codec": "png",
+        "width": 1920,
+        "height": 1080,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-conflito-termometro.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-conflito-termometro-optimized.webp",
+          "bytes": 34770,
+          "sha256": "a13a7db19667bb5df5a60ef91d2ebe16c540a82ed1ddfa07c77106a5393ad60a",
+          "width": 1920,
+          "height": 1080,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "7528758db2e5738808049ac48a1758864f9db1d9ce527cff78081b7e489ab389",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-contexto-bagagem.png",
+        "bytes": 212269,
+        "sha256": "e2b90099bd911e638f9b3b7659d04a7c1c34b8e12bbda3285162a1427e3054ce",
+        "codec": "png",
+        "width": 1920,
+        "height": 1080,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-contexto-bagagem.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-contexto-bagagem-optimized.webp",
+          "bytes": 59052,
+          "sha256": "1de168d271877f0df4041e1b9445c8ee301d577f3219c467ed55c5a8ce8757b6",
+          "width": 1920,
+          "height": 1080,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "cada9dfe47a2f3a0266a82ed46e31597d887481980bfd02eed97c455e252afd0",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-contexto-leveza.png",
+        "bytes": 135146,
+        "sha256": "c123e103d78415e1e7d705df83c1c3c4629fb90f80fd0a2c8fe862502d9c09ce",
+        "codec": "png",
+        "width": 1920,
+        "height": 1080,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-contexto-leveza.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-contexto-leveza-optimized.webp",
+          "bytes": 29670,
+          "sha256": "1456bb9f12917713021c28a6a72f18e7e450bcacc59203328f4d99dcc3b9ada0",
+          "width": 1920,
+          "height": 1080,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "9ffed880d980d4811bc0242b555e36ba50f3dac246d67e8dc09170488ee3c696",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-hero-desktop.png",
+        "bytes": 3738617,
+        "sha256": "1cd48c37db7539961491dba8b7a25f341c478ec5efaf283695f3adef35615b65",
+        "codec": "png",
+        "width": 2480,
+        "height": 1522,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-hero-desktop.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-hero-desktop-1240.webp",
+          "bytes": 96572,
+          "sha256": "4b461b7adc81bbcb2a909577ea42e90a12502d8c98d62dc5895fd4e0d6255360",
+          "width": 1240,
+          "height": 761,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.977855,
+          "ffmpegOptions": [
+            "-vf",
+            "scale=1240:-1:flags=lanczos",
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        },
+        {
+          "path": "assets/images/libero-hero-desktop-optimized.webp",
+          "bytes": 249118,
+          "sha256": "3438d7a962d9296422d00ddc02a179c93f79715b7b8a3d82bed4b8cf9f867892",
+          "width": 2480,
+          "height": 1522,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.973141,
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-hero-mobile.png",
+        "bytes": 523862,
+        "sha256": "5a191b8182d8e41ac82ea158cc7eca8af5c023e1a29c6624de0aaffd7b4a2f90",
+        "codec": "png",
+        "width": 760,
+        "height": 466,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-hero-mobile.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-hero-mobile-optimized.webp",
+          "bytes": 46610,
+          "sha256": "b0242815cf328f126e8256fac0e7424afddc16905613638038557838a152cd31",
+          "width": 760,
+          "height": 466,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.971722,
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-marca-interface.png",
+        "bytes": 658027,
+        "sha256": "57e4b3cd7f536f1ea1e2a67e6518d6cc27e4d8fca463865fce54ff388a6aed54",
+        "codec": "png",
+        "width": 4096,
+        "height": 2109,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-marca-interface.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-marca-interface-optimized.webp",
+          "bytes": 202014,
+          "sha256": "64b03dae746c188181035acee29a13f380d0471dd6608d7ab5a3b349d73f4c83",
+          "width": 4096,
+          "height": 2109,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "4c66c95a68265c1fcc49bf0f350131c991bc9016e2c2e5d14cd97f3b6495b93f",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-marca-moodboard.png",
+        "bytes": 3302100,
+        "sha256": "fd31ff4002c9932c18fb69e95c2778f753c36079b971ada08fc59c0849c009d3",
+        "codec": "png",
+        "width": 4096,
+        "height": 2124,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-marca-moodboard.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-marca-moodboard-optimized.webp",
+          "bytes": 1570358,
+          "sha256": "e89980acaad19adba6f8b7f961a992c7fd77cc4aa9139b6b48d12c76b0af6d16",
+          "width": 4096,
+          "height": 2124,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "a9e04e902dd7668d6a82366fd494c725f2f53ad95be13bf768ce18847b4dae32",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-solucao-plataforma.png",
+        "bytes": 3060840,
+        "sha256": "2b052e497eb8cb44c01c7c2017d5e523f55cc70f6e073faadcc9bf9fc3af9cd9",
+        "codec": "png",
+        "width": 4096,
+        "height": 1972,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-solucao-plataforma.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-solucao-plataforma-optimized.webp",
+          "bytes": 1151956,
+          "sha256": "fb2316588cdba4098e41037e02c25d0599407b4c9eae504c319e795db24a27ff",
+          "width": 4096,
+          "height": 1972,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "ebc4b38c102d424175e3cb7b9e6966eb38ba1032663dcc71e247c626416343a2",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-wireframes-motivos.png",
+        "bytes": 70201,
+        "sha256": "958e652d4068cd199929d4b5e2713d552f6b3a67aaaad5d80120c1f267e3fae0",
+        "codec": "png",
+        "width": 1240,
+        "height": 720,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-wireframes-motivos.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-wireframes-motivos-optimized.webp",
+          "bytes": 27362,
+          "sha256": "badef93e3248407437df205ee774001e41f1e72034266b7c290d3702a3dca6d1",
+          "width": 1240,
+          "height": 720,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "5c39a3a3bcc873fd753d83e1cd2a8e0cbf8ecc55b31c3309fe70e44f3e16eab1",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/libero-wireframes-navegacao.png",
+        "bytes": 80362,
+        "sha256": "87e6040c4c32c9e7d56b92b4a43c37fe2ab56cf3705494e1be87d0d5ecd74b1a",
+        "codec": "png",
+        "width": 1240,
+        "height": 720,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/libero-wireframes-navegacao.png"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/libero-wireframes-navegacao-optimized.webp",
+          "bytes": 32678,
+          "sha256": "034e6245d2c13c1405ca62568a4cc51af7e95670738e60dc2787d546f153d80f",
+          "width": 1240,
+          "height": 720,
+          "codec": "webp",
+          "pixelFormat": "argb",
+          "lossless": true,
+          "quality": 100,
+          "identicalDecodedRGBA": true,
+          "decodedRGBASha256": "29b77bf9c17e3c7b2063c726bb0e3ab9d7fb64588095ec1c6180d9fb7cc09e75",
+          "ffmpegOptions": [
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "1",
+            "-quality",
+            "100",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra",
+            "-threads",
+            "2"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Decoded RGBA hashes identical, including alpha."
+      }
+    },
+    {
+      "original": {
+        "path": "assets/images/vinicius-machado-formatura.jpg",
+        "bytes": 1995833,
+        "sha256": "1e69dd2c2a383d8fad5cbb04d4f9c4d43bdcce0e530fb23f74881ae626b0e9ed",
+        "codec": "mjpeg",
+        "width": 3648,
+        "height": 2432,
+        "storage": {
+          "status": "archived-removed-from-project",
+          "backupRelativePath": "assets/images/vinicius-machado-formatura.jpg"
+        }
+      },
+      "optimized": [
+        {
+          "path": "assets/images/vinicius-machado-formatura-2040.webp",
+          "bytes": 319194,
+          "sha256": "81ce8e767b14f2677a21cde3fb365db70ac42b23c562f73ff4fd0062249da637",
+          "width": 2040,
+          "height": 1360,
+          "codec": "webp",
+          "pixelFormat": "yuv420p",
+          "lossless": false,
+          "quality": 92,
+          "identicalDecodedRGBA": false,
+          "ssimAgainstScaledOriginal": 0.946565,
+          "ffmpegOptions": [
+            "-vf",
+            "scale=2040:1360:flags=lanczos",
+            "-frames:v",
+            "1",
+            "-c:v",
+            "libwebp",
+            "-lossless",
+            "0",
+            "-quality",
+            "92",
+            "-compression_level",
+            "6",
+            "-pix_fmt",
+            "bgra"
+          ]
+        }
+      ],
+      "visualReview": {
+        "notes": "Side-by-side original/optimized inspection; no perceptible regression at inspected display sizes."
+      }
+    }
+  ],
+  "retained": [
+    {
+      "path": "assets/images/vinicius-machado-retrato.jpg",
+      "bytes": 59301,
+      "sha256": "e7c83939221753a476f6c80ca19f069816d8c59a94e07b8b397f5b418e4864df",
+      "reason": "Small original portrait retained; avoid an unnecessary lossy re-encode."
+    }
+  ],
+  "validation": {
+    "validatedAt": "2026-10-31T22:56:16.333Z",
+    "quality": {
+      "videoSSIMRange": [
+        0.999332,
+        0.999848
+      ],
+      "allVideoFramesFPSResolutionVisualDurationPreserved": true,
+      "allVideoColorMetadataPreserved": true,
+      "representativeFramesInspectedPerVideo": 3,
+      "losslessImagesWithIdenticalDecodedRGBA": 8,
+      "heroPhotosConfirmedOpaque": [
+        {
+          "file": "assets/images/libero-hero-desktop.png",
+          "minAlpha": 255,
+          "maxAlpha": 255,
+          "nonOpaquePixels": 0
+        },
+        {
+          "file": "assets/images/libero-hero-mobile.png",
+          "minAlpha": 255,
+          "maxAlpha": 255,
+          "nonOpaquePixels": 0
+        }
+      ],
+      "visualReview": "27 pairs of representative video frames, native-size text/control crops, side-by-side photos and browser screenshots; no perceptible regression at inspected display sizes."
+    },
+    "browser": {
+      "engine": "Chrome headless",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "widths": [
+        320,
+        375,
+        412,
+        768,
+        1024,
+        1440
+      ],
+      "videoWidthCombinationsPassed": 54,
+      "videoFunctionalChecks": "Nine videos: near-only source activation once, visible autoplay, silent/inline/loop, offscreen pause, resume, rapid scroll, direct anchor, reduced motion and manual playback.",
+      "nativeKeyboardManualPlayback": [
+        0,
+        6,
+        7
+      ],
+      "layoutComparisonsPassed": 12,
+      "layoutDeltaTolerancePx": 0.1,
+      "overflowDetected": false,
+      "unexpectedBrowserErrors": 0,
+      "sidebarViewports": [
+        [
+          1024,
+          600
+        ],
+        [
+          1024,
+          768
+        ],
+        [
+          1024,
+          900
+        ],
+        [
+          1440,
+          600
+        ],
+        [
+          1440,
+          768
+        ],
+        [
+          1440,
+          900
+        ]
+      ],
+      "otherChecks": "Nine anchors, active indicator/Hero/Footer, sticky/static under 484px, image decoding, no-JS photos, source/autoplay failures, Home intro wheel/touch/keyboard and Home/Case navigation.",
+      "highDensityChecks": [
+        {
+          "width": 412,
+          "height": 823,
+          "dpr": 3,
+          "mobile": true,
+          "gesture": "touch",
+          "cover": "libero-capa-1240.webp",
+          "passed": true
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "dpr": 2,
+          "mobile": false,
+          "gesture": "wheel",
+          "cover": "libero-capa-2480.webp",
+          "passed": true
+        },
+        {
+          "width": 320,
+          "height": 823,
+          "dpr": 2,
+          "mobile": true,
+          "gesture": "keyboard",
+          "cover": "libero-capa-760.webp",
+          "passed": true
+        }
+      ],
+      "physicalDevicesAndOtherBrowsers": "Not tested"
+    },
+    "integrity": {
+      "checks": [
+        {
+          "file": "index.html",
+          "onlyMediaAttributesChanged": true
+        },
+        {
+          "file": "cases/libero.html",
+          "onlyMediaAttributesChanged": true
+        }
+      ],
+      "unchangedOriginalFiles": 45,
+      "verifiedExternalCopies": 22,
+      "allNewMediaHashesVerified": true,
+      "allExistingCSSAndJavaScriptUnchanged": true
+    },
+    "performance": {
+      "lighthouseVersion": "12.8.2",
+      "coldRunsPerPageProfile": 3,
+      "conditions": {
+        "mobile": {
+          "viewport": [
+            412,
+            823
+          ],
+          "throughputKbps": 1638.4,
+          "rttMs": 150,
+          "cpuSlowdown": 4
+        },
+        "desktop": {
+          "viewport": [
+            1440,
+            900
+          ],
+          "throughputKbps": 10240,
+          "rttMs": 40,
+          "cpuSlowdown": 1
+        }
+      },
+      "lighthouseThrottling": "simulate; independent clean Chrome profiles",
+      "summary": [
+        {
+          "device": "mobile",
+          "route": "/index.html",
+          "runs": 3,
+          "transfer": {
+            "median": 234669,
+            "min": 234661,
+            "max": 234687
+          },
+          "LCP": {
+            "median": 2693.5929999999994,
+            "min": 2655.0995,
+            "max": 2813.3544999999995
+          },
+          "CLS": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "TBT": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "FCP": {
+            "median": 2370.1528000000003,
+            "min": 2250.4755,
+            "max": 2535.4019999999996
+          },
+          "videoRequests": [
+            0,
+            0,
+            0
+          ],
+          "actualImageFiles": [
+            [
+              "vinicius-machado.svg",
+              "libero-capa-760.webp",
+              "libero-separador.svg"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-capa-760.webp",
+              "libero-separador.svg"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-capa-760.webp",
+              "libero-separador.svg"
+            ]
+          ],
+          "previousStage": {
+            "transferBytes": 4322375,
+            "LCPms": 22848.734
+          },
+          "transferReductionPercent": 94.57083200786604
+        },
+        {
+          "device": "mobile",
+          "route": "/cases/libero.html",
+          "runs": 3,
+          "transfer": {
+            "median": 353261,
+            "min": 353258,
+            "max": 353268
+          },
+          "LCP": {
+            "median": 3028.0895,
+            "min": 2503.33,
+            "max": 5563.707549999999
+          },
+          "CLS": {
+            "median": 0.0001582027933335576,
+            "min": 0,
+            "max": 0.0001582027933335576
+          },
+          "TBT": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "FCP": {
+            "median": 2503.33,
+            "min": 2482.8514999999998,
+            "max": 5563.707549999999
+          },
+          "videoRequests": [
+            0,
+            0,
+            0
+          ],
+          "actualImageFiles": [
+            [
+              "vinicius-machado.svg",
+              "libero-hero-mobile-optimized.webp",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-hero-mobile-optimized.webp",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-hero-mobile-optimized.webp",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp"
+            ]
+          ],
+          "previousStage": {
+            "transferBytes": 1088925,
+            "LCPms": 6059.3370358860075
+          },
+          "transferReductionPercent": 67.55873912344744
+        },
+        {
+          "device": "desktop",
+          "route": "/index.html",
+          "runs": 3,
+          "transfer": {
+            "median": 289314,
+            "min": 289312,
+            "max": 289320
+          },
+          "LCP": {
+            "median": 787.2539999999999,
+            "min": 713.96575,
+            "max": 792.7755
+          },
+          "CLS": {
+            "median": 0.00002349537037037037,
+            "min": 0.00002349537037037037,
+            "max": 0.00002349537037037037
+          },
+          "TBT": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "FCP": {
+            "median": 787.2539999999999,
+            "min": 713.96575,
+            "max": 792.7755
+          },
+          "videoRequests": [
+            0,
+            0,
+            0
+          ],
+          "actualImageFiles": [
+            [
+              "vinicius-machado.svg",
+              "libero-capa-1240.webp",
+              "libero-separador.svg"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-capa-1240.webp",
+              "libero-separador.svg"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-capa-1240.webp",
+              "libero-separador.svg"
+            ]
+          ],
+          "previousStage": {
+            "transferBytes": 4322375,
+            "LCPms": 3855.241
+          },
+          "transferReductionPercent": 93.30659648919864
+        },
+        {
+          "device": "desktop",
+          "route": "/cases/libero.html",
+          "runs": 3,
+          "transfer": {
+            "median": 438617,
+            "min": 438616,
+            "max": 438625
+          },
+          "LCP": {
+            "median": 772.8292419918155,
+            "min": 733.739,
+            "max": 792.5878894297508
+          },
+          "CLS": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "TBT": {
+            "median": 0,
+            "min": 0,
+            "max": 0
+          },
+          "FCP": {
+            "median": 772.8292419918155,
+            "min": 733.739,
+            "max": 792.5878894297508
+          },
+          "videoRequests": [
+            0,
+            0,
+            0
+          ],
+          "actualImageFiles": [
+            [
+              "vinicius-machado.svg",
+              "libero-hero-desktop-1240.webp",
+              "libero-voltar.svg",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp",
+              "libero-conflito-termometro-optimized.webp"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-hero-desktop-1240.webp",
+              "libero-voltar.svg",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp",
+              "libero-conflito-termometro-optimized.webp"
+            ],
+            [
+              "vinicius-machado.svg",
+              "libero-hero-desktop-1240.webp",
+              "libero-voltar.svg",
+              "libero-voltar.svg",
+              "libero-contexto-bagagem-optimized.webp",
+              "libero-contexto-leveza-optimized.webp",
+              "libero-conflito-termometro-optimized.webp"
+            ]
+          ],
+          "previousStage": {
+            "transferBytes": 4480911,
+            "LCPms": 3541.3813655038275
+          },
+          "transferReductionPercent": 90.21143245201701
+        }
+      ],
+      "interpretation": "Previous stage numbers are individual runs; current values are medians of three. Home Lighthouse does not dismiss the intro. Mobile Case LCP ranged from 2.50 to 5.56 seconds; the slow run included Adobe font transfers around 3.18 seconds. Do not attribute all LCP variation to media compression."
+    },
+    "videoNetwork": {
+      "method": "Actual Chrome DevTools network/CPU throttling. Same optimized images in both modes; temporary test server switches only MP4 content between original and optimized files. Three valid cold starts per mode/profile.",
+      "summary": [
+        {
+          "device": "mobile",
+          "mode": "original-video",
+          "validColdStarts": 3,
+          "firstPlayingLatencyMs": {
+            "median": 3167.7000000476837,
+            "min": 3032.2000000476837,
+            "max": 3474.100000143051
+          },
+          "initialVideoRequests": [
+            0,
+            0,
+            0
+          ],
+          "solutionTour": null
+        },
+        {
+          "device": "mobile",
+          "mode": "optimized",
+          "validColdStarts": 3,
+          "firstPlayingLatencyMs": {
+            "median": 2068.2000000476837,
+            "min": 1909.2999999523163,
+            "max": 2132
+          },
+          "initialVideoRequests": [
+            0,
+            0,
+            0
+          ],
+          "solutionTour": {
+            "bytes": 5406755,
+            "requests": 10
+          }
+        },
+        {
+          "device": "desktop",
+          "mode": "original-video",
+          "validColdStarts": 3,
+          "firstPlayingLatencyMs": {
+            "median": 1022.7999999523163,
+            "min": 858.8999998569489,
+            "max": 2033.4000000953674
+          },
+          "initialVideoRequests": [
+            0,
+            0,
+            0
+          ],
+          "solutionTour": {
+            "bytes": 85713307,
+            "requests": 27
+          }
+        },
+        {
+          "device": "desktop",
+          "mode": "optimized",
+          "validColdStarts": 3,
+          "firstPlayingLatencyMs": {
+            "median": 504.5,
+            "min": 375.5,
+            "max": 548.3999998569489
+          },
+          "initialVideoRequests": [
+            0,
+            0,
+            0
+          ],
+          "solutionTour": {
+            "bytes": 7160716,
+            "requests": 10
+          }
+        }
+      ],
+      "tourProtocol": "One run per mode/profile: DOM order, center each video, wait until ready/playing, watch 1 second, settle 1 second after ninth. Transfer is encoded CDP bytes received, not declared Content-Length; completed requests include headers, in-flight requests include received bodies.",
+      "limitations": [
+        {
+          "device": "mobile",
+          "mode": "original-video",
+          "run": 1,
+          "error": "Error: Tour video 7 did not start"
+        }
+      ],
+      "interpretation": "Original mobile tour exceeded the 90-second polling budget at micro_2; no complete before-tour transfer is reported. Original first-start measurement was retried without a tour to obtain three valid control starts.",
+      "additionalTotalResourceTours": {
+        "method": "Actual throttled network; one complete traversal per profile. Same DOM-order protocol: wait for playback, watch one second per video, settle one second after ninth. These independent samples supplement the planned three cold-start measurements; they are not included in those medians.",
+        "samples": [
+          {
+            "device": "mobile",
+            "initialBytes": 264144,
+            "additionalTourBytes": 6513027,
+            "totalBytesAtTourEnd": 6777171,
+            "videoBytesAtTourEnd": 5412755,
+            "initialVideoRequests": 0,
+            "unexpectedErrors": 0
+          },
+          {
+            "device": "desktop",
+            "initialBytes": 373787,
+            "additionalTourBytes": 8359250,
+            "totalBytesAtTourEnd": 8733037,
+            "videoBytesAtTourEnd": 7174216,
+            "initialVideoRequests": 0,
+            "unexpectedErrors": 0
+          }
+        ]
+      }
+    },
+    "stage": "10.2.2"
+  },
+  "cleanup": {
+    "performed": true,
+    "completedAt": "2026-10-31T23:16:18.949Z",
+    "backup": {
+      "directory": "C:/portfolio-backups/vncsmachado-media-originals-2026-10-31",
+      "outsideRepository": true,
+      "algorithm": "SHA-256",
+      "verifiedFiles": 21,
+      "manifestFile": "backup-manifest-20261031-231521-978.json",
+      "originalOptimizationManifest": {
+        "path": "media-optimization-before-cleanup-cb8bdefd37b5.json",
+        "sha256": "cb8bdefd37b5fc1d5ac01f70473bb74be8893c3be2b9c5d7ea825c66ec857a8c"
+      },
+      "manifestSHA256": "1cde53a60e346ed4fb25aeab98aad584661b751b9824389020a2ae73944cfd7f"
+    },
+    "removedOriginals": [
+      {
+        "path": "assets/videos/fluxo_1.mp4",
+        "bytes": 17890370,
+        "sha256": "019b6beb9da133b48a70d1a833dc1cfa8fe234c32bbb6ac1128f64ccc8cebd01",
+        "backupRelativePath": "assets/videos/fluxo_1.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_1-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_2.mp4",
+        "bytes": 13588218,
+        "sha256": "15bbd4b3abee0c6a3dc098f9b3dcb078a4db593866feb203ce05303b019c9839",
+        "backupRelativePath": "assets/videos/fluxo_2.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_2-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_3.mp4",
+        "bytes": 17040109,
+        "sha256": "2d36c011bcee055359dc173f81ebe9ae3412a2fc0eaf150b72edbb7d2509c6af",
+        "backupRelativePath": "assets/videos/fluxo_3.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_3-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_4.mp4",
+        "bytes": 4559512,
+        "sha256": "5690e505cb5912f29c9be7782e0d8e29442f81b1cb741e8080e4dd15fd446c27",
+        "backupRelativePath": "assets/videos/fluxo_4.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_4-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_5.mp4",
+        "bytes": 12687527,
+        "sha256": "677d7cac3bee9419434d224a3c62f1ace55c8a7c0b6f1de5236f707366fada61",
+        "backupRelativePath": "assets/videos/fluxo_5.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_5-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_6.mp4",
+        "bytes": 33097215,
+        "sha256": "603030a56e60fe5be6aa6345cef60ff84fc9c35aee725c1f6393a59e258ae888",
+        "backupRelativePath": "assets/videos/fluxo_6.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_6-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/fluxo_7.mp4",
+        "bytes": 15189271,
+        "sha256": "973f8ea926bf123a7ec68467758acd6f96cf481b215f04934159cbf217a5a7bf",
+        "backupRelativePath": "assets/videos/fluxo_7.mp4",
+        "optimizedPaths": [
+          "assets/videos/fluxo_7-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/micro_1.mp4",
+        "bytes": 20641451,
+        "sha256": "3a84b94a8f7a8034c6c0f0dfe3c720be683a5c3ceebd68f7463dd01582f22e3e",
+        "backupRelativePath": "assets/videos/micro_1.mp4",
+        "optimizedPaths": [
+          "assets/videos/micro_1-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/videos/micro_2.mp4",
+        "bytes": 10485870,
+        "sha256": "b65e3bc7e075ca1b84bcb4909c667889a7c28667b9ab4f92e32552653271e162",
+        "backupRelativePath": "assets/videos/micro_2.mp4",
+        "optimizedPaths": [
+          "assets/videos/micro_2-optimized.mp4"
+        ]
+      },
+      {
+        "path": "assets/images/libero-capa.png",
+        "bytes": 4140048,
+        "sha256": "fa280dd61c172585880a867fa2a356f581cc5c135ec57d0c0a74d566d498461d",
+        "backupRelativePath": "assets/images/libero-capa.png",
+        "optimizedPaths": [
+          "assets/images/libero-capa-760.webp",
+          "assets/images/libero-capa-1240.webp",
+          "assets/images/libero-capa-2480.webp",
+          "assets/images/libero-capa-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-conflito-termometro.png",
+        "bytes": 176605,
+        "sha256": "1ebb366e0fb2f162c1e02a16ea292ba3c10ecc93af32b079d348947f9c86c719",
+        "backupRelativePath": "assets/images/libero-conflito-termometro.png",
+        "optimizedPaths": [
+          "assets/images/libero-conflito-termometro-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-contexto-bagagem.png",
+        "bytes": 212269,
+        "sha256": "e2b90099bd911e638f9b3b7659d04a7c1c34b8e12bbda3285162a1427e3054ce",
+        "backupRelativePath": "assets/images/libero-contexto-bagagem.png",
+        "optimizedPaths": [
+          "assets/images/libero-contexto-bagagem-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-contexto-leveza.png",
+        "bytes": 135146,
+        "sha256": "c123e103d78415e1e7d705df83c1c3c4629fb90f80fd0a2c8fe862502d9c09ce",
+        "backupRelativePath": "assets/images/libero-contexto-leveza.png",
+        "optimizedPaths": [
+          "assets/images/libero-contexto-leveza-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-hero-desktop.png",
+        "bytes": 3738617,
+        "sha256": "1cd48c37db7539961491dba8b7a25f341c478ec5efaf283695f3adef35615b65",
+        "backupRelativePath": "assets/images/libero-hero-desktop.png",
+        "optimizedPaths": [
+          "assets/images/libero-hero-desktop-1240.webp",
+          "assets/images/libero-hero-desktop-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-hero-mobile.png",
+        "bytes": 523862,
+        "sha256": "5a191b8182d8e41ac82ea158cc7eca8af5c023e1a29c6624de0aaffd7b4a2f90",
+        "backupRelativePath": "assets/images/libero-hero-mobile.png",
+        "optimizedPaths": [
+          "assets/images/libero-hero-mobile-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-marca-interface.png",
+        "bytes": 658027,
+        "sha256": "57e4b3cd7f536f1ea1e2a67e6518d6cc27e4d8fca463865fce54ff388a6aed54",
+        "backupRelativePath": "assets/images/libero-marca-interface.png",
+        "optimizedPaths": [
+          "assets/images/libero-marca-interface-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-marca-moodboard.png",
+        "bytes": 3302100,
+        "sha256": "fd31ff4002c9932c18fb69e95c2778f753c36079b971ada08fc59c0849c009d3",
+        "backupRelativePath": "assets/images/libero-marca-moodboard.png",
+        "optimizedPaths": [
+          "assets/images/libero-marca-moodboard-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-solucao-plataforma.png",
+        "bytes": 3060840,
+        "sha256": "2b052e497eb8cb44c01c7c2017d5e523f55cc70f6e073faadcc9bf9fc3af9cd9",
+        "backupRelativePath": "assets/images/libero-solucao-plataforma.png",
+        "optimizedPaths": [
+          "assets/images/libero-solucao-plataforma-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-wireframes-motivos.png",
+        "bytes": 70201,
+        "sha256": "958e652d4068cd199929d4b5e2713d552f6b3a67aaaad5d80120c1f267e3fae0",
+        "backupRelativePath": "assets/images/libero-wireframes-motivos.png",
+        "optimizedPaths": [
+          "assets/images/libero-wireframes-motivos-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/libero-wireframes-navegacao.png",
+        "bytes": 80362,
+        "sha256": "87e6040c4c32c9e7d56b92b4a43c37fe2ab56cf3705494e1be87d0d5ecd74b1a",
+        "backupRelativePath": "assets/images/libero-wireframes-navegacao.png",
+        "optimizedPaths": [
+          "assets/images/libero-wireframes-navegacao-optimized.webp"
+        ]
+      },
+      {
+        "path": "assets/images/vinicius-machado-formatura.jpg",
+        "bytes": 1995833,
+        "sha256": "1e69dd2c2a383d8fad5cbb04d4f9c4d43bdcce0e530fb23f74881ae626b0e9ed",
+        "backupRelativePath": "assets/images/vinicius-machado-formatura.jpg",
+        "optimizedPaths": [
+          "assets/images/vinicius-machado-formatura-2040.webp"
+        ]
+      }
+    ],
+    "retainedOriginals": [
+      "assets/images/vinicius-machado-retrato.jpg"
+    ],
+    "activeMedia": [
+      {
+        "path": "assets/videos/fluxo_1-optimized.mp4",
+        "bytes": 991511,
+        "sha256": "d58da13cd734006d9a9445ac8b3619d671d6ce2c25ec235e344b0ba4dcf2bc16"
+      },
+      {
+        "path": "assets/videos/fluxo_2-optimized.mp4",
+        "bytes": 700745,
+        "sha256": "31f492161421d322670ea39ffe30bcbb29a7ebd47d3742defb5cdc8a91a82cd8"
+      },
+      {
+        "path": "assets/videos/fluxo_3-optimized.mp4",
+        "bytes": 567234,
+        "sha256": "9c1d03439c988aeabf67f6c3a431c31380dd4b7d7ea0c2dfa5fe02fdbdd7190c"
+      },
+      {
+        "path": "assets/videos/fluxo_4-optimized.mp4",
+        "bytes": 800550,
+        "sha256": "7e886f8328c47e98656559eb74617fbcff3142c7c4f2af526ea49a455b54271e"
+      },
+      {
+        "path": "assets/videos/fluxo_5-optimized.mp4",
+        "bytes": 691805,
+        "sha256": "9e4cb1fb035f471cd62c52345a060bb847b7d8ba826d1cdadd0cdea60228bf91"
+      },
+      {
+        "path": "assets/videos/fluxo_6-optimized.mp4",
+        "bytes": 1522351,
+        "sha256": "36b42ab5f4fd3baa7e1589386448cf6631d6183f172ce0ac26c8594e92b232ae"
+      },
+      {
+        "path": "assets/videos/fluxo_7-optimized.mp4",
+        "bytes": 368678,
+        "sha256": "635a7947ca0398eff166a498a026e574fc7d0f1a51926e4bcfd35104d4cc5226"
+      },
+      {
+        "path": "assets/videos/micro_1-optimized.mp4",
+        "bytes": 945141,
+        "sha256": "f0b3e73c6ee86ebd1d4ba92beaab86ebf5489cb1b165f6e26de8a5a7654b5cb8"
+      },
+      {
+        "path": "assets/videos/micro_2-optimized.mp4",
+        "bytes": 585169,
+        "sha256": "23e38242652a95ed0e3baf0f793e01e2ab14d45475f563af7d10de6207a16e22"
+      },
+      {
+        "path": "assets/images/libero-capa-760.webp",
+        "bytes": 52070,
+        "sha256": "199a45da8ce67c957fcab43d935adb5c6dd128e40cffefaaa083eb1e7770ca9f"
+      },
+      {
+        "path": "assets/images/libero-capa-1240.webp",
+        "bytes": 106722,
+        "sha256": "f342fd16453929b38d011641732d09f051cb997f4a72d22aced2071be95ba0c2"
+      },
+      {
+        "path": "assets/images/libero-capa-2480.webp",
+        "bytes": 284900,
+        "sha256": "c3a1bf83d4eaf8790cf016930e3e3c2171e7ac0c55de78cb22311ff4422706b6"
+      },
+      {
+        "path": "assets/images/libero-capa-optimized.webp",
+        "bytes": 576220,
+        "sha256": "acc198675d48457cbb1f96e966eed21f65aaf7d4922f988054ddd9d1a5f950f5"
+      },
+      {
+        "path": "assets/images/libero-conflito-termometro-optimized.webp",
+        "bytes": 34770,
+        "sha256": "a13a7db19667bb5df5a60ef91d2ebe16c540a82ed1ddfa07c77106a5393ad60a"
+      },
+      {
+        "path": "assets/images/libero-contexto-bagagem-optimized.webp",
+        "bytes": 59052,
+        "sha256": "1de168d271877f0df4041e1b9445c8ee301d577f3219c467ed55c5a8ce8757b6"
+      },
+      {
+        "path": "assets/images/libero-contexto-leveza-optimized.webp",
+        "bytes": 29670,
+        "sha256": "1456bb9f12917713021c28a6a72f18e7e450bcacc59203328f4d99dcc3b9ada0"
+      },
+      {
+        "path": "assets/images/libero-hero-desktop-1240.webp",
+        "bytes": 96572,
+        "sha256": "4b461b7adc81bbcb2a909577ea42e90a12502d8c98d62dc5895fd4e0d6255360"
+      },
+      {
+        "path": "assets/images/libero-hero-desktop-optimized.webp",
+        "bytes": 249118,
+        "sha256": "3438d7a962d9296422d00ddc02a179c93f79715b7b8a3d82bed4b8cf9f867892"
+      },
+      {
+        "path": "assets/images/libero-hero-mobile-optimized.webp",
+        "bytes": 46610,
+        "sha256": "b0242815cf328f126e8256fac0e7424afddc16905613638038557838a152cd31"
+      },
+      {
+        "path": "assets/images/libero-marca-interface-optimized.webp",
+        "bytes": 202014,
+        "sha256": "64b03dae746c188181035acee29a13f380d0471dd6608d7ab5a3b349d73f4c83"
+      },
+      {
+        "path": "assets/images/libero-marca-moodboard-optimized.webp",
+        "bytes": 1570358,
+        "sha256": "e89980acaad19adba6f8b7f961a992c7fd77cc4aa9139b6b48d12c76b0af6d16"
+      },
+      {
+        "path": "assets/images/libero-solucao-plataforma-optimized.webp",
+        "bytes": 1151956,
+        "sha256": "fb2316588cdba4098e41037e02c25d0599407b4c9eae504c319e795db24a27ff"
+      },
+      {
+        "path": "assets/images/libero-wireframes-motivos-optimized.webp",
+        "bytes": 27362,
+        "sha256": "badef93e3248407437df205ee774001e41f1e72034266b7c290d3702a3dca6d1"
+      },
+      {
+        "path": "assets/images/libero-wireframes-navegacao-optimized.webp",
+        "bytes": 32678,
+        "sha256": "034e6245d2c13c1405ca62568a4cc51af7e95670738e60dc2787d546f153d80f"
+      },
+      {
+        "path": "assets/images/vinicius-machado-formatura-2040.webp",
+        "bytes": 319194,
+        "sha256": "81ce8e767b14f2677a21cde3fb365db70ac42b23c562f73ff4fd0062249da637"
+      },
+      {
+        "path": "assets/images/vinicius-machado-retrato.jpg",
+        "bytes": 59301,
+        "sha256": "e7c83939221753a476f6c80ca19f069816d8c59a94e07b8b397f5b418e4864df"
+      }
+    ],
+    "totals": {
+      "scope": "All files under assets/, including CSS, JavaScript, PDF and seven .gitkeep placeholders; decimal bytes.",
+      "beforeBytes": 175485434,
+      "afterBytes": 12211981,
+      "removedBytes": 163273453,
+      "beforeFiles": 66,
+      "afterFiles": 45,
+      "retainedUsefulFilesExcludingPlaceholders": 38
+    },
+    "validation": {
+      "status": "passed",
+      "validatedAt": "2026-10-31T23:19:44.149Z",
+      "browser": "Chrome headless, local HTTP with Range support; cache disabled in video/layout/functional checks",
+      "widths": [
+        320,
+        375,
+        412,
+        768,
+        1024,
+        1440
+      ],
+      "desktopMenuViewports": [
+        {
+          "width": 1024,
+          "height": 600
+        },
+        {
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "width": 1024,
+          "height": 900
+        },
+        {
+          "width": 1440,
+          "height": 600
+        },
+        {
+          "width": 1440,
+          "height": 768
+        },
+        {
+          "width": 1440,
+          "height": 900
+        }
+      ],
+      "videos": {
+        "files": 9,
+        "widthVideoStates": 54,
+        "noDistantRequests": true,
+        "loadOnlyWithin400px": true,
+        "loadOncePerElement": true,
+        "autoplayVisibleOnly": true,
+        "mutedLoopPlaysinline": true,
+        "pausedOutsideViewport": true,
+        "resumeOnReturn": true,
+        "reducedMotionManualPlaybackAllNine": true,
+        "keyboardPlaybackChecked": [
+          0,
+          6,
+          7
+        ],
+        "fastScrollAndDirectAnchor": true
+      },
+      "images": {
+        "decoded": true,
+        "homeDeferredPhotos": true,
+        "noScriptHomeAndCase": true,
+        "responsiveHighDensitySources": true,
+        "layoutComparisons": 12,
+        "geometryDifferences": 0,
+        "screenshotComparisons": [
+          {
+            "page": "case-412",
+            "identicalToStage1022Screenshot": true
+          },
+          {
+            "page": "case-1440",
+            "identicalToStage1022Screenshot": true
+          },
+          {
+            "page": "home-412",
+            "identicalToStage1022Screenshot": true
+          },
+          {
+            "page": "home-1440",
+            "identicalToStage1022Screenshot": true
+          }
+        ]
+      },
+      "navigation": {
+        "nineAnchors": true,
+        "heroNoActiveItem": true,
+        "footerConclusionActive": true,
+        "stickyNoInternalScrolling": true,
+        "shortViewportStatic": true,
+        "homeCaseNavigation": true,
+        "introWheelTouchKeyboard": true,
+        "pdfNewTabAndHTTP200": true,
+        "emailClipboardMouseEnterSpaceAndFeedback": true,
+        "socialDestinationsAndSecurityAttributes": true
+      },
+      "network": {
+        "removedResourceRequests": 0,
+        "browserErrors": 0
+      },
+      "integrity": {
+        "backedUpOriginals": 21,
+        "originalOptimizationManifestVerified": true,
+        "optimizedFiles": 25,
+        "retainedPortraitVerified": true,
+        "checkedLocalReferences": 80,
+        "brokenLocalReferences": 0,
+        "htmlCSSJavaScriptUnchanged": true,
+        "unexpectedProjectFiles": 0
+      },
+      "limitations": [
+        "Desktop Chrome with mobile viewport/touch emulation; physical devices and other browser engines not tested.",
+        "External social destinations and link attributes checked; remote authenticated profile availability not assessed.",
+        "No new Lighthouse run: this stage removes unreferenced files and does not change active loading or media bytes."
+      ]
+    },
+    "note": "Historical optimization measurements in validation are retained from stage 10.2.2. Active media are listed in cleanup.activeMedia; assets[].original records describe externally archived provenance, not deployable resource paths."
+  },
+  "updatedAt": "2026-10-31T23:16:18.947Z"
+}
