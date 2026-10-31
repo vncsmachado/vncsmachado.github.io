@@ -17,8 +17,9 @@ Arquivo Figma `RXlxl9DLCRFMvs9gVWFD9k`, desktop `507:332` e mobile `507:176`. Co
 - Diagnóstico: `507:361` (desktop) e `507:219` (mobile); Conflito: `507:472` e `507:222`.
 - Hero: `507:340` (desktop) e `507:184` (mobile), com metadados, contexto e screenshots dos dois nós.
 - Decisão: `609:121` no desktop; `507:230` e `507:237` como referências responsivas. O grupo termina no quarto trade-off, antes da seção Solução.
+- Solução: grupo desktop `609:122`, com os nós `507:386`, `507:391`, `507:401` e `507:414`; referências de composição mobile `507:252`, `507:257`, `507:267` e `507:280`. Termina no vídeo `507:418`, antes de Estratégia.
 
-A Hero e os detalhes do projeto aparecem antes do Contexto. O título original da Hero é o único `h1` da página. As seções posteriores à Decisão e o Footer ainda não foram implementados; não há placeholders para elas.
+A Hero e os detalhes do projeto aparecem antes do Contexto. O título original da Hero é o único `h1` da página. Solução inclui os textos desktop, a imagem e os nove vídeos originais locais. As seções posteriores à Solução e o Footer ainda não foram implementados; não há placeholders para elas.
 
 ## Layout e tipografia
 
@@ -30,13 +31,12 @@ A Hero e os detalhes do projeto aparecem antes do Contexto. O título original d
 
 ## Menu e próximas âncoras
 
-Contexto, Diagnóstico e Decisão são links nativos funcionais para `#contexto`, `#diagnostico` e `#decisao`, com smooth scroll e exceção para movimento reduzido. Conflito pertence à seção Diagnóstico e mantém esse item ativo. `IntersectionObserver` acompanha as seções reais e atualiza `aria-current="location"`; não depende de clique. A faixa de observação vai de 12% a 13% da altura da viewport. Enquanto Contexto estiver abaixo dessa faixa, nenhum item fica ativo; retornar à Hero também limpa a seleção. A Hero não foi adicionada ao menu. Sem suporte à API, os links nativos continuam funcionando sem indicação automática de seção ativa.
+Contexto, Diagnóstico, Decisão e Solução são links nativos funcionais para `#contexto`, `#diagnostico`, `#decisao` e `#solucao`, com smooth scroll e exceção para movimento reduzido. Conflito pertence à seção Diagnóstico e mantém esse item ativo. `IntersectionObserver` acompanha as seções reais e atualiza `aria-current="location"`; não depende de clique. A faixa de observação vai de 12% a 13% da altura da viewport. Enquanto Contexto estiver abaixo dessa faixa, nenhum item fica ativo; retornar à Hero também limpa a seleção. A Hero não foi adicionada ao menu. Sem suporte à API, os links nativos continuam funcionando sem indicação automática de seção ativa.
 
 Os demais rótulos mantêm a aparência cinza do Figma e usam `aria-disabled="true"`, sem `href` para um destino inexistente. Não entram na sequência de Tab. `data-section` prepara a associação; ao adicionar uma seção real com o ID correspondente, o script ativa seu link e passa a observá-la. Ao implementar cada seção, adicionar também seu `href` no HTML para preservar a navegação sem JavaScript.
 
 | Rótulo | ID futuro | Nó principal desktop |
 |---|---|---|
-| Solução | `solucao` | `609:122` |
 | Estratégia | `estrategia` | `507:419` (incluir Estrutura do serviço `507:422`) |
 | Wireframes | `wireframes` | `507:425` (avaliar agrupamento com Marca `507:435`) |
 | Resultados | `resultados` | `507:443` (incluir Limitações `507:446`) |
@@ -100,4 +100,38 @@ Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: imagens e fontes carregad
 - Chrome headless: 320, 375, 412, 768, 1024 e 1440 px, com os 13 blocos textuais comparados automaticamente ao nó desktop, destaques conferidos, fontes efetivas verificadas e screenshots desktop/mobile inspecionadas. Nenhum overflow horizontal, sobreposição ou erro de carregamento. Todos os elementos da Hero, Contexto, Diagnóstico e menu mantiveram suas posições e dimensões anteriores, sem deslocamentos.
 - Menu conferido com barras nativas do Chrome visíveis em 1024/1440 × 600/768/900 px: largura útil 138 px, sticky a 32 px, todos os rótulos visíveis e nenhuma rolagem interna. Validados cliques nas três âncoras, destaque por scroll nas duas direções, ausência de seleção durante a Hero, foco por Tab/Enter em Decisão, movimento reduzido, entrada direta por hash e adaptação estática em 400 px de altura. Home, JavaScript, assets e regras CSS anteriores preservados.
 
-Próxima seção de conteúdo: Solução. Nenhum commit ou push realizado.
+### Solução — etapa 8.4
+
+- Implementados todos os textos e destaques desktop em uma única estrutura HTML: “Solução proposta”, “Dois caminhos para reduzir ambiguidade logo no início”, “Conjuntos por loja para reduzir fragmentação e sobrecarga cognitiva” e “Mais previsibilidade na reserva e no acompanhamento do serviço”. Nenhum conteúdo de Estratégia incorporado.
+- Título principal Bold 24 px e subtítulos Bold 20 px com entrelinha normal; parágrafos Roman/Bold 16/24 px. Intervalos do Auto Layout: 48 px entre os quatro blocos, 16 px dentro de cada bloco e 24 px entre os parágrafos da apresentação e da reserva. Após Decisão: 51 px no desktop e 48 px no mobile. Sem alturas fixas, margens negativas ou compensações tipográficas.
+- Imagem original `../assets/images/libero-solucao-plataforma.png`, PNG 4096 × 1972, baixada pelo URL fornecido por `get_design_context`. Slots de 824 × 450 no desktop e 380 × 209 no mobile; recorte central com `object-fit: cover`, conforme preenchimento FILL do Figma. Nas larguras intermediárias, o slot acompanha a largura da coluna sem alterar o conteúdo textual.
+- Link nativo `#solucao` habilitado também sem JavaScript. O observador existente reconhece a quarta seção automaticamente; `libero.js` não foi alterado. Cinco destinos futuros permanecem desabilitados. CSS do menu e estilos das seções anteriores preservados.
+- O MCP identificou nove preenchimentos VIDEO, mas disponibilizou apenas previews. Posteriormente, o usuário forneceu os nove originais em `assets/videos/`. Seus quadros foram inspecionados no Chrome e comparados às referências do Figma antes da inserção. Os arquivos foram preservados, sem conversão ou substituição por imagens. A correspondência está registrada abaixo.
+
+| Vídeo original local | Nó desktop | Slot desktop | Slot mobile |
+|---|---|---|---|
+| `fluxo_1.mp4` — entrada por destinos | `507:395` | 824 × 551 | 380 × 255 |
+| `fluxo_2.mp4` — entrada por motivos | `507:396` | 824 × 550 | 380 × 255 |
+| `fluxo_3.mp4` — contexto da busca | `507:399` | 824 × 550 | 380 × 255 |
+| `fluxo_4.mp4` — navegação contextual | `507:400` | 824 × 550 | 380 × 255 |
+| `fluxo_5.mp4` — conjuntos por loja | `507:405` | 824 × 536 | 380 × 249 |
+| `fluxo_6.mp4` — detalhes e personalização do conjunto | `507:409` | 824 × 681,5 | 380 × 315 |
+| `micro_1.mp4` — seleção de tamanho | `507:410` | 409,5 × 681,5 | 187,5 × 315 |
+| `micro_2.mp4` — ajuste de itens | `507:411` | 409,5 × 681,5 | 187,5 × 315 |
+| `fluxo_7.mp4` — reserva e acompanhamento | `507:418` | 824 × 536 | 379 × 247 |
+
+Todos os vídeos usam fontes locais em `../assets/videos/`, com `autoplay muted loop playsinline preload="metadata"` e nomes acessíveis. Fluxo6 ocupa a primeira linha inteira; Micro1/Micro2 ficam lado a lado na segunda, com gap horizontal de 5 px e vertical de 6 px. Os slots usam `aspect-ratio` e `object-fit: cover`, com recorte central correspondente aos preenchimentos FILL do Figma, sem distorção. A grade tem `min-height: 0` para impedir que o tamanho intrínseco dos vídeos verticais expanda o slot após a decodificação. Não há alturas fixas para os textos.
+
+O JavaScript existente controla pausa fora da viewport, retomada ao entrar, reprodução silenciosa em loop e controles manuais para movimento reduzido ou falha de autoplay. Não foi necessário alterá-lo. Não foram fornecidos posters separados; o navegador apresenta os quadros originais decodificados, sem imagens fictícias. Os sete fluxos medem 1916 × 1080 (Fluxo4: 1920 × 1080); as duas microinterações medem 1080 × 1920. Durações originais entre 7,24 e 22,31 segundos.
+
+- Validação da parte disponível no Chrome headless: 320, 375, 412, 768, 1024 e 1440 px. Os 11 blocos textuais e seus destaques foram comparados automaticamente ao contexto desktop; conteúdo idêntico entre resoluções. Imagem decodificada, dimensões e recorte conferidos; fontes reais HelveticaLTPro-Roman/Bold confirmadas. Sem overflow horizontal, sobreposições ou erros de carregamento. Capturas de 412 e 1440 px inspecionadas; a ausência dos vídeos impede equivalência visual integral com o Figma.
+- Geometria de todos os elementos da Hero, Contexto, Diagnóstico, Decisão e menu comparada com a medição anterior: nenhuma alteração nas seis larguras. Home, scripts e assets anteriores preservados por comparação de hashes. Menu novamente testado com barras nativas do Chrome visíveis em 1024/1440 × 600/768/900 px: largura útil de 138 px, rótulos completos, sticky a 32 px e nenhuma rolagem interna. Conferidos quatro links por clique, alternância do indicador por scroll nas duas direções, nenhuma seleção na Hero, foco por Tab/Enter em Solução, entrada direta por hash, movimento reduzido e adaptação estática em viewport de 400 px de altura.
+
+### Validação dos vídeos originais
+
+- Todos os nove arquivos carregados e decodificados no Chrome. Verificados individualmente: reprodução automática silenciosa ao entrar na viewport, avanço do tempo, retorno ao início ao atingir o fim, `playsinline`, ausência de controles no modo normal e pausa ao sair da área visível. Com movimento reduzido, ficam pausados e oferecem controles nativos; reprodução manual confirmada nas emulações desktop e mobile.
+- Slots conferidos após a decodificação em 320, 375, 412, 768, 1024 e 1440 px, incluindo a grade de microinterações. A altura mínima automática dessa grade foi removida com `min-height: 0`, evitando expansão causada pelas dimensões intrínsecas dos vídeos verticais. Preservados os recortes centrais, os gaps de 5/6 px e as proporções desktop/mobile; sem overflow horizontal ou erros de carregamento.
+- Repetidos os testes dos textos e destaques desktop, geometria das seções anteriores, quatro âncoras, indicador ativo, teclado, movimento reduzido e menu em 1024/1440 × 600/768/900 px. Menu sem barras internas ou cortes; Home, seções anteriores e JavaScript preservados. Nenhuma seção futura implementada.
+- A comparação visual usa quadros dos vídeos originais: a imagem muda naturalmente durante a reprodução. Continuam válidas as diferenças naturais de métricas tipográficas já documentadas; não foram aplicadas compensações de altura. Não há vídeos pendentes nesta seção.
+
+Solução concluída com os nove vídeos fornecidos. Estratégia aguarda nova instrução. Nenhum commit ou push realizado.
