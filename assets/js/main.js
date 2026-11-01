@@ -47,11 +47,13 @@ if (intro && introSkip && homeHeader && !initialAnchor) {
     let focusHome = false;
     let touchStartY = null;
     let exitTimeout;
+    let autoDismissTimeout;
 
     const finishIntro = () => {
         if (finished) return;
         finished = true;
         window.clearTimeout(exitTimeout);
+        window.clearTimeout(autoDismissTimeout);
         listeners.abort();
         intro.hidden = true;
         introSkip.hidden = true;
@@ -66,6 +68,7 @@ if (intro && introSkip && homeHeader && !initialAnchor) {
     const dismissIntro = (moveFocus = false) => {
         if (leaving || finished) return;
         leaving = true;
+        window.clearTimeout(autoDismissTimeout);
         focusHome = moveFocus;
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 
@@ -75,7 +78,7 @@ if (intro && introSkip && homeHeader && !initialAnchor) {
         }
 
         intro.classList.add("home-intro--leaving");
-        // Segurança caso transitionend não seja emitido; nunca inicia o avanço sozinho.
+        // Segurança caso transitionend não seja emitido durante a saída.
         exitTimeout = window.setTimeout(finishIntro, 600);
     };
 
@@ -117,7 +120,16 @@ if (intro && introSkip && homeHeader && !initialAnchor) {
         dismissIntro(true);
     }, { signal: listeners.signal });
 
-    homeRegions.forEach(({ element }) => { element.inert = true; });
-    document.documentElement.classList.add("intro-is-active");
-    intro.hidden = false;
+    reducedMotion.addEventListener("change", (event) => {
+        if (event.matches) finishIntro();
+    }, { signal: listeners.signal });
+
+    if (reducedMotion.matches) {
+        finishIntro();
+    } else {
+        homeRegions.forEach(({ element }) => { element.inert = true; });
+        document.documentElement.classList.add("intro-is-active");
+        intro.hidden = false;
+        autoDismissTimeout = window.setTimeout(dismissIntro, 3000);
+    }
 }
