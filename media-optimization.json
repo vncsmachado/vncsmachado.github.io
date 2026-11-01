@@ -12,7 +12,7 @@
   },
   "originals": {
     "preservedInProject": false,
-    "externalVerifiedCopy": "C:/portfolio-backups/vncsmachado-media-originals-2026-10-31",
+    "externalVerifiedCopy": "Permanent external backup outside the repository; original folder structure preserved.",
     "algorithm": "SHA-256",
     "verifiedFiles": 21,
     "retainedInProject": [
@@ -1951,7 +1951,7 @@
     "performed": true,
     "completedAt": "2026-10-31T23:16:18.949Z",
     "backup": {
-      "directory": "C:/portfolio-backups/vncsmachado-media-originals-2026-10-31",
+      "directory": "Permanent external backup outside the repository; original folder structure preserved.",
       "outsideRepository": true,
       "algorithm": "SHA-256",
       "verifiedFiles": 21,
