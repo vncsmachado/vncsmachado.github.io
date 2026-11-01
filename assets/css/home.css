@@ -149,10 +149,19 @@ html {
 
 .home-hero__title {
     width: 274px;
-    max-width: 100%;
+    /* Preserva a palavra inteira também com o arredondamento da viewport/scrollbar. */
+    max-width: calc(100% + 1px);
+    /* Usa somente os pontos discricionários do HTML quando a palavra não cabe. */
+    hyphens: manual;
     font-size: 64px;
     font-weight: 700;
     line-height: 63px;
+}
+
+.home-hero__word {
+    /* Mantém cada palavra inteira na próxima linha quando ela ainda cabe. */
+    display: inline-block;
+    max-width: 100%;
 }
 
 .home-hero__location {

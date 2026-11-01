@@ -11,7 +11,10 @@ const sections = sectionLinks.flatMap((link) => {
     return [section];
 });
 
+let currentSectionId;
 const setCurrentSection = (id) => {
+    if (id === currentSectionId) return;
+    currentSectionId = id;
     sectionLinks.forEach((link) => {
         if (link.dataset.section === id) link.setAttribute("aria-current", "location");
         else link.removeAttribute("aria-current");
@@ -20,61 +23,42 @@ const setCurrentSection = (id) => {
 
 if (sections.length) {
     setCurrentSection(null);
+    let updatePending = false;
+    const updateCurrentSection = () => {
+        const readingLine = window.innerHeight * 0.13;
+        const positions = sections.map((section) => ({ section, rect: section.getBoundingClientRect() }));
+        const last = positions[positions.length - 1];
+
+        if (positions[0].rect.top > readingLine) {
+            setCurrentSection(null);
+        } else if (last.rect.top >= 0 && last.rect.bottom <= window.innerHeight) {
+            // A última seção curta pode ficar inteira visível sem alcançar a linha.
+            setCurrentSection(last.section.id);
+        } else {
+            // A geometria atual também cobre saltos que não cruzam uma faixa do
+            // observador. Blocos independentes mantêm o marco principal anterior.
+            const current = positions.filter(({ rect }) => rect.top <= readingLine).pop();
+            setCurrentSection(current?.section.id ?? null);
+        }
+    };
+    const scheduleSectionUpdate = () => {
+        if (updatePending) return;
+        updatePending = true;
+        window.requestAnimationFrame(() => {
+            updatePending = false;
+            updateCurrentSection();
+        });
+    };
+
     if ("IntersectionObserver" in window) {
-        const visibleSections = new Set();
-        const lastSection = sections[sections.length - 1];
-        let lastSectionFullyVisible = false;
-        const updateCurrentSection = () => {
-            const current = [...visibleSections].sort((a, b) =>
-                Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top)
-            )[0];
-            if (sections[0].getBoundingClientRect().top > window.innerHeight * 0.13) {
-                setCurrentSection(null);
-            } else if (lastSectionFullyVisible) {
-                setCurrentSection(lastSection.id);
-            } else if (current) {
-                setCurrentSection(current.id);
-            } else {
-                // Nos blocos independentes, mantém o marco anterior também
-                // ao rolar para cima, sem adicionar novos alvos ao observador.
-                const previous = [...sections].reverse().find((section) =>
-                    section.getBoundingClientRect().top <= window.innerHeight * 0.13
-                );
-                setCurrentSection(previous?.id ?? null);
-            }
-        };
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) visibleSections.add(entry.target);
-                else visibleSections.delete(entry.target);
-            });
-            updateCurrentSection();
-        // Uma faixa estreita identifica a seção na linha de leitura,
-        // sem ativar a próxima só porque ela apareceu no fim da viewport.
-        }, { rootMargin: "-12% 0px -87% 0px", threshold: 0 });
+        // O observador sinaliza entradas/saídas e seções inteiramente visíveis;
+        // a linha de leitura é calculada pela altura real da viewport.
+        const sectionObserver = new IntersectionObserver(scheduleSectionUpdate, { threshold: [0, 1] });
         sections.forEach((section) => sectionObserver.observe(section));
-
-        // Uma última seção curta pode não alcançar a faixa de leitura antes
-        // do fim da página. Quando cabe inteira na viewport, ela fica ativa.
-        const lastSectionObserver = new IntersectionObserver(([entry]) => {
-            lastSectionFullyVisible = entry.isIntersecting && entry.intersectionRatio === 1;
-            updateCurrentSection();
-        }, { threshold: 1 });
-        lastSectionObserver.observe(lastSection);
-
-        // Um salto de um bloco independente até a Hero pode não cruzar
-        // nenhum alvo do observador. Limpa a seleção também nesse caso.
-        window.addEventListener("scroll", () => {
-            if (sections[0].getBoundingClientRect().top > window.innerHeight * 0.13
-                && sectionLinks.some((link) => link.hasAttribute("aria-current"))) {
-                setCurrentSection(null);
-            } else if (lastSection.getBoundingClientRect().bottom <= window.innerHeight * 0.13) {
-                // Um salto direto ao Footer pode atravessar todos os alvos
-                // sem intersectar a faixa de leitura, sobretudo em telas baixas.
-                setCurrentSection(lastSection.id);
-            }
-        }, { passive: true });
     }
+    window.addEventListener("scroll", scheduleSectionUpdate, { passive: true });
+    window.addEventListener("resize", scheduleSectionUpdate);
+    scheduleSectionUpdate();
 }
 
 // Carrega perto da viewport; reproduz somente quando realmente visível.

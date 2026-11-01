@@ -24,7 +24,19 @@ const intro = document.querySelector(".home-intro");
 const introSkip = document.querySelector(".home-intro__skip");
 const homeHeader = document.querySelector("#inicio-home");
 
-if (intro && introSkip && homeHeader) {
+// Um destino válido tem prioridade sobre a experiência de entrada.
+// A introdução não deve disputar a rolagem com a âncora solicitada.
+const initialAnchor = (() => {
+    try {
+        const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+        return target && !intro?.contains(target) ? target : null;
+    } catch {
+        return null;
+    }
+})();
+if (introSkip && initialAnchor) introSkip.hidden = true;
+
+if (intro && introSkip && homeHeader && !initialAnchor) {
     const listeners = new AbortController();
     const homeRegions = [homeHeader, document.querySelector(".home-main"), document.querySelector(".home-footer")]
         .filter(Boolean)
