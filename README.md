@@ -1,167 +1,118 @@
-# vncsmachado.github.io
+# Vinicius Machado — Product Designer
 
-Portfólio de Vinicius Machado, Product Designer. Site estático com Home e Case LIBERÔ implementados, destinado ao GitHub Pages. Utiliza HTML5, CSS3 e JavaScript nativos, Adobe Fonts e referências de design do Figma, sem frameworks, bibliotecas ou etapa de build.
+Portfólio profissional desenvolvido para apresentar minha abordagem em Product Design, UX/UI Design e desenvolvimento de interfaces digitais.
 
-## Estrutura
+O projeto foi criado a partir de uma identidade visual própria, com layouts desenvolvidos no Figma e implementação em HTML, CSS e JavaScript, sem utilização de frameworks ou templates.
+
+**[Acessar portfólio](https://vncsmachado.github.io/)**
+
+---
+
+## Projeto em destaque — LIBERÔ
+
+A **LIBERÔ** é uma proposta de plataforma digital desenvolvida como Trabalho de Conclusão de Curso em Design.
+
+O projeto explora uma alternativa para tornar as viagens mais práticas, permitindo que viajantes aluguem itens diretamente de estabelecimentos comerciais no destino, reduzindo a necessidade de transportá-los na bagagem.
+
+O Case apresenta o processo de design, incluindo pesquisa, definição do problema, decisões estratégicas, desenvolvimento da solução, prototipação e reflexões sobre os resultados e possibilidades futuras.
+
+A LIBERÔ é um projeto acadêmico e conceitual. Suas propostas de impacto e evolução não representam resultados de um produto lançado comercialmente.
+
+**[Explorar o Case LIBERÔ](https://vncsmachado.github.io/cases/libero.html)**
+
+## Tecnologias e ferramentas
+
+- **HTML5:** estrutura semântica das páginas.
+- **CSS3:** layouts responsivos, estilos e animações.
+- **JavaScript:** interações, navegação e comportamentos dinâmicos.
+- **Figma:** design das interfaces e referências visuais.
+- **Adobe Fonts:** integração das famílias tipográficas da identidade visual.
+- **Git e GitHub:** versionamento e gerenciamento do código.
+- **GitHub Pages:** hospedagem e publicação do site.
+
+A implementação utiliza tecnologias nativas da Web, sem frameworks ou processo de build.
+
+## Funcionalidades
+
+### Home
+
+- Introdução animada da identidade visual, com saída automática após 3 segundos ou antecipada por interação.
+- Apresentação profissional e acesso ao Case LIBERÔ.
+- Seção Sobre mim, com ferramentas e informações profissionais.
+- Currículo disponível em PDF.
+- Links para redes sociais e funcionalidade de copiar e-mail.
+
+### Case LIBERÔ
+
+- Apresentação do projeto e de seu processo de desenvolvimento.
+- Nove seções principais e dois blocos complementares.
+- Menu lateral com navegação por âncoras e identificação automática da seção ativa.
+- Sete demonstrações de fluxos e duas de microinterações em vídeo.
+- Layout responsivo para diferentes tamanhos de tela.
+- Imagens e vídeos otimizados, com carregamento progressivo.
+
+## Estrutura do projeto
 
 ```text
-index.html                  Home
-cases/libero.html           Case LIBERÔ
-cases/README.md             Organização e decisões técnicas do Case
-cases/AGENTS.md             Instruções permanentes de manutenção
-media-optimization.json     Manifesto de mídias ativas, otimização e integridade
-favicon.ico                 Favicon original preservado
-assets/
-  css/styles.css            Base compartilhada e tokens confirmados
-  css/home.css              Seções implementadas da Home
-  css/libero.css            Layout e estilos específicos do Case LIBERÔ
-  css/footer.css            Estilos do Footer compartilhado
-  js/main.js                Introdução, âncora inicial e fotos adiadas da Home
-  js/libero.js              Indicador do menu e carregamento/reprodução dos vídeos
-  js/footer.js              Cópia de e-mail e feedback compartilhados
-  images/                   Imagens
-  icons/                    Ícones
-  logos/                    Logos
-  videos/                   Vídeos
-  animations/               Assets de animação
-  fonts/                    Somente fontes com distribuição web autorizada
-  documents/                Currículo PDF
+/
+├── index.html
+├── favicon.ico
+├── cases/
+│   ├── libero.html
+│   ├── README.md
+│   └── AGENTS.md
+├── assets/
+│   ├── css/
+│   │   ├── styles.css
+│   │   ├── home.css
+│   │   ├── libero.css
+│   │   └── footer.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── libero.js
+│   │   └── footer.js
+│   ├── images/
+│   ├── icons/
+│   ├── logos/
+│   ├── videos/
+│   ├── animations/
+│   ├── fonts/
+│   └── documents/
+└── media-optimization.json
 ```
 
-As pastas de assets usam `.gitkeep` para serem preservadas pelo Git enquanto estiverem vazias. Para novos arquivos, usar nomes descritivos em minúsculas, sem espaços ou acentos, separados por hífens.
+Para informações específicas sobre a arquitetura e as decisões técnicas do Case, consulte a [documentação da LIBERÔ](cases/README.md).
 
-## Decisões técnicas
+## Desempenho e acessibilidade
 
-- HTML semântico, CSS e JavaScript nativos, sem dependências ou build.
-- Caminhos relativos funcionam na raiz do GitHub Pages, em subdiretórios e em um servidor local. O Case resolve seus recursos a partir de `cases/`; a pasta `assets/` e `favicon.ico` permanecem na raiz do projeto.
-- Layouts responsivos seguem as referências do Figma, com HTML semântico, foco visível e alturas naturais para o conteúdo. Diferenças imperceptíveis de métricas tipográficas não são compensadas por alturas fixas ou margens negativas.
-- As cores e medidas recuperadas das seções da Home são aplicadas em `home.css`, reutilizando os tokens globais existentes.
-- `styles.css` centraliza tokens e base global; `home.css` e `libero.css` tratam suas páginas; `footer.css` é compartilhado. Os scripts usam `defer`: `main.js` trata a Home, `libero.js` o Case, e `footer.js` a cópia do e-mail nas duas páginas. Navegação e currículo usam links HTML nativos.
-- O favicon existente foi preservado. Não há assets fictícios, URLs temporárias do Figma ou fontes Adobe redistribuídas.
+O portfólio incorpora práticas de otimização e acessibilidade, incluindo:
 
-## Visualização local
+- HTML semântico e navegação por teclado.
+- Indicadores de foco e contraste de cores revisado.
+- Suporte à preferência por movimento reduzido.
+- Imagens em WebP e vídeos MP4 otimizados.
+- Carregamento sob demanda de recursos visuais.
+- Adaptação responsiva e suporte a diferentes configurações de leitura.
 
-Para desenvolvimento e validação, servir a raiz do projeto por HTTP local (por exemplo, com a extensão Live Server do VS Code, se disponível) e abrir `index.html` ou `cases/libero.html`. A cópia de e-mail depende da Clipboard API e de um contexto seguro, como HTTPS ou localhost; se indisponível ou negada, o Footer orienta a cópia manual. Abrir por `file://` não valida todos esses comportamentos.
+**Limitação conhecida:** os vídeos são reproduzidos automaticamente e em loop, sem controle permanente de pausa no modo padrão. Essa decisão mantém uma limitação em relação ao critério WCAG 2.2.2; portanto, o projeto não declara conformidade integral com WCAG 2.2 AA.
 
-## GitHub Pages
+## Execução local
 
-O conteúdo é compatível com publicação estática a partir da raiz (`/`) do branch escolhido em **Settings → Pages → Deploy from a branch**. Não é necessário instalar pacotes ou executar build. Não há conteúdo que exija configuração especial do Jekyll.
+Para visualizar o projeto localmente:
 
-A configuração remota de Pages ainda precisa ser conferida no GitHub. Esta etapa não executa commits, pushes, publicação ou alterações de configuração Git.
+1. Clone o repositório.
+2. Abra a pasta no Visual Studio Code ou editor de sua preferência.
+3. Inicie um servidor HTTP local, como a extensão Live Server.
+4. Acesse `index.html` para visualizar a Home e `cases/libero.html` para acessar o Case.
 
-## Funcionalidades implementadas
+Algumas funcionalidades, como a cópia de e-mail, dependem de um contexto seguro (`localhost` ou HTTPS).
 
-- Home: introdução vetorial dispensada pela interação do visitante, Hero, card LIBERÔ com acesso ao Case, Sobre mim, currículo PDF e Footer com redes sociais e cópia de e-mail.
-- Case: Hero, nove seções principais, dois blocos independentes, navegação lateral desktop e nove vídeos otimizados. A organização e o indicador ativo estão descritos no [README do Case](cases/README.md).
-- A03: acessos com âncora inicial válida, como `index.html#sobre-mim`, seguem a navegação nativa sem ativar a introdução. Sem hash válido, a experiência de entrada permanece disponível e não reaparece após ser dispensada no mesmo documento.
-- A01: links sobre fundo claro usam `--color-link-on-light` (`#E60505`), com hover `#AE0606`; os Footers preservam `#F20505` sobre preto e usam hover `#FF3333` nos links sociais. As transições de cor de 200 ms respeitam movimento reduzido.
-- A06: “Product Designer” mantém fonte, peso e tamanho; palavras agrupadas e pontos `&shy;` permitem hifenização discricionária quando o espaçamento personalizado exige. Uma tolerância de 1 px no limite do título evita quebra de arredondamento sem mudar sua aparência padrão.
+## Publicação
 
-## Implementação e referências da Home
+O portfólio está hospedado no GitHub Pages, utilizando a branch `main` e o diretório raiz do repositório.
 
-As referências e medições abaixo registram as etapas de desenvolvimento e suas validações locais; não são garantias de desempenho em produção. Os comportamentos atuais estão resumidos acima.
+**Site:** https://vncsmachado.github.io/
 
-### Header da Home
+---
 
-- Referências consultadas: metadados de `507:101` e `507:26`; contexto e screenshots apenas dos Headers `507:102` e `507:27`.
-- Altura mínima de 144 px; logo de 48 × 48 px; padding vertical de 32 px; padding horizontal de 100 px no desktop e 16 px no mobile; links separados por 34 px, em vermelho `#E60505` após a correção A01, sobre fundo `#F8F9F4`.
-- O Figma não especifica breakpoint: a transição para margens desktop em 48rem é uma decisão de implementação. O layout usa Flexbox com quebra de linha conforme o Auto Layout retornado.
-- A logo usa o original vetorial fornecido em `assets/logos/vinicius-machado.svg`, com `viewBox="0 0 407.72 347.83"`, um path e dois polígonos, sem imagens rasterizadas incorporadas. Renderizada com `object-fit: contain` em 48 × 48 px, preservando a proporção do SVG. O `alt=""` é intencional: o link já possui o nome acessível “Vinicius Machado — início”.
-- A fonte do Header é Operetta 8 Regular (`operetta-8`, 400 normal), 20 px, entrelinha normal e sublinhado de 4%. O Adobe Web Project `kmd2lah` está integrado em Home e Case LIBERÔ pelo stylesheet oficial, sem redistribuir arquivos de fonte. Georgia/Times New Roman permanecem apenas como fallback para falha de carregamento.
-- Validação após a integração Adobe Fonts: `document.fonts.load()` carregou as 12 combinações de família/peso/estilo em ambas as páginas; o Chrome confirmou `Operetta8-Regular` como fonte efetivamente renderizada no Header. As seis larguras foram verificadas novamente, sem overflow ou erros de carregamento. Tamanho, peso, entrelinha `normal`, sublinhado e espaçamentos CSS foram preservados.
-- “Sobre mim” aponta para a seção `#sobre-mim`, já implementada. O smooth scroll existente respeita `prefers-reduced-motion` e a âncora nativa transfere o foco para a seção, que tem `tabindex="-1"`.
-- Currículo disponível em `assets/documents/curriculo.pdf`, acessível pelo link nativo do Header com `target="_blank"` e `rel="noopener noreferrer"`. O bloqueio anterior foi removido do HTML e do JavaScript. Sem atributo `download`, permitindo visualização no navegador e download pelo próprio visualizador.
-- Na etapa do Header, nenhuma outra seção foi implementada ou alterada visualmente.
-
-### Hero da Home
-
-- Referências: metadados, contexto e screenshots dos nós `507:109` (desktop) e `507:34` (mobile), sem solicitar contexto dos frames completos. A variável `medium gray` retornou `#595856`.
-- Elementos: nome em caixa alta, título semântico `h1` “Product Designer”, localização “Curitiba - PR” e texto de apresentação. Nenhum asset visual é necessário para a Hero.
-- Helvetica LT Pro Bold (700 normal) no nome/localização a 24 px e no título a 64 px; Roman (400 normal) na descrição a 20 px. As entrelinhas de 24/63/20 px seguem as alturas das caixas de texto dos metadados, para manter a geometria em vez de depender de `normal` no navegador.
-- A Hero inicia em y=192, com 48 px entre o Header e a seção. Em 412 px, altura de 630 px, padding de 32/16/48 px, intervalo de 256 px entre os grupos e de 20 px entre os textos; título limitado a 274 px e descrição a 374 px, sem exceder a largura disponível.
-- Em 1440 px, altura de 215 px, nome em x=100/y=87,5 relativo à seção e apresentação em x=630/y=26, com 710 × 147 px. Os espaços verticais efetivos de 26/42 px seguem os metadados e a screenshot: o padding nominal 32/48 px exportado não cabe nessa altura fixa com o conteúdo de 147 px. A linha cinza inferior é desenhada internamente sem aumentar a altura da seção.
-- Adaptação entre as referências: margens desktop em 48rem, como no Header; duas colunas a partir de 64rem, com gap fluido limitado aos 256 px da referência. Esses breakpoints são decisões de implementação; não há frame tablet fornecido. A altura pode crescer nas larguras menores para acomodar o texto sem overflow.
-- Chrome headless verificado em 320, 375, 412, 768, 1024 e 1440 px, sem rolagem horizontal, sobreposição ou erros de carregamento. Screenshots de 412 e 1440 px comparadas com o Figma; posições e dimensões principais coincidem com os metadados. Permanecem pequenas diferenças nas métricas visuais/rasterização dos textos entre navegador e Figma, sem compensações artificiais nos glifos.
-- O navegador confirmou `HelveticaLTPro-Bold` e `HelveticaLTPro-Roman` efetivamente renderizadas. Header, logo SVG, fontes globais, JavaScript e Case LIBERÔ foram preservados, incluindo navegação por teclado, smooth scroll e acesso ao currículo PDF.
-- Sem assets pendentes para a Hero.
-
-### Projeto LIBERÔ da Home
-
-- Referências: `get_metadata` nos frames desktop/mobile, seguido de `get_design_context` e `get_screenshot` exclusivamente nos nós `507:119` e `507:44`. Nenhum contexto de página completa foi solicitado.
-- Card com capa original, identificação LIBERÔ/2024, separador SVG, título, descrição e CTA “Ler mais”. A capa ativa usa `assets/images/libero-capa-optimized.webp` (4096 × 2731 px), com variantes responsivas de 760/1240/2480 px; o separador original em `assets/icons/libero-separador.svg` (1 × 40 px). Não há dependências de URLs temporárias do Figma.
-- Seção 48 px após a Hero, padding vertical de 32 px e margens laterais de 16 px no mobile/100 px a partir de 48rem, preservando o padrão existente. Capa com `object-fit: cover`, proporção 380/153 no mobile e 1240/500 no desktop; espaço até os detalhes de 46/48 px. Os detalhes têm altura mínima de 284 px e crescem conforme necessário em telas menores.
-- Tipografia: Helvetica LT Pro Light 300 nos rótulos a 20 px, Bold 700 no título a 30/32 px e Roman 400 na descrição a 20 px; CTA com Operetta 8 Regular 400 a 20 px. O peso Light foi disponibilizado no kit Adobe durante a implementação e confirmado no Chrome como `HelveticaLTPro-Light`, sem substituição por outro peso.
-- Títulos com larguras máximas de 365/504 px e entrelinhas de 29/31 px, conforme as caixas de texto do Figma. Descrição com limite de 381/468 px e entrelinha de 20 px. No mobile de 412 px, a descrição é limitada aos 380 px úteis para evitar o excesso de 1 px presente no metadado do Figma.
-- Um único link HTML nativo, com nome acessível “Ler mais sobre o case LIBERÔ”, cobre todo o card por pseudo-elemento e leva a `cases/libero.html`. O foco por teclado contorna o card. Sem links aninhados, JavaScript adicional ou efeitos visuais no card completo; o hover do texto “Ler mais” está descrito abaixo.
-- Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px: sem rolagem horizontal, sobreposição ou erros de carregamento; fontes e ambos os assets carregados. Capturas em 412/1440 px comparadas com as referências: seção de 547/896 px e capa de 380 × 153/1240 × 500 px, com pequenas diferenças de rasterização tipográfica.
-- Navegação confirmada com Tab/Enter, clique na capa e clique no CTA, incluindo carregamento da página de destino. Header, Hero, logo SVG, fontes/estilos globais, JavaScript e arquivos do Case LIBERÔ preservados.
-- Nenhum asset ou ajuste manual pendente nesta seção. O currículo também está disponível pelo Header.
-
-### Sobre mim da Home
-
-- Consultados `get_metadata`, `get_design_context` e `get_screenshot` nos nós `507:136` (desktop) e `507:61` (mobile). A implementação preserva os dois parágrafos, as oito ferramentas e as duas fotografias das referências. Naquela etapa, o Footer ainda não havia sido implementado.
-- Seção semântica com `id="sobre-mim"`, título `h2`, subtítulo `h3`, lista de ferramentas e textos alternativos nas fotografias. Helvetica LT Pro Bold 700 em 32 px no título e 20 px em “Ferramentas:”; Roman 400 em 16 px na lista e nos parágrafos. Entrelinhas derivadas das caixas do Figma: 31/20/16 px; parágrafos separados por 18 px.
-- Seção 72 px após o projeto; padding superior de 48 px e inferior de 32 px; margens de 16 px no mobile e 100 px a partir de 48rem. Traço cinza `#595856` desenhado internamente no topo, sem acrescentar altura.
-- Em 412 px, a seção mede 1768 px, o grupo lateral 487 px, o espaço entre título e ferramentas 194 px e o grupo de apresentação inicia a 663 px do topo. As fotos de 340 × 340 px ficam empilhadas com intervalo de 36 px, 22 px após os parágrafos.
-- Em 1440 px, a seção mede 663 px; o grupo lateral começa em x=100/y=48 relativo à seção, com 153 px entre título e ferramentas. A apresentação ocupa 709 px a partir de x=631/y=48. Fotos lado a lado de 340 × 340 px com intervalo de 29 px, 22 px após o texto.
-- Adaptação intermediária: duas colunas a partir de 64rem, como na Hero; abaixo, organização mobile. Em telas menores que a largura da foto, os quadrados reduzem fluidamente; em desktop intermediário, as fotos dividem o espaço disponível sem overflow. Esses pontos de transição são decisões de implementação, pois não há referência tablet específica.
-- Fotografias ativas: `assets/images/vinicius-machado-retrato.jpg` (896 × 1200 px, original preservado) e `assets/images/vinicius-machado-formatura-2040.webp` (2040 × 1360 px, derivada do JPEG original de 3648 × 2432 px). Não há ícones adicionais nesta seção.
-- Recorte do retrato preservado conforme o Figma: imagem com altura de 133,93% da caixa, topo em -4,9% no mobile/-4,89% no desktop e deslocamento horizontal de -0,1% apenas no desktop. Formatura com `object-fit: cover` centralizado. As caixas quadradas limitam os recortes.
-- Chrome headless validado em 320, 375, 412, 768, 1024 e 1440 px: fotos/fontes carregadas, oito ferramentas, dois parágrafos, sem overflow horizontal ou sobreposições. Screenshots de 412/1440 px comparadas com o Figma; geometria principal e enquadramentos conferidos, com pequenas diferenças de rasterização tipográfica.
-- Link “Sobre mim” validado por clique e Tab/Enter: hash correto, foco na seção e rolagem suave; com movimento reduzido, comportamento `auto`. A rolagem respeita o limite do documento quando a seção inteira cabe no fim da página. Nenhuma lógica de rolagem foi duplicada e o Header não foi alterado.
-- Header, Hero, projeto LIBERÔ, fontes/estilos globais, JavaScript, assets anteriores e Case LIBERÔ preservados. Navegação do card por mouse/teclado conferida novamente. Sem assets pendentes ou intervenção manual necessária para Sobre mim.
-
-### Footer da Home
-
-- Consultados metadados, contexto e screenshots exclusivamente dos nós `507:168` e `507:93`, sem contexto dos frames completos. Elemento `<footer>` após o conteúdo principal, com “Todos os direitos reservados™”, e-mail e três redes sociais. Nenhum asset novo é necessário.
-- Fundo preto `#000000`, texto padrão `#F20505` e Operetta 8 Regular 400 a 20 px, reutilizando os tokens globais. Entrelinha de 24 px conforme as caixas do Figma; redes sublinhadas com espessura de 4%. Os hovers das redes sociais estão descritos abaixo.
-- Em 412 px: altura de 420 px, padding de 32/16 px, intervalo de 194 px entre copyright e contatos, links empilhados com intervalo de 14 px e área de cada link ocupando a largura do grupo. Em 1440 px: altura de 204 px, margens de 100 px, copyright em x=100/y=90 relativo ao Footer e grupo de contatos de 590 px em x=750/y=90.
-- Adaptação intermediária: margens desktop a partir de 48rem; composição horizontal com quebra de linha a partir de 64rem. Quando os dois grupos não cabem lado a lado, passam para linhas distintas, separados por 32 px. Em 320 px, o e-mail quebra em duas linhas e a altura cresce para 444 px, sem reduzir a fonte nem causar overflow.
-- Destinos recuperados do Figma: Instagram `https://www.instagram.com/vncs_machado?srtk=Nm9iZGc0OWQyOGR5&utm_source=qr`, Twitter `https://x.com/vncs_machado?s=11` e LinkedIn `https://www.linkedin.com/in/viniciushmachado/`. Todos usam `target="_blank"` e `rel="noopener noreferrer"`. O e-mail mantém a aparência sem sublinhado da referência e agora é um botão que copia `vncs_machado@outlook.com`, sem abrir um cliente de e-mail.
-- Validação no Chrome headless em 320, 375, 412, 768, 1024 e 1440 px, sem overflow horizontal, sobreposição ou erros de carregamento. Fonte efetiva confirmada como `Operetta8-Regular`. Screenshots desktop/mobile comparadas ao Figma; permanecem pequenas diferenças de rasterização tipográfica.
-- Os quatro contatos receberam foco com Tab e contorno visível. LinkedIn aberto por Enter; Instagram e Twitter abertos por clique, com os destinos confirmados em novas abas. A página externa de cada serviço pode ter redirecionamentos ou exigir login.
-- Cópia do e-mail implementada em `assets/js/footer.js` com `navigator.clipboard.writeText()`, extraindo o endereço do texto existente. Botão nativo com `type="button"`, nome acessível “Copiar endereço de e-mail”, cursor pointer e foco visível, mantendo fonte/cor/espaçamentos. O sucesso só aparece após a promessa ser resolvida: “Copiado!” é anunciado por uma região `aria-live="polite"` e removido em 2 segundos. O feedback fica acima dos contatos, fora do fluxo, sem deslocamentos. Falha ou indisponibilidade mostram instrução de cópia manual, sem falso sucesso; cliques concorrentes e temporizadores anteriores são controlados.
-- Ajuste de cópia validado no Chrome: leitura real da área de transferência após clique nas seis larguras; Enter e Espaço também copiaram o endereço correto. Confirmados o desaparecimento do sucesso, as falhas por permissão negada e API ausente, ausência de deslocamentos/overflow e preservação das redes sociais e demais seções. Nenhuma aba, navegação, aplicativo de e-mail ou envio de mensagem é acionado pela cópia.
-- Header, Hero, projeto LIBERÔ, Sobre mim, fotos, logo, integração Adobe, estilos globais, JavaScript e Case LIBERÔ preservados. Navegação do card e da âncora Sobre mim, incluindo movimento reduzido, conferida novamente.
-- Nenhum link fictício, asset pendente ou intervenção manual necessária para o Footer. O botão “Voltar ao topo” não foi implementado na Home nem no Case LIBERÔ.
-
-### Hover e transições da Home
-
-- Sobre mim, Currículo e “Ler mais” usam `--color-link-hover: #ae0606`. Instagram, Twitter e LinkedIn usam `--color-link-hover-on-dark: #ff3333` após A01. Todos mantêm `transition: color 200ms ease`. Os estilos padrão, fontes, sublinhados, medidas e destinos permanecem iguais.
-- Regras de hover limitadas a `(hover: hover) and (pointer: fine)`, evitando estados persistentes em telas de toque. Com `prefers-reduced-motion: reduce`, as transições são removidas; foco visível e smooth scroll existentes foram preservados.
-- O texto do CTA usa `.project-card__label` acima do pseudo-elemento que estende o link ao card. `:has(.project-card__label:hover)` aplica a cor apenas sobre “Ler mais”, preservando o clique na capa sem acionar hover visual no card inteiro. Nenhum novo efeito na logo, fotografias ou botão de copiar e-mail.
-- Chrome headless: comparação do estado padrão antes/depois em 320, 375, 412, 768, 1024 e 1440 px, com geometria, fontes, cores, decorações e destinos idênticos; sem overflow. Na validação original da etapa 7.1, anterior a A01, foram confirmadas cor final `rgb(174, 6, 6)`, propriedade `color`, duração `0.2s`, função `ease` e interpolação de cor durante a transição.
-- Testados movimento reduzido, emulação de toque sem hover, foco por Tab nos oito controles, navegação por card/CTA, âncora Sobre mim e smooth scroll, novas abas do currículo/redes sociais e cópia real do e-mail com feedback. JavaScript e Case LIBERÔ não foram alterados. Na etapa de hover, a animação da logo ainda não havia sido iniciada.
-
-### Introdução e animação vetorial
-
-- Introdução no mesmo `index.html`, como overlay fixo de tela cheia, fora do fluxo da Home. Fundo `#F8F9F4`, logo centralizada, altura `100svh` com fallback `100vh`. A Home permanece renderizada no documento, começando pelo Header, sem reservar espaço para a introdução.
-- SVG inline, três paths, cores, proporções, `viewBox` e `clipPath` preservados. A logo da introdução é exibida a 145,5 × 124,5 px, com redução proporcional em telas menores e zoom final de 1.025; a logo do Header não participa da animação. A animação continua exclusivamente em CSS: V de baixo para cima em 1100 ms; esquerda entre 1000–1900 ms; direita entre 1080–1980 ms; zoom de 1 para 1.025 entre 1980–2580 ms. Sem loop, desaparecimento automático ou alteração da logo do Header.
-- O primeiro gesto para baixo (wheel/touchpad, toque, ArrowDown, Espaço, PageDown ou End) inicia a saída, mesmo antes do fim da animação. O overlay sobe e perde opacidade com `500ms ease-in-out`; ao terminar, recebe `hidden` e não pode ser reencontrado rolando para cima. Não há redirecionamento nem temporizador para iniciar o avanço. Um fallback de 600 ms apenas finaliza uma saída já solicitada caso `transitionend` não seja emitido.
-- Durante a introdução, a rolagem da Home fica suspensa e suas regiões usam `inert` temporariamente, evitando foco atrás do overlay. Em acesso sem âncora inicial válida, o gesto inicial revela a Home no topo; `touch-action: pinch-zoom` impede que a inércia desse gesto desloque o Header, preservando o zoom por pinça. Após a saída, os estados anteriores são restaurados e todos os listeners temporários são removidos com `AbortController`.
-- O atalho “Avançar para a Home” aparece ao receber Tab. Enter ou as teclas de avanço removem o overlay e transferem o foco ao Header, sem prendê-lo. O smooth scroll existente permanece intacto. Com movimento reduzido, a logo aparece completa imediatamente e a saída não tem animação. Sem JavaScript, o overlay permanece oculto e a Home fica acessível desde o início.
-- Chrome headless: entrada, permanência após a animação, interpolação da saída, primeira rolagem, retorno ao topo sem introdução/espaço vazio, limpeza de listeners, teclado e atalho, toque emulado, movimento reduzido e JavaScript desativado. Em 320, 375, 412, 768, 1024 e 1440 px, conferidas centralização e ausência de overflow; a geometria e os estilos da Home após a saída coincidem com a referência anterior.
-- Links do currículo e das redes sociais, card/CTA LIBERÔ, âncora Sobre mim, foco e cópia real do e-mail foram conferidos após a remoção do overlay. Conteúdo das seções anteriores, SVG original, estilos globais e página do Case preservados.
-- Limite da validação: Chrome headless e emulação de toque; aparelhos físicos, barras móveis reais e outros navegadores não foram testados.
-
-- Famílias confirmadas no CSS do Adobe Fonts: `operetta-8`, `helvetica-lt-pro` e `roboto`; todas com 400 e 700, normal e italic, e Helvetica LT Pro também com Light 300 normal. As variáveis globais `--font-operetta`, `--font-helvetica` e `--font-roboto` incluem fallbacks serif/sans-serif apropriados. Home e Case utilizam essas variáveis; fontes alternativas permanecem como fallback e os arquivos Adobe não são redistribuídos.
-
-## Manutenção das referências do Figma
-
-- Arquivo de referência: `RXlxl9DLCRFMvs9gVWFD9k`. Home desktop/mobile: `507:101` / `507:26`; Case desktop/mobile: `507:332` / `507:176`. As diretrizes permanentes do Case estão em [cases/AGENTS.md](cases/AGENTS.md).
-- Consultar primeiro `get_metadata` para mapear a hierarquia; depois consultar `get_design_context` por seção, conferir `get_screenshot` e recuperar variáveis quando necessário. Evitar contexto de páginas completas devido ao timeout já observado.
-- Recuperar assets por seção para estas pastas, priorizando SVG quando disponível; listar arquivos que precisarem de fornecimento manual após essa inspeção.
-- Preservar conteúdo desktop e composição responsiva mobile. Novas funcionalidades, animações e alterações de design dependem de escopo explícito; não publicar nem alterar Git remoto por iniciativa própria.
-
-## Carregamento e otimização de mídias
-
-Os 21 originais substituídos foram arquivados fora do repositório, com SHA-256 verificado, e removidos somente após confirmar a ausência de referências no site. O [manifesto de mídias](media-optimization.json) registra os caminhos ativos, as variantes responsivas, a correspondência com os originais e o backup permanente. As versões otimizadas e o retrato JPEG foram preservados.
-
-- Home: capa WebP com `srcset`/`sizes`, carregamento eager e decodificação assíncrona; as duas fotos entram no DOM por proximidade de 400 px via `template`, com alternativas em `noscript`.
-- Case: Hero em `picture` com variantes desktop/mobile; demais imagens usam lazy loading e decodificação assíncrona. Os nove vídeos usam MP4 H.264 otimizado, fontes em `data-src` e `preload="none"` inicialmente. O carregamento começa a até 400 px da viewport; a reprodução automática só ocorre quando visíveis. Pausa, retomada e movimento reduzido são responsabilidades separadas do carregamento.
-- O conjunto de vídeos passou de aproximadamente 145,18 MB para 7,17 MB; o conjunto de imagens, incluindo variantes ativas e retrato JPEG, de 18,15 MB para 4,90 MB. A limpeza reduziu `assets/` de 175,49 MB para 12,21 MB. São tamanhos de arquivos em MB decimais, não medições ou garantias de transferência inicial/LCP em produção.
-- O manifesto preserva parâmetros, correspondências, hashes e resultados históricos de laboratório. Não é necessário duplicar seus inventários nos READMEs.
-
-## Decisão de acessibilidade — A05
-
-Por decisão explícita do responsável pelo portfólio na etapa 10.4, A05 (novos controles de pausa dos vídeos) não será implementado. Os nove vídeos mantêm autoplay silencioso, loop, reprodução inline, carregamento por proximidade, pausa fora da viewport e retomada; a alternativa existente para `prefers-reduced-motion: reduce` permanece disponível. Essa decisão mantém a limitação identificada em relação ao critério WCAG 2.2.2 e não representa conformidade integral com WCAG 2.2 AA.
+Desenvolvido por **Vinicius Machado**.
